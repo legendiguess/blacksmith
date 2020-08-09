@@ -85,5 +85,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 912.318, 510.722 )
+[node name="Character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 929.822, 493.889 )
