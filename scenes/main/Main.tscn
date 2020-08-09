@@ -1,11 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=1]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect6" type="ColorRect" parent="."]
-margin_top = 500.0
+margin_top = 501.059
 margin_right = 1280.0
-margin_bottom = 564.0
+margin_bottom = 565.059
 rect_pivot_offset = Vector2( 128, 64 )
 color = Color( 0.505882, 0.141176, 0.0666667, 1 )
 __meta__ = {
@@ -83,13 +85,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect5" type="ColorRect" parent="."]
-margin_left = 896.0
-margin_top = 405.0
-margin_right = 960.0
-margin_bottom = 533.0
-rect_pivot_offset = Vector2( 32, 58 )
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 912.318, 510.722 )
