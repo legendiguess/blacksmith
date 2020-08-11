@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 #Load sector
 var Item = load("res://scenes/items/Base_item.gd")
