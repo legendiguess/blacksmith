@@ -32,3 +32,14 @@ alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+margin_left = 98.1575
+margin_top = 8.5874
+margin_right = 149.158
+margin_bottom = 28.5874
+text = "Put"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
