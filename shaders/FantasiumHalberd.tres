@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 uv_handle;
+
+void fragment() {
+	vec4 enchant_texture = vec4(UV, 1.0, 1.0);
+	
+	enchant_texture.x = cos(enchant_texture.x + enchant_texture.y + TIME);
+	enchant_texture.y = sin(enchant_texture.x + enchant_texture.y + TIME);
+	
+	COLOR = texture(TEXTURE, UV);
+	if (!(UV.x < uv_handle.x && UV.x > uv_handle.z && UV.y < uv_handle.y && UV.y > uv_handle.w)) {
+		COLOR.x = COLOR.x + enchant_texture.x * 0.25;
+		COLOR.y = COLOR.y + enchant_texture.y * 0.25;
+	}
+}"
+custom_defines = ""
+
+[resource]
+shader = SubResource( 1 )
+shader_param/uv_handle = Plane( 0.671, 0.927, 0.475, 0.139 )
