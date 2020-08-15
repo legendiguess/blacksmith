@@ -11,8 +11,8 @@ var items_button = [] # Array of buttons
 
 #Code sector
 func _ready():
-	items.append(item_factory.new_item(item_table.ids.copper_ore))
-	items.append(item_factory.new_item(item_table.ids.copper_ore))
+	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
+	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
 	log_out()
 	pass 
 
