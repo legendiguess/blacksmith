@@ -1,21 +1,34 @@
 extends Node
 
 #Добавлять все предметы(руды/оружие/т.д.)
-enum ids{
-	base_item
-	copper_ore
+enum Ids{
+	BASE_ITEM,
+	COPPER_ORE,
+	IRON_ORE,
+	SILVER_ORE,
+	GOLDEN_ORE,
+	FANTASIUM_ORE,
+#Слитки
+	COPPER_INGOT,
+	IRON_INGOT,
+	SILVER_INGOT,
+	GOLDEN_INGOT,
+	FANTASIUM_INGOT,
 }
 #Ид всех пушек добавлять сюда
 var weapon_ids = []
 
 #Каждому id предмета соответсвует массив спрайтов для предмета(спрайт предмета на полу, в руках и в инвентаре), 
 var sprite = {
-	ids.copper_ore : [1]
+	#руды
+	Ids.COPPER_ORE : 1,
+	#Слитки
+	Ids.COPPER_INGOT: preload("res://sprites/CopperIngot.png"),
+	Ids.IRON_INGOT: preload("res://sprites/IronIngot.png"),
+	Ids.SILVER_INGOT: preload("res://sprites/SilverIngot.png"),
+	Ids.GOLDEN_INGOT: preload("res://sprites/GoldIngot.png"),
+	Ids.FANTASIUM_INGOT: preload("res://sprites/FantasiumIngot.png")
 }
-
-
-func _ready():
-	pass
 
 func correct_test():
 	#Проверка что для каждого предмета из ids есть спрайт, выведение ошибки(если присутсвует)

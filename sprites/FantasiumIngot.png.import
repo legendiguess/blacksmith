@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Сharacter.png-0f39f670d9e3c66bd9e5175de992d65e.stex"
+path="res://.import/FantasiumIngot.png-9742cdc0d8d9b93e39dde711ed209ede.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Сharacter.png"
-dest_files=[ "res://.import/Сharacter.png-0f39f670d9e3c66bd9e5175de992d65e.stex" ]
+source_file="res://sprites/FantasiumIngot.png"
+dest_files=[ "res://.import/FantasiumIngot.png-9742cdc0d8d9b93e39dde711ed209ede.stex" ]
 
 [params]
 
