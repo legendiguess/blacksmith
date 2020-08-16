@@ -23,11 +23,11 @@ var sprite = {
 	#руды
 	Ids.COPPER_ORE : 1,
 	#Слитки
-	Ids.COPPER_INGOT: preload("res://sprites/CopperIngot.png"),
-	Ids.IRON_INGOT: preload("res://sprites/IronIngot.png"),
-	Ids.SILVER_INGOT: preload("res://sprites/SilverIngot.png"),
-	Ids.GOLDEN_INGOT: preload("res://sprites/GoldIngot.png"),
-	Ids.FANTASIUM_INGOT: preload("res://sprites/FantasiumIngot.png")
+	Ids.COPPER_INGOT: preload("res://sprites/ingots/Copper.png"),
+	Ids.IRON_INGOT: preload("res://sprites/ingots/Iron.png"),
+	Ids.SILVER_INGOT: preload("res://sprites/ingots/Silver.png"),
+	Ids.GOLDEN_INGOT: preload("res://sprites/ingots/Gold.png"),
+	Ids.FANTASIUM_INGOT: preload("res://sprites/ingots/Fantasium.png")
 }
 
 func correct_test():
