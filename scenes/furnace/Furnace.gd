@@ -57,7 +57,7 @@ func _on_Button_pressed():
 func temperature_decrease_timer():
 	temperature_bar.value -= 10
 
-func progress_timer():
+func melting_progress_timer():
 	if melting_progress_bar.value >= ore_time[current_ore_in_furnace]:
 		progress_timer.stop()
 		melting_progress_bar.value = 0
