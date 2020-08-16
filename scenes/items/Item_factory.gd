@@ -16,3 +16,5 @@ func new_item(id):
 	item.item_name = strings.names[id]
 	return item
 
+	
+

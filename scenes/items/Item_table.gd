@@ -30,6 +30,10 @@ var sprite = {
 	Ids.FANTASIUM_INGOT: preload("res://sprites/ingots/Fantasium.png")
 }
 
+var recipes = {
+	
+}
+
 func correct_test():
 	#Проверка что для каждого предмета из ids есть спрайт, выведение ошибки(если присутсвует)
 	pass
