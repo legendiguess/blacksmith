@@ -16,12 +16,13 @@ enum Ids{
 	FANTASIUM_INGOT,
 }
 #Ид всех пушек добавлять сюда
-var weapon_ids = []
+var weapon_ids = [Ids.COPPER_INGOT, Ids.FANTASIUM_ORE]
 
 #Каждому id предмета соответсвует массив спрайтов для предмета(спрайт предмета на полу, в руках и в инвентаре), 
 var sprite = {
 	#руды
 	Ids.COPPER_ORE : 1,
+	Ids.FANTASIUM_ORE : preload("res://sprites/ingots/Fantasium.png"),
 	#Слитки
 	Ids.COPPER_INGOT: preload("res://sprites/ingots/Copper.png"),
 	Ids.IRON_INGOT: preload("res://sprites/ingots/Iron.png"),
