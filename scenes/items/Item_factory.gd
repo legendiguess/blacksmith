@@ -1,8 +1,8 @@
 extends Node
 
 var bs_item = load("res://scenes/items/Base_item.gd")
-onready var item_table = get_node("../ItemTable")
-onready var strings = get_node("../Strings")
+onready var item_table = get_node("/root/ItemTable")
+onready var strings = get_node("/root/Strings")
 
 
 

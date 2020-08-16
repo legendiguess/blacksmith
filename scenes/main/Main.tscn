@@ -1,20 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/inventory/Inventory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/strings/Strings.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/items/Item_table.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/items/Item_factory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Strings" parent="." instance=ExtResource( 4 )]
-
-[node name="ItemTable" parent="." instance=ExtResource( 5 )]
-
-[node name="ItemFactory" parent="." instance=ExtResource( 6 )]
 
 [node name="ColorRect6" type="ColorRect" parent="."]
 margin_top = 501.059

@@ -1,8 +1,9 @@
 extends Node2D
 #Load sector
 var item = load("res://scenes/items/Base_item.gd")
-onready var item_factory = get_node("../ItemFactory")
-onready var item_table = get_node("../ItemTable")
+onready var item_factory = get_node("/root/ItemFactory")
+onready var item_table = get_node("/root/ItemTable")
+onready var inventory = get_node("../Inventory")
 
 #Declare Variables
 var N:int = 5  # Number of slots
@@ -36,15 +37,15 @@ func put(item) -> bool:
 	else: return false
 	
 func take(item_index):
-	if $"/root/Inventory".current_item != null:
-		var item_hand = $"/root/Inventory".current_item
-		$"/root/Inventory".current_item = items[item_index]
+	if inventory.current_item != null:
+		var item_hand = inventory.current_item
+		inventory.current_item = items[item_index]
 		items[item_index] = item_hand
 	else:
-		$"/root/Inventory".current_item = items[item_index]
+		inventory.current_item = items[item_index]
 		items.remove(item_index)
 		
-	$"/root/Inventory".update()
+	inventory.update()
 	update()
 		
 	
@@ -52,9 +53,9 @@ func _on_click_item_button(btn):
 	take(items_button.find(btn))
 
 func _on_Button_button_up():
-	var item = $"/root/Inventory".current_item
+	var item = inventory.current_item
 	if item != null && put(item):
-		 $"/root/Inventory".put()
+		 inventory.put()
 	pass # Replace with function body.
 
 func update():

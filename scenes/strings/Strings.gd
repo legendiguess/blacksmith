@@ -1,6 +1,6 @@
 extends Node
 # Массив строк зависит от языка
-onready var item_table = get_node("../ItemTable")
+onready var item_table = get_node("/root/ItemTable")
 var names
 func _ready():
 	names = {
