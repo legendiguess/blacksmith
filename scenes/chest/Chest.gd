@@ -13,7 +13,10 @@ var items_button = [] # Array of buttons
 #Code sector
 func _ready():
 	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
-	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
+	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_ORE))
+	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_ORE))
+	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
+	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
 	log_out()
 	pass 
 
@@ -29,9 +32,9 @@ func log_out():
 		btn.text = i.log_out()
 		items_button.append(btn)
 
-func put(item) -> bool:
+func put(p_item) -> bool:
 	if items.size() < number_of_slots:
-		items.append(item)
+		items.append(p_item)
 		update()
 		return true
 	else: return false
@@ -53,8 +56,8 @@ func _on_click_item_button(btn):
 	take(items_button.find(btn))
 
 func _on_Button_button_up():
-	var item = inventory.current_item
-	if item != null && put(item):
+	var it = inventory.current_item
+	if it != null && put(item):
 		 inventory.put()
 	pass # Replace with function body.
 
