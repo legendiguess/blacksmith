@@ -18,7 +18,7 @@ func _ready():
 
 
 func next_buyer():
-	if queue_of_buyers.front() == null:
+	if queue_of_buyers.empty() or queue_of_buyers.front() == null:
 		return #Очередь пуста
 	current_buyer = queue_of_buyers.front()
 	$Text_order.text = current_buyer.say() + $"/root/Strings".names[current_buyer.order]
