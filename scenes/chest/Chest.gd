@@ -6,7 +6,7 @@ onready var item_table = get_node("/root/ItemTable")
 onready var inventory = get_node("../Inventory")
 
 #Declare Variables
-var N:int = 5  # Number of slots
+var number_of_slots:int = 5  # Number of slots
 var items = [] # Array of items
 var items_button = [] # Array of buttons
 
@@ -30,7 +30,7 @@ func log_out():
 		items_button.append(btn)
 
 func put(item) -> bool:
-	if items.size() < N:
+	if items.size() < number_of_slots:
 		items.append(item)
 		update()
 		return true
