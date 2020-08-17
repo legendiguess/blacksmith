@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/inventory/Inventory.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cashier/Сashier.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/dwarf/Dwarf contoroller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
@@ -103,3 +104,6 @@ position = Vector2( 814.201, 463.898 )
 
 [node name="Сashier" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1047.7, 397.341 )
+
+[node name="Dwarf controller" parent="." instance=ExtResource( 5 )]
+position = Vector2( 182, 606 )
