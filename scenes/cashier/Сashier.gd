@@ -34,7 +34,7 @@ func generate_buyer():
 	
 func submit_order():
 	var player_item = get_node("../Inventory").current_item
-	if player_item.id == current_buyer.order:
+	if player_item and player_item.id == current_buyer.order:
 		get_node("../Inventory").put()
 		$Text_order.text = "Submited!!!"
 		queue_of_buyers.pop_front()
@@ -44,4 +44,5 @@ func submit_order():
 
 func _on_Button_button_up():
 	submit_order()
+	update()
 	pass # Replace with function body.

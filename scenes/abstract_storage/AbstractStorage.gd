@@ -11,7 +11,22 @@ func put():
 		items.append(it)
 		inventory.put()
 		update()
+		
+func item_gui(container):
+	for i in items_button:
+		i.queue_free()
+	items_button.clear()
+	for i in items:
+		if i == null: continue
+		var btn = Button.new()
+		container.add_child(btn)
+		btn.connect("button_up", self, "_on_click_item_button", [btn])
+		btn.text = i.log_out()
+		items_button.append(btn)
 
+	
+func _on_click_item_button(btn):
+	take(items_button.find(btn))
 	
 func take(item_index):
 	if inventory.current_item != null:

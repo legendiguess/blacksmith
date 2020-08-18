@@ -22,6 +22,9 @@ var weapon_ids = [Ids.COPPER_INGOT, Ids.FANTASIUM_ORE]
 var sprite = {
 	#руды
 	Ids.COPPER_ORE : 1,
+	Ids.IRON_ORE: 2,
+	Ids.SILVER_ORE: 3,
+	Ids.GOLDEN_ORE: 4,
 	Ids.FANTASIUM_ORE : preload("res://sprites/ingots/Fantasium.png"),
 	#Слитки
 	Ids.COPPER_INGOT: preload("res://sprites/ingots/Copper.png"),

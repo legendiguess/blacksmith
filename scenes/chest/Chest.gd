@@ -1,4 +1,4 @@
-extends "res://scenes/abstract_storage/Abstract_storage.gd"
+extends "res://scenes/abstract_storage/AbstractStorage.gd"
 #Load sector
 var item = load("res://scenes/items/Base_item.gd")
 onready var item_factory = get_node("/root/ItemFactory")
@@ -12,28 +12,13 @@ func _ready():
 	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_ORE))
 	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
 	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
-	log_out()
+	update()
 	pass 
 
-func log_out():
-	for i in items_button:
-		i.queue_free()
-	items_button.clear()
-	for i in items:
-		if i == null: continue
-		var btn = Button.new()
-		$VBoxContainer.add_child(btn)
-		btn.connect("button_down", self, "_on_click_item_button", [btn])
-		btn.text = i.log_out()
-		items_button.append(btn)
-
-	
-func _on_click_item_button(btn):
-	take(items_button.find(btn))
 
 func _on_Button_button_up():
 	put()
 	pass # Replace with function body.
 
 func update():
-	log_out()
+	item_gui($VBoxContainer)
