@@ -28,11 +28,12 @@ func _ready():
 
 class sandwich:
 	var name
-	var accelerationfactor
+	var acceleration_factor
 	var sprite
 	var cost
 	func init(rname, rfactor, rsprite, rcost):
 		name = rname
-		accelerationfactor = rfactor
+		acceleration_factor = rfactor
 		sprite = rsprite
 		cost = rcost
+		return self
