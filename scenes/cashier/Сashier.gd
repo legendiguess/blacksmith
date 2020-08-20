@@ -33,9 +33,9 @@ func generate_buyer():
 	pass
 	
 func submit_order():
-	var player_item = get_node("../Inventory").current_item
+	var player_item = get_node("../Character/Inventory").current_item
 	if player_item and player_item.id == current_buyer.order:
-		get_node("../Inventory").put()
+		get_node("../Character/Inventory").put()
 		$Text_order.text = "Submited!!!"
 		queue_of_buyers.pop_front()
 		next_buyer()

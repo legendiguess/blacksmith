@@ -21,11 +21,11 @@ var weapon_ids = [Ids.COPPER_INGOT, Ids.FANTASIUM_ORE]
 #Каждому id предмета соответсвует массив спрайтов для предмета(спрайт предмета на полу, в руках и в инвентаре), 
 var sprite = {
 	#руды
-	Ids.COPPER_ORE : 1,
-	Ids.IRON_ORE: 2,
-	Ids.SILVER_ORE: 3,
-	Ids.GOLDEN_ORE: 4,
-	Ids.FANTASIUM_ORE : preload("res://sprites/ingots/Fantasium.png"),
+	Ids.COPPER_ORE: preload("res://sprites/ore/Copper.png"),
+	Ids.IRON_ORE: preload("res://sprites/ore/Iron.png"),
+	Ids.SILVER_ORE: preload("res://sprites/ore/Silver.png"),
+	Ids.GOLDEN_ORE: preload("res://sprites/ore/Gold.png"),
+	Ids.FANTASIUM_ORE : preload("res://sprites/ore/Fantasium.png"),
 	#Слитки
 	Ids.COPPER_INGOT: preload("res://sprites/ingots/Copper.png"),
 	Ids.IRON_INGOT: preload("res://sprites/ingots/Iron.png"),

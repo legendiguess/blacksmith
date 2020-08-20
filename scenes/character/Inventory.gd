@@ -9,7 +9,6 @@ var current_item # Array of items
 #Code sector
 func _ready():
 	update()
-	 
 
 func update():
 	log_out()

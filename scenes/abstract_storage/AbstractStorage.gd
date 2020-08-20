@@ -1,6 +1,6 @@
 extends Node
 
-onready var inventory = get_node("../Inventory")
+onready var inventory = get_node("../Character/Inventory")
 var number_of_slots:int  # Number of slots
 var items = [] # Array of items
 var items_button = [] # Array of buttons
@@ -11,6 +11,7 @@ func put():
 		items.append(it)
 		inventory.put()
 		update()
+		inventory.update()
 		
 func item_gui(container):
 	for i in items_button:
