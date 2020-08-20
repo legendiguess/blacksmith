@@ -1,8 +1,5 @@
 extends Node
 
-#Load sector
-var Item = load("res://scenes/items/Base_item.gd")
-
 #Declare Variables
 var current_item # Array of items
 
@@ -11,8 +8,12 @@ func _ready():
 	update()
 
 func update():
+	if current_item == null:
+		get_node("../ItemInHandsSprite").texture = null
+	else:
+		get_node("../ItemInHandsSprite").texture = current_item.sprites
 	log_out()
-	
+
 func log_out():
 	var st = "Inventory: \n"
 	if current_item !=null:
@@ -21,4 +22,4 @@ func log_out():
 
 func put():
 	current_item = null
-	log_out()
+	update()
