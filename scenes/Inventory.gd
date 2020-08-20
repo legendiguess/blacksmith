@@ -22,4 +22,4 @@ func log_out():
 
 func put():
 	current_item = null
-	log_out()
+	update()

@@ -11,7 +11,6 @@ func put():
 		items.append(it)
 		inventory.put()
 		update()
-		inventory.update()
 		
 func item_gui(container):
 	for i in items_button:
