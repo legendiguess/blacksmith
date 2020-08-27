@@ -4,10 +4,11 @@ onready var temperature_bar = $HBoxContainer/Temperature
 onready var melting_progress_bar = $HBoxContainer/MeltingProgress
 onready var temperature_decrease_timer = $TemperatureTimer
 onready var progress_timer = $ProgressTimer
+onready var furnace_storage = $Storage
 onready var furnace_node = get_node(".")
-
-func _ready():
-	pass
+onready var character_inventory = get_node("../Character/Inventory")
+onready var item_factory = get_node("/root/ItemFactory")
+onready var melted_ingot_sprite = get_node("IngotSprite")
 
 var ore_list = {
 	ItemTable.Ids.COPPER_ORE: ItemTable.Ids.COPPER_INGOT,
@@ -33,11 +34,11 @@ var ore_temperature = {
 	ItemTable.Ids.FANTASIUM_ORE: 750
 	}
 	
-var current_ore_in_furnace = ItemTable.Ids.COPPER_ORE
+var current_ore_in_furnace = null
 
 func ore_melting(ore_id):
+	
 	melting_progress_bar.max_value = ore_time[ore_id]
-	current_ore_in_furnace = ore_id
 	temperature_bar.visible = true
 	melting_progress_bar.visible = true
 	timers(0.2, 1)
@@ -58,17 +59,62 @@ func temperature_decrease_timer():
 	temperature_bar.value -= 10
 
 func melting_progress_timer():
-	if melting_progress_bar.value >= ore_time[current_ore_in_furnace]:
+	if melting_progress_bar.value >= ore_time[current_ore_in_furnace.id]:
 		progress_timer.stop()
 		melting_progress_bar.value = 0
-		var ore_sprite = Sprite.new()
-		ore_sprite.texture = ItemTable.sprite[ore_list[current_ore_in_furnace]]
-		furnace_node.add_child(ore_sprite)
-		
-	elif temperature_bar.value >= ore_temperature[current_ore_in_furnace]:
+		finish_melting()
+	elif temperature_bar.value >= ore_temperature[current_ore_in_furnace.id]:
 		melting_progress_bar.value += 1
 	else:
 		melting_progress_bar.value -= 1
+
+func finish_melting():
+	melting_progress_bar.visible = false
+	furnace_storage.items.clear()
+	furnace_storage.items.append(item_factory.new_item(ore_list[current_ore_in_furnace.id]))
+	melted_ingot_sprite.texture = ItemTable.sprite[ore_list[current_ore_in_furnace.id]]
+	melted_ingot_sprite.visible = true
+	
+func check_if_player_item_is_ore():
+	var current_item = character_inventory.current_item
+	if current_item.id == ItemTable.Ids.COPPER_ORE:
+		return true
+	elif current_item.id == ItemTable.Ids.IRON_ORE:
+		return true
+	elif current_item.id == ItemTable.Ids.SILVER_ORE:
+		return true
+	elif current_item.id == ItemTable.Ids.GOLDEN_ORE:
+		return true
+	elif current_item.id == ItemTable.Ids.FANTASIUM_ORE:
+		return true
+	else:
+		return false
+	
+func check_if_player_item_is_ingot():
+	var furnace_item_id = furnace_storage.items.front().id
+	
+	if furnace_item_id == ItemTable.Ids.COPPER_INGOT:
+		return true
+	elif furnace_item_id == ItemTable.Ids.IRON_INGOT:
+		return true
+	elif furnace_item_id == ItemTable.Ids.SILVER_INGOT:
+		return true
+	elif furnace_item_id == ItemTable.Ids.GOLDEN_INGOT:
+		return true
+	elif furnace_item_id == ItemTable.Ids.FANTASIUM_INGOT:
+		return true
+	else:
+		return false
 		
-func start_pressed():
-	ore_melting(ItemTable.Ids.FANTASIUM_ORE)
+func _on_furnace_input_event(viewport, event, shape_idx):
+	if event is InputEventMouse and Input.is_action_just_pressed("left_mouse_button"):
+		if character_inventory.current_item != null and furnace_storage.items.empty() and check_if_player_item_is_ore() == true:
+				current_ore_in_furnace = character_inventory.current_item
+				furnace_storage.items.append(current_ore_in_furnace)
+				character_inventory.put()
+				ore_melting(current_ore_in_furnace.id)
+		elif !furnace_storage.items.empty() and character_inventory.current_item == null and check_if_player_item_is_ingot() == true:
+				furnace_storage.take(0)
+				melted_ingot_sprite.visible = false
+		else:
+			print("You have no items")
