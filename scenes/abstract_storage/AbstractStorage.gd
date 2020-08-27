@@ -1,9 +1,12 @@
 extends Node
 
-onready var inventory = get_node("../Character/Inventory")
+onready var inventory = get_node("/root/Node2D/Character/Inventory")
 var number_of_slots:int  # Number of slots
 var items = [] # Array of items
 var items_button = [] # Array of buttons
+
+onready var slots = 1
+onready var visibility  = true
 
 func put():
 	var it = inventory.current_item
@@ -24,7 +27,7 @@ func item_gui(container):
 		btn.text = i.log_out()
 		items_button.append(btn)
 
-	
+
 func _on_click_item_button(btn):
 	take(items_button.find(btn))
 	
@@ -39,9 +42,9 @@ func take(item_index):
 		
 	inventory.update()
 	update()
-		
+
 func update():
 	pass
-		
+	
 func _ready():
 	pass
