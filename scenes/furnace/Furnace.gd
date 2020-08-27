@@ -33,11 +33,10 @@ var ore_temperature = {
 	ItemTable.Ids.FANTASIUM_ORE: 750
 	}
 	
-var current_ore_in_furnace = ItemTable.Ids.COPPER_ORE
+var current_ore_in_furnace = ItemTable.Ids.FANTASIUM_ORE
 
 func ore_melting(ore_id):
 	melting_progress_bar.max_value = ore_time[ore_id]
-	current_ore_in_furnace = ore_id
 	temperature_bar.visible = true
 	melting_progress_bar.visible = true
 	timers(0.2, 1)
@@ -45,7 +44,7 @@ func ore_melting(ore_id):
 func timers(temp, progress):
 	temperature_decrease_timer.set_wait_time(temp)
 	temperature_decrease_timer.start()
-	progress_timer.set_wait_time(progress) 
+	progress_timer.set_wait_time(progress)
 	progress_timer.start()
 	
 func temperature_increase(amount):
@@ -71,4 +70,4 @@ func melting_progress_timer():
 		melting_progress_bar.value -= 1
 		
 func start_pressed():
-	ore_melting(ItemTable.Ids.FANTASIUM_ORE)
+	ore_melting(current_ore_in_furnace)

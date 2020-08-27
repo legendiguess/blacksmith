@@ -28,7 +28,7 @@ __meta__ = {
 
 [node name="Temperature" type="ProgressBar" parent="HBoxContainer"]
 margin_right = 66.0
-margin_bottom = 14.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 max_value = 1000.0
 step = 1.0
@@ -36,7 +36,7 @@ step = 1.0
 [node name="MeltingProgress" type="ProgressBar" parent="HBoxContainer"]
 margin_left = 83.0
 margin_right = 150.0
-margin_bottom = 14.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
 step = 1.0
 __meta__ = {
@@ -69,5 +69,5 @@ __meta__ = {
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="TemperatureTimer" to="." method="temperature_decrease_timer"]
-[connection signal="timeout" from="ProgressTimer" to="." method="progress_timer"]
+[connection signal="timeout" from="ProgressTimer" to="." method="melting_progress_timer"]
 [connection signal="pressed" from="Button2" to="." method="start_pressed"]
