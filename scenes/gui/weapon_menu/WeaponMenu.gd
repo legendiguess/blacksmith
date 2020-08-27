@@ -4,7 +4,7 @@ signal weapon_selected(weapon_id)
 
 func _ready():
 	$Menu.connect("item_selected", self, "item_selected")
-
+	
 func open(ingot_id):
 	var weapon_id_array
 	if ingot_id == ItemTable.Ids.COPPER_INGOT:
