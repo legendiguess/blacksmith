@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Silver.png-8014b52d4f7563ffde40633c86223339.stex"
+path="res://.import/Gold.png-4aedf4e4201e8d84a0a643e156c48a61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapons/longswords/Silver.png"
-dest_files=[ "res://.import/Silver.png-8014b52d4f7563ffde40633c86223339.stex" ]
+source_file="res://sprites/weapons/longsword/Gold.png"
+dest_files=[ "res://.import/Gold.png-4aedf4e4201e8d84a0a643e156c48a61.stex" ]
 
 [params]
 

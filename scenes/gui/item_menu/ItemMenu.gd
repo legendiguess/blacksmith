@@ -1,6 +1,5 @@
 extends PanelContainer
 
-
 onready var preload_item_button = preload("res://scenes/gui/item_menu/ItemButton.tscn")
 
 signal item_selected(item_dictionary)

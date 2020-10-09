@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fantasium.png-8aaa488dab682d0ea8713c0de65dbaf1.stex"
+path="res://.import/Iron.png-8815e7b0f0cfdb1fd31d27ba43ead6ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapons/longswords/Fantasium.png"
-dest_files=[ "res://.import/Fantasium.png-8aaa488dab682d0ea8713c0de65dbaf1.stex" ]
+source_file="res://sprites/weapons/longsword/Iron.png"
+dest_files=[ "res://.import/Iron.png-8815e7b0f0cfdb1fd31d27ba43ead6ca.stex" ]
 
 [params]
 

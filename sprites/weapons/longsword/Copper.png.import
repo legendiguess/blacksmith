@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Copper.png-011eba843d3cae272dbf7ea7b675bd4b.stex"
+path="res://.import/Copper.png-e44937cb70c287cb7079b27f9b5b3e89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapons/longswords/Copper.png"
-dest_files=[ "res://.import/Copper.png-011eba843d3cae272dbf7ea7b675bd4b.stex" ]
+source_file="res://sprites/weapons/longsword/Copper.png"
+dest_files=[ "res://.import/Copper.png-e44937cb70c287cb7079b27f9b5b3e89.stex" ]
 
 [params]
 
