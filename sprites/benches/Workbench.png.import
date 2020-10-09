@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Anvil.png-94739b7f73d83ec10f010211f9923752.stex"
+path="res://.import/Workbench.png-73892c333ffd7e3c3743fd7fd8c9b02a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/benches/Anvil.png"
-dest_files=[ "res://.import/Anvil.png-94739b7f73d83ec10f010211f9923752.stex" ]
+source_file="res://sprites/benches/Workbench.png"
+dest_files=[ "res://.import/Workbench.png-73892c333ffd7e3c3743fd7fd8c9b02a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
