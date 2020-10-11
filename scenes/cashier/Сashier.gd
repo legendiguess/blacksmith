@@ -32,13 +32,17 @@ func set_event(_event):
 #Генерация пользователей
 func generate_buyer():
 	var random_id
-	if current_event and randf() < CHANCE_OF_EVENT:
-		random_id = current_event.weapon_pull[randi()%current_event.weapon_pull]
+	var random_phrase
+	var rand = randf()
+	if current_event and  rand < CHANCE_OF_EVENT:
+		random_id = current_event.weapon_pull[randi()%current_event.weapon_pull.size()]
+		random_phrase = current_event.phrases[randi()%current_event.phrases.size()]
 		pass
 	else: 
 		 random_id = $"/root/ItemTable".weapon_ids[randi()%$"/root/ItemTable".weapon_ids.size()]
+		 random_phrase = $"/root/Strings".default_phrases[randi()%$"/root/Strings".default_phrases.size()]
 	var b = buyer.instance()
-	b.init(random_id)
+	b.init(random_id, random_phrase)
 	queue_of_buyers.push_back(b)
 	pass
 	
