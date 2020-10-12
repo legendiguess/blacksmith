@@ -13,12 +13,13 @@ var current_buyer
 
 func _ready():
 	randomize()
+	pass
+
+func generate_day():
 	generate_buyer()
 	generate_buyer()
 	generate_buyer()
 	next_buyer()
-	pass
-
 
 func next_buyer():
 	if queue_of_buyers.empty() or queue_of_buyers.front() == null:
