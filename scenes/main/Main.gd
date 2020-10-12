@@ -5,5 +5,6 @@ func _ready():
 	pass
 func init(number, event):
 	$"Сashier".set_event(event)
+	$"Сashier".generate_day()
 	pass
 	
