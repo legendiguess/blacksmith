@@ -38,6 +38,6 @@ onready var names = {
 		item_table.Ids.GOLDEN_RAPIER : tr("GOLDEN_RAPIER"),
 		item_table.Ids.FANTASIUM_RAPIER : tr("FANTASIUM_RAPIER"),
 	}
-
+onready var default_phrases = ["Дефолт фраза:" ]
 func _ready():
 	pass
