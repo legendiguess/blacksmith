@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/chest/Chest.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Chest.png" type="Texture" id=2]
 [ext_resource path="res://scenes/abstract_storage/AbstractStorage.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 34.8895
 
 [node name="Chest" type="StaticBody2D"]
 script = ExtResource( 1 )
