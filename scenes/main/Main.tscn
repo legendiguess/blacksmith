@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -7,26 +7,46 @@
 [ext_resource path="res://scenes/dwarf/DwarfContoroller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gui/chest_menu/ChestMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/house/Shadow.png" type="Texture" id=8]
+[ext_resource path="res://sprites/house/Floor.png" type="Texture" id=9]
+[ext_resource path="res://sprites/house/Wall.png" type="Texture" id=10]
+[ext_resource path="res://sprites/house/Background.png" type="Texture" id=11]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Game" type="Node2D" parent="."]
 
+[node name="Background" type="Sprite" parent="Game"]
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Wall" type="Sprite" parent="Game"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Floor" type="Sprite" parent="Game"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Shadow" type="Sprite" parent="Game"]
+texture = ExtResource( 8 )
+centered = false
+
 [node name="Chest" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 575.42, 472.053 )
+position = Vector2( 324.497, 266.32 )
 
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
-position = Vector2( 705.592, 470.395 )
+position = Vector2( 403.533, 239.689 )
 
 [node name="Furnace" parent="Game" instance=ExtResource( 7 )]
-position = Vector2( 814.201, 463.898 )
+position = Vector2( 54.2977, 223.678 )
 
 [node name="Сashier" parent="Game" instance=ExtResource( 4 )]
-position = Vector2( 1047.7, 397.341 )
+position = Vector2( 478.07, 177.338 )
 
 [node name="Dwarf controller" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 110, 416 )
+position = Vector2( 7.72821, 377.945 )
 
 [node name="GUI" type="Control" parent="."]
 visible = false
