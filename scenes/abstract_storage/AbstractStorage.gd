@@ -1,6 +1,6 @@
 extends Node
 
-onready var inventory = get_node("/root/Node2D/Character/Inventory")
+onready var inventory = get_node("/root/Main/Game/Character/Inventory")
 var number_of_slots:int  # Number of slots
 var items = [] # Array of items
 var items_button = [] # Array of buttons

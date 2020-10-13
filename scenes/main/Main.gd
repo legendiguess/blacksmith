@@ -1,10 +1,13 @@
-extends Node2D
+extends Node
 
 func _ready():
-	init(1, load("res://scenes/events/test_event.gd").new())
-	pass
-func init(number, event):
-	$"Сashier".set_event(event)
-	$"Сashier".generate_day()
-	pass
+	$Game/Chest.connect("opened", $GUI/ChestMenu, "open")
+	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
 	
+	init(1, load("res://scenes/events/test_event.gd").new())
+	
+	$GUI.show()
+
+func init(number, event):
+	$"Game/Сashier".set_event(event)
+	$"Game/Сashier".generate_day()

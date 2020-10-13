@@ -1,23 +1,33 @@
-extends "res://scenes/abstract_storage/AbstractStorage.gd"
+extends StaticBody2D
 #Load sector
 var item = load("res://scenes/items/Base_item.gd")
 onready var item_factory = get_node("/root/ItemFactory")
-onready var item_table = get_node("/root/ItemTable")
+
+onready var storage = $Storage
+
+signal opened(opened_chest)
 
 #Code sector
 func _ready():
-	number_of_slots = 6
-	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
-	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_ORE))
-	items.append(item_factory.new_item(item_table.Ids.IRON_ORE))
-	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
-	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
-	update()
+	#test
+	storage.number_of_slots = 6
+	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_ORE))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
+	#
 
+func take_item_to_character(item_id):
+	var item_index = 0
+	for item in storage.items:
+		if item.id == item_id:
+			storage.take(item_index)
+			break
+		item_index += 1
 
-func _on_Button_button_up():
-	put()
-	pass # Replace with function body.
+func put_item_to_chest():
+	$Storage.put()
 
-func update():
-	item_gui($VBoxContainer)
+func open():
+	emit_signal("opened", self)

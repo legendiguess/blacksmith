@@ -6,7 +6,6 @@ const ACCELERATION = 100
 var motion_x = 0
 
 func _physics_process(delta):
-	
 	if Input.is_action_pressed('ui_right'):
 		$Sprite.flip_h = true
 		$ItemInHandsSprite.position.x = 23
@@ -17,5 +16,15 @@ func _physics_process(delta):
 		$ItemInHandsSprite.position.x = -23
 	else:
 		motion_x = lerp(motion_x, 0, 0.2)
-		
+	
 	position.x += motion_x * delta
+	
+	var overlapping_bodies = $Area2D.get_overlapping_bodies()
+	if !overlapping_bodies.empty():
+		if Input.is_action_just_pressed("use"):
+			for body in overlapping_bodies:
+				if body.name == "Chest":
+					if $Inventory.current_item == null:
+						body.open()
+					else:
+						body.put_item_to_chest()
