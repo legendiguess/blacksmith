@@ -1,26 +1,64 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cashier/Сashier.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/dwarf/DwarfContoroller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/benches/anvil.png" type="Texture" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/anvil/AnvilCollision.gd" type="Script" id=8]
+[ext_resource path="res://scenes/gui/weapon_menu/WeaponMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/anvil/Anvil.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 43.574
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Chest" parent="." instance=ExtResource( 2 )]
-position = Vector2( 517.464, 308.263 )
+position = Vector2( 163.678, 187.572 )
 
 [node name="Character" parent="." instance=ExtResource( 3 )]
-position = Vector2( 705.592, 470.395 )
+position = Vector2( 307.67, 262.205 )
 
 [node name="Furnace" parent="." instance=ExtResource( 7 )]
-position = Vector2( 814.201, 463.898 )
+position = Vector2( 420.279, 260.708 )
 
 [node name="Сashier" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1047.7, 397.341 )
+position = Vector2( 479.431, 62.3916 )
+
+[node name="Anvil" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Anvil"]
+position = Vector2( 207.905, 289.176 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Anvil/Area2D"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anvil/Area2D"]
+shape = SubResource( 1 )
 
 [node name="Dwarf controller" parent="." instance=ExtResource( 5 )]
-position = Vector2( 110, 416 )
+position = Vector2( -182.657, 177.326 )
+
+[node name="GUI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WeaponMenu" parent="GUI" instance=ExtResource( 9 )]
+margin_left = 1.41422
+margin_right = 1.41422
+
+[node name="AnvilMinigame" parent="GUI" instance=ExtResource( 10 )]
+visible = false
+[connection signal="input_event" from="Anvil/Area2D" to="Anvil" method="_on_anvil_input_event"]
+[connection signal="weapon_selected" from="GUI/WeaponMenu" to="Anvil" method="what_weapon_is_selected"]

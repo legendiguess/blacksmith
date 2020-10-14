@@ -8,10 +8,10 @@ onready var item_table = get_node("/root/ItemTable")
 func _ready():
 	number_of_slots = 6
 	items.append(item_factory.new_item(item_table.Ids.COPPER_ORE))
-	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_ORE))
-	items.append(item_factory.new_item(item_table.Ids.IRON_ORE))
+	items.append(item_factory.new_item(item_table.Ids.FANTASIUM_INGOT))
+	items.append(item_factory.new_item(item_table.Ids.IRON_INGOT))
 	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
-	items.append(item_factory.new_item(item_table.Ids.COPPER_INGOT))
+	items.append(item_factory.new_item(item_table.Ids.COPPER_RAPIER_BLADE))
 	update()
 
 

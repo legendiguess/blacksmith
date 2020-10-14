@@ -13,5 +13,3 @@ func _ready():
 func sharpen():
 	weapon_state = Weapon_states.SHARPENED
 	
-
-

@@ -1,0 +1,212 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/anvil/Anvil.gd" type="Script" id=1]
+[ext_resource path="res://sprites/minigames/anvil_minigame/CopperFirstPerson.png" type="Texture" id=2]
+[ext_resource path="res://sprites/minigames/anvil_minigame/mark.png" type="Texture" id=3]
+[ext_resource path="res://scenes/anvil/IngotZone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/minigames/anvil_minigame/MarkDisable.png" type="Texture" id=5]
+[ext_resource path="res://sprites/minigames/anvil_minigame/AnvilFirstPerson.png" type="Texture" id=6]
+[ext_resource path="res://sprites/minigames/anvil_minigame/OutlineSlider.png" type="Texture" id=7]
+[ext_resource path="res://sprites/minigames/anvil_minigame/GreenSlider.png" type="Texture" id=8]
+[ext_resource path="res://sprites/minigames/anvil_minigame/Slider.png" type="Texture" id=9]
+[ext_resource path="res://sprites/minigames/anvil_minigame/YellowSlider.png" type="Texture" id=10]
+
+[node name="Anvil" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnvilFirstPerson" type="TextureRect" parent="."]
+rect_scale = Vector2( 4.383, 4.39 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BladeSprite" type="Sprite" parent="."]
+position = Vector2( 344.784, 174.864 )
+scale = Vector2( 8, 8 )
+
+[node name="IngotSprite" type="TextureRect" parent="."]
+margin_left = 235.771
+margin_top = 127.453
+margin_right = 284.771
+margin_bottom = 151.453
+rect_scale = Vector2( 4.383, 4.383 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ingot" type="Control" parent="."]
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Ingot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 451.0
+margin_top = 127.0
+margin_right = 556.0
+margin_bottom = 342.0
+rect_rotation = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="0" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_right = 32.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="1" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="2" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="3" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_top = 54.0
+margin_right = 32.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="4" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 36.0
+margin_top = 54.0
+margin_right = 68.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="5" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_top = 54.0
+margin_right = 104.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="6" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_top = 108.0
+margin_right = 32.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="7" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 36.0
+margin_top = 108.0
+margin_right = 68.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="8" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_top = 108.0
+margin_right = 104.0
+margin_bottom = 158.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="9" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_top = 162.0
+margin_right = 32.0
+margin_bottom = 212.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="10" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 36.0
+margin_top = 162.0
+margin_right = 68.0
+margin_bottom = 212.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="11" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
+margin_left = 72.0
+margin_top = 162.0
+margin_right = 104.0
+margin_bottom = 212.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 5 )
+
+[node name="SliderBar" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YellowSlider" type="Sprite" parent="SliderBar"]
+position = Vector2( 344, 48 )
+scale = Vector2( 4.383, 4.383 )
+texture = ExtResource( 10 )
+
+[node name="GreenSlider" type="Sprite" parent="SliderBar"]
+position = Vector2( 343, 48 )
+scale = Vector2( 1.454, 4.383 )
+texture = ExtResource( 8 )
+
+[node name="OutlineSlider" type="Sprite" parent="SliderBar"]
+position = Vector2( 344, 48 )
+scale = Vector2( 4.383, 4.383 )
+texture = ExtResource( 7 )
+
+[node name="Slider" type="Sprite" parent="SliderBar"]
+position = Vector2( 343, 49 )
+scale = Vector2( 4.383, 4.383 )
+texture = ExtResource( 9 )

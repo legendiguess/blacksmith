@@ -15,6 +15,3 @@ func new_item(id):
 	item.sprites = item_table.sprite[id]
 	item.item_name = strings.names[id]
 	return item
-
-	
-
