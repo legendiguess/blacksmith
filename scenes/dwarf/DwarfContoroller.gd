@@ -1,4 +1,4 @@
-extends "res://scenes/abstract_storage/AbstractStorage.gd"
+extends "res://scenes/abstractions/Storage.gd"
 
 onready var item_table = $"/root/ItemTable"
 onready var strings = $"/root/Strings"
