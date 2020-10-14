@@ -55,8 +55,6 @@ func submit_order():
 		queue_of_buyers.pop_front()
 		next_buyer()
 
-
-
 func _on_Button_button_up():
 	submit_order()
 	update()

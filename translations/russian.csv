@@ -1,4 +1,14 @@
 keys	ru
+SETTINGS    Настройки
+MASTER_VOLUME	Общая громкость
+SFX_VOLUME	Громкость эффектов
+MUSIC_VOLUME	Громкость музыки
+CONTROLS	Управление
+BY_TAP	Нажатием
+VIRTUAL_GAMEPAD	Виртуальный джойстик
+RESET_PROGRESS	Сброс прогресса
+BACK	Назад
+SAVE	Сохранить
 COPPER_ORE	Медная руда
 IRON_ORE	Железная руда
 SILVER_ORE	Серебряная руда
