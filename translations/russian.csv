@@ -1,5 +1,7 @@
 keys	ru
-SETTINGS    Настройки
+EXIT	Выход
+NEXT_DAY	Следующий день
+SETTINGS	Настройки
 MASTER_VOLUME	Общая громкость
 SFX_VOLUME	Громкость эффектов
 MUSIC_VOLUME	Громкость музыки
