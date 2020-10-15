@@ -27,7 +27,6 @@ func item_gui(container):
 		btn.text = i.log_out()
 		items_button.append(btn)
 
-
 func _on_click_item_button(btn):
 	take(items_button.find(btn))
 	

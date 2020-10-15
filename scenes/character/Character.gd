@@ -10,11 +10,16 @@ func _physics_process(delta):
 		$Sprite.flip_h = true
 		$ItemInHandsSprite.position.x = 23
 		motion_x = min(motion_x + ACCELERATION, MAX_SPEED)
+		if $Footsteps.playing == false:
+			$Footsteps.play()
 	elif Input.is_action_pressed('ui_left'):
 		motion_x = max(motion_x - ACCELERATION, -MAX_SPEED)
 		$Sprite.flip_h = false
 		$ItemInHandsSprite.position.x = -23
+		if $Footsteps.playing == false:
+			$Footsteps.play()
 	else:
+		$Footsteps.stop()
 		motion_x = lerp(motion_x, 0, 0.2)
 	
 	position.x += motion_x * delta
