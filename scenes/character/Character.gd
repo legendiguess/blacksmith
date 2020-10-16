@@ -28,3 +28,7 @@ func _physics_process(delta):
 						body.open()
 					else:
 						body.put_item_to_chest()
+				elif body.name == "Grindstone":
+					if $Inventory.current_item != null:
+						body.put_item_to_grindstone()
+						pass

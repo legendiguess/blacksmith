@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/main/CashierWindowEntranceZone.gd" type="Script" id=12]
 [ext_resource path="res://scenes/main/Game.gd" type="Script" id=13]
 [ext_resource path="res://scenes/main/Camera2D.gd" type="Script" id=14]
+[ext_resource path="res://scenes/grindstone/Grindstone.tscn" type="PackedScene" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -76,6 +77,9 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Grindstone" parent="Game" instance=ExtResource( 15 )]
+position = Vector2( 218.814, 265.193 )
 
 [node name="GUI" type="Control" parent="."]
 visible = false
