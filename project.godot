@@ -25,6 +25,7 @@ ItemTable="*res://scenes/items/Item_table.gd"
 ItemFactory="*res://scenes/items/Item_factory.tscn"
 Strings="*res://scenes/strings/Strings.tscn"
 Settings="*res://scenes/singletons/Settings.gd"
+MusicCollection="*res://scenes/music_collection/MusicCollection.gd"
 
 [display]
 

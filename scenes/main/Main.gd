@@ -1,5 +1,7 @@
 extends Node
 
+var current_event
+
 func _ready():
 	$Game/Chest.connect("opened", $GUI/ChestMenu, "open")
 	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
@@ -13,5 +15,9 @@ func _ready():
 	AudioServer.set_bus_volume_db(2, Settings.music_volume)
 
 func init(number, event):
+	current_event = event
 	$"Game/Сashier".set_event(event)
 	$"Game/Сashier".generate_day()
+	#Запуск музыки от эвентов
+	#...
+	
