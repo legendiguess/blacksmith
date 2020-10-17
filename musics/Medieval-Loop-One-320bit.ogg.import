@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Medieval-Loop-One-320bit.ogg-e72198fde2c5625359dc2da26d4f0a51.oggstr"
+
+[deps]
+
+source_file="res://musics/Medieval-Loop-One-320bit.ogg"
+dest_files=[ "res://.import/Medieval-Loop-One-320bit.ogg-e72198fde2c5625359dc2da26d4f0a51.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

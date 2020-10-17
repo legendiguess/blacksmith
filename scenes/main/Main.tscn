@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/main/CashierWindowEntranceZone.gd" type="Script" id=12]
 [ext_resource path="res://scenes/main/Game.gd" type="Script" id=13]
 [ext_resource path="res://scenes/main/Camera2D.gd" type="Script" id=14]
+[ext_resource path="res://scenes/main/BackgroundMusicPlayer.gd" type="Script" id=15]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -86,3 +87,7 @@ __meta__ = {
 }
 
 [node name="ChestMenu" parent="GUI" instance=ExtResource( 6 )]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+script = ExtResource( 15 )
