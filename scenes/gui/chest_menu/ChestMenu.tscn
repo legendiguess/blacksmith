@@ -13,3 +13,5 @@ __meta__ = {
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
 use_quantity = false
+menu_name = "CHEST"
+menu_description = "CHEST_DESCRIPTION"

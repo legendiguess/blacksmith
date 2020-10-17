@@ -6,7 +6,7 @@ func _ready():
 	$Menu.connect("item_selected", self, "item_selected")
 
 func open(chest):
-	for item_button in $Menu/VBoxContainer.get_children():
+	for item_button in $Menu/VBoxContainer/VBoxContainer.get_children():
 		item_button.queue_free()
 	
 	for item in chest.storage.items:
