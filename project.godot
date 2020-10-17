@@ -24,8 +24,6 @@ config/icon="res://icon.png"
 ItemTable="*res://scenes/items/Item_table.gd"
 ItemFactory="*res://scenes/items/Item_factory.tscn"
 Strings="*res://scenes/strings/Strings.tscn"
-Settings="*res://scenes/singletons/Settings.gd"
-Music="*res://scenes/singletons/Music.gd"
 
 [display]
 
