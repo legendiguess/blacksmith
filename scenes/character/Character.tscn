@@ -6,8 +6,6 @@
 [ext_resource path="res://scenes/character/Inventory.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sounds/Footsteps.wav" type="AudioStream" id=5]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 15.7898
 height = 78.4204
