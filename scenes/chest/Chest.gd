@@ -15,7 +15,7 @@ func _ready():
 	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
 	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
 	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
-	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_DAGGER))
 	#
 
 func take_item_to_character(item_id):

@@ -4,6 +4,7 @@ var current_event
 
 func _ready():
 	$Game/Chest.connect("opened", $GUI/ChestMenu, "open")
+	#$Game/Grindstone.connect("opened", $G)
 	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
 	
 	# Setup day event
