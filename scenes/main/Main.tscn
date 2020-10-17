@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -100,4 +100,4 @@ __meta__ = {
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"
-script = ExtResource( 15 )
+script = ExtResource( 16 )

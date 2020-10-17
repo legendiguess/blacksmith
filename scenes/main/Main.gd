@@ -15,7 +15,7 @@ func _ready():
 	$BackgroundMusicPlayer.play()
 	
 	$GUI.show()
-	
+	var Settings = $"/root/Settings"
 	AudioServer.set_bus_volume_db(0, Settings.master_volume)
 	AudioServer.set_bus_volume_db(1, Settings.sfx_volume)
 	AudioServer.set_bus_volume_db(2, Settings.music_volume)
