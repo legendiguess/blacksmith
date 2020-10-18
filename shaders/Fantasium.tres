@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
 [sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
+code = "/*shader_type canvas_item;
 
 void fragment() {
 	vec4 enchant_texture = vec4(UV, 1.0, 1.0);
@@ -12,8 +12,23 @@ void fragment() {
 	COLOR = texture(TEXTURE, UV);
 	COLOR.x = COLOR.x + enchant_texture.x * 0.25;
 	COLOR.y = COLOR.y + enchant_texture.y * 0.25;
+}*/
+shader_type canvas_item;
+
+void fragment()
+{
+	vec4 enchant_texture = vec4(UV, 1.0, 1.0);
+	
+	enchant_texture.r = sin(enchant_texture.r + enchant_texture.r + TIME);
+	enchant_texture.g = sin(enchant_texture.g + enchant_texture.g + TIME);
+	enchant_texture.b = cos(enchant_texture.b + enchant_texture.b + TIME);
+	
+	COLOR = texture(TEXTURE, UV);
+	
+	if (COLOR.a != 0f) {
+		COLOR += enchant_texture * 0.5;
+	}
 }"
-custom_defines = ""
 
 [resource]
 shader = SubResource( 1 )
