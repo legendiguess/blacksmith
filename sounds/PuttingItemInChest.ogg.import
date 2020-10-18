@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PuttingItemInChest.ogg-14850c6dbd16b3ba65e6d8197bcab82d.oggstr"
+
+[deps]
+
+source_file="res://sounds/PuttingItemInChest.ogg"
+dest_files=[ "res://.import/PuttingItemInChest.ogg-14850c6dbd16b3ba65e6d8197bcab82d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

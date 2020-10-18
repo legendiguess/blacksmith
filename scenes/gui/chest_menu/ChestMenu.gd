@@ -13,6 +13,10 @@ func open(chest):
 		$Menu.add_item_button(item.id, ItemTable.sprite[item.id], null)
 	
 	$Menu.show()
+	$ChestClosing.stop()
+	$ChestOpening.play()
 
 func item_selected(item_dictionary):
 	emit_signal("item_selected", item_dictionary.id)
+	$ChestOpening.stop()
+	$ChestClosing.play()

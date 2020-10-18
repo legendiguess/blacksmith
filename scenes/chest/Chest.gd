@@ -28,6 +28,7 @@ func take_item_to_character(item_id):
 
 func put_item_to_chest():
 	$Storage.put()
+	$PuttingItemInChest.play()
 
 func open():
 	emit_signal("opened", self)

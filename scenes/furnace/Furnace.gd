@@ -117,5 +117,10 @@ func use():
 			if character_inventory.current_item == null:
 				furnace_storage.take(0)
 				melted_metal_sprite.visible = false
+			elif check_if_character_is_item_ore() == true:
+				current_ore_in_furnace = character_inventory.current_item
+				furnace_storage.take(0)
+				furnace_storage.items.append(current_ore_in_furnace)
+				ore_melting(current_ore_in_furnace.id)
 		else:
 			use_furs()
