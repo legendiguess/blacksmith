@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 onready var temperature_bar = $HBoxContainer/Temperature
 onready var melting_progress_bar = $HBoxContainer/MeltingProgress
@@ -49,7 +49,7 @@ func ore_melting(ore_id):
 func temperature_increase(amount):
 	temperature_bar.value += amount
 
-func _on_Button_pressed():
+func use_furs():
 	temperature_increase(75)
 	temperature_decrease_timer.set_wait_time(0.2)
 	temperature_decrease_timer.start()
@@ -105,16 +105,17 @@ func check_if_item_in_furnace_is_ingot():
 		return true
 	else:
 		return false
-		
-func _on_furnace_input_event(viewport, event, shape_idx):
-	if event is InputEventMouse and Input.is_action_just_pressed("left_mouse_button"):
-		if character_inventory.current_item != null and furnace_storage.items.empty() and check_if_character_is_item_ore() == true:
-			current_ore_in_furnace = character_inventory.current_item
-			furnace_storage.items.append(current_ore_in_furnace)
-			character_inventory.put()
-			ore_melting(current_ore_in_furnace.id)
-		elif !furnace_storage.items.empty() and check_if_item_in_furnace_is_ingot() == true and character_inventory.current_item == null:
-			furnace_storage.take(0)
-			melted_metal_sprite.visible = false
+
+func use():
+	if character_inventory.current_item != null and furnace_storage.items.empty() and check_if_character_is_item_ore() == true:
+		current_ore_in_furnace = character_inventory.current_item
+		furnace_storage.items.append(current_ore_in_furnace)
+		character_inventory.put()
+		ore_melting(current_ore_in_furnace.id)
+	elif !furnace_storage.items.empty():
+		if check_if_item_in_furnace_is_ingot() == true:
+			if character_inventory.current_item == null:
+				furnace_storage.take(0)
+				melted_metal_sprite.visible = false
 		else:
-			print("You have no items")
+			use_furs()

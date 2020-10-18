@@ -37,3 +37,5 @@ func _physics_process(delta):
 					if $Inventory.current_item != null:
 						body.put_item_to_grindstone()
 						pass
+				elif body.name == "Furnace":
+					body.use()

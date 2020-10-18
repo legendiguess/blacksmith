@@ -60,11 +60,8 @@ centered = false
 [node name="Chest" parent="Game" instance=ExtResource( 2 )]
 position = Vector2( 324.497, 266.32 )
 
-[node name="Character" parent="Game" instance=ExtResource( 3 )]
-position = Vector2( 403.533, 239.671 )
-
 [node name="Furnace" parent="Game" instance=ExtResource( 7 )]
-position = Vector2( 54.2977, 223.678 )
+position = Vector2( 103.298, 225.678 )
 
 [node name="Сashier" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 478.07, 177.338 )
@@ -87,6 +84,9 @@ __meta__ = {
 
 [node name="Grindstone" parent="Game" instance=ExtResource( 15 )]
 position = Vector2( 218.814, 265.193 )
+
+[node name="Character" parent="Game" instance=ExtResource( 3 )]
+position = Vector2( 403.533, 239.671 )
 
 [node name="GUI" type="Control" parent="."]
 visible = false
