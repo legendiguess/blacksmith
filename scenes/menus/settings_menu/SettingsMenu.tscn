@@ -38,73 +38,73 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 9.0
+margin_top = 29.0
 margin_right = 640.0
-margin_bottom = 31.0
+margin_bottom = 51.0
 text = "MASTER_VOLUME"
 align = 1
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
-margin_top = 35.0
+margin_top = 55.0
 margin_right = 640.0
-margin_bottom = 51.0
+margin_bottom = 71.0
 min_value = -80.0
 max_value = 6.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-margin_top = 55.0
+margin_top = 75.0
 margin_right = 640.0
-margin_bottom = 59.0
+margin_bottom = 79.0
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 63.0
+margin_top = 83.0
 margin_right = 640.0
-margin_bottom = 85.0
+margin_bottom = 105.0
 text = "SFX_VOLUME"
 align = 1
 
 [node name="HSlider2" type="HSlider" parent="VBoxContainer"]
-margin_top = 89.0
+margin_top = 109.0
 margin_right = 640.0
-margin_bottom = 105.0
+margin_bottom = 125.0
 min_value = -80.0
 max_value = 6.0
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-margin_top = 109.0
+margin_top = 129.0
 margin_right = 640.0
-margin_bottom = 113.0
+margin_bottom = 133.0
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
-margin_top = 117.0
+margin_top = 137.0
 margin_right = 640.0
-margin_bottom = 139.0
+margin_bottom = 159.0
 text = "MUSIC_VOLUME"
 align = 1
 
 [node name="HSlider3" type="HSlider" parent="VBoxContainer"]
-margin_top = 143.0
+margin_top = 163.0
 margin_right = 640.0
-margin_bottom = 159.0
+margin_bottom = 179.0
 min_value = -80.0
 max_value = 6.0
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
-margin_top = 163.0
+margin_top = 183.0
 margin_right = 640.0
-margin_bottom = 167.0
+margin_bottom = 187.0
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
-margin_top = 171.0
+margin_top = 191.0
 margin_right = 640.0
-margin_bottom = 193.0
+margin_bottom = 213.0
 text = "CONTROLS"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 197.0
+margin_top = 217.0
 margin_right = 640.0
-margin_bottom = 225.0
+margin_bottom = 245.0
 alignment = 1
 script = ExtResource( 2 )
 
@@ -121,16 +121,12 @@ margin_bottom = 28.0
 disabled = true
 text = "VIRTUAL_GAMEPAD"
 
-[node name="HSeparator4" type="HSeparator" parent="VBoxContainer"]
-margin_top = 229.0
-margin_right = 640.0
-margin_bottom = 233.0
-
 [node name="Button" type="Button" parent="VBoxContainer"]
+visible = false
 margin_left = 243.0
-margin_top = 237.0
+margin_top = 262.0
 margin_right = 397.0
-margin_bottom = 265.0
+margin_bottom = 292.0
 size_flags_horizontal = 4
 text = "RESET_PROGRESS"
 

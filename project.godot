@@ -36,6 +36,8 @@ window/stretch/aspect="keep"
 
 [gui]
 
+theme/use_hidpi=true
+theme/custom="res://themes/Main.tres"
 theme/custom_font="res://fonts/RobotoSlab.tres"
 
 [input]
