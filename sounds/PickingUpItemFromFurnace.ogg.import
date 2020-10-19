@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PickingUpItemFromFurnace.ogg-36757534f03f8738933b0af01f25fbcf.oggstr"
+
+[deps]
+
+source_file="res://sounds/PickingUpItemFromFurnace.ogg"
+dest_files=[ "res://.import/PickingUpItemFromFurnace.ogg-36757534f03f8738933b0af01f25fbcf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

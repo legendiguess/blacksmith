@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PuttingItemInFurnace.ogg-8816adb17d6b8e6f7ce847b5d507ae00.oggstr"
+
+[deps]
+
+source_file="res://sounds/PuttingItemInFurnace.ogg"
+dest_files=[ "res://.import/PuttingItemInFurnace.ogg-8816adb17d6b8e6f7ce847b5d507ae00.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

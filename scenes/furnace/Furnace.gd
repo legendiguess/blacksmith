@@ -109,6 +109,7 @@ func check_if_item_in_furnace_is_ingot():
 func use():
 	if character_inventory.current_item != null and furnace_storage.items.empty() and check_if_character_is_item_ore() == true:
 		current_ore_in_furnace = character_inventory.current_item
+		$PuttingItemInFurnace.play()
 		furnace_storage.items.append(current_ore_in_furnace)
 		character_inventory.put()
 		ore_melting(current_ore_in_furnace.id)
@@ -117,10 +118,22 @@ func use():
 			if character_inventory.current_item == null:
 				furnace_storage.take(0)
 				melted_metal_sprite.visible = false
+				$PickingUpItemFromFurnace.play()
 			elif check_if_character_is_item_ore() == true:
 				current_ore_in_furnace = character_inventory.current_item
+				$PickingUpItemFromFurnace.play()
+				$PuttingItemInFurnace.play()
 				furnace_storage.take(0)
 				furnace_storage.items.append(current_ore_in_furnace)
 				ore_melting(current_ore_in_furnace.id)
 		else:
 			use_furs()
+			if !$Bellows.playing:
+				$Bellows.play()
+
+func _process(delta):
+	if $HBoxContainer/Temperature.value > 0:
+		if !$Fire.playing:
+			$Fire.play()
+	else:
+		$Fire.stop()

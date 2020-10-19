@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bellows.ogg-6a13e5be4fbb4ea14912c0194c6e271d.oggstr"
+
+[deps]
+
+source_file="res://sounds/Bellows.ogg"
+dest_files=[ "res://.import/Bellows.ogg-6a13e5be4fbb4ea14912c0194c6e271d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
