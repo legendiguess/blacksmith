@@ -4,15 +4,16 @@ var current_event
 
 func _ready():
 	$Game/Chest.connect("opened", $GUI/ChestMenu, "open")
-	#$Game/Grindstone.connect("opened", $G)
+	$Game/Grindstone.connect("opened", $GUI/GrindstoneMinigame, "open")
 	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
+	$GUI/GrindstoneMinigame.connect("finish", $Game/Grindstone, "finish")
 	
 	# Setup day event
 	current_event = load("res://scenes/events/TestEvent.gd").new()
 	$"Game/Сashier".set_event(current_event)
 	$"Game/Сashier".generate_day()
 	$BackgroundMusicPlayer.load_music_list(current_event.music_names_to_play)
-	$BackgroundMusicPlayer.play()
+	#$BackgroundMusicPlayer.play()
 	
 	$GUI.show()
 	var Settings = $"/root/Settings"
