@@ -4,11 +4,14 @@ var grindstone_rect = Rect2(63,27,4,10)
 var image_texture = ImageTexture.new()
 var image = Image.new()
 var image_path = ""
+
 var upper_pixels = []
+var upper_pixel_completeness = []
 
 var current_weapon
 var speed_sharpen = 0.05
 
+signal finish()
 
 func _ready():
 	set_process(false)
@@ -23,7 +26,7 @@ func open(weapon):
 	image = Image.new()
 	image.load(image_path)
 	image_texture.create_from_image(image)
-	upper_pixels = get_upper_pixels()
+	get_upper_pixels()
 	show()
 	set_process(true)
 	pass
@@ -40,10 +43,15 @@ func _process(delta):
 		var current_rect = Rect2(upper_pixels[i] + $GrindSprite.position, Vector2(1,1))
 		if current_rect.intersects(grindstone_rect):
 			var pixel_position = upper_pixels[i]+ item_region.position
-			flag_swap_texture = true
 			image.lock()
 			var current_color = image.get_pixelv(pixel_position)
-			image.set_pixelv(pixel_position, current_color.linear_interpolate(Color.white, speed_sharpen))
+			if Color.white.gray() - current_color.gray() > 0.01:
+				var lr_color = current_color.linear_interpolate(Color.white, speed_sharpen)
+				image.set_pixelv(pixel_position, lr_color)
+				flag_swap_texture = true
+				if lr_color.gray() - current_color.gray() < 0.01:
+					upper_pixel_completeness[i] = true
+					check_completeness()
 			image.unlock()
 	update()
 	if flag_swap_texture:
@@ -67,7 +75,6 @@ func get_upper_pixels():
 	var y1 = 0
 	var acc = []
 	image.lock()
-	print(image.get_width())
 	while x+x1 < (item_region.position.x + item_region.size.x) && x+x1 < image.get_width():
 		y1 = 0
 		while y + y1 < (item_region.position.y + item_region.size.y) && y + y1 < image.get_height():
@@ -77,6 +84,19 @@ func get_upper_pixels():
 			y1+=1
 		x1+=1
 	image.unlock()
-	return acc
+	upper_pixel_completeness = []
+	upper_pixels = acc
+	for i in range(upper_pixels.size()):
+		upper_pixel_completeness.append(false)
+
+func check_completeness():
+	for i in upper_pixel_completeness:
+		if not i:
+			return
+	set_process(false)
+	hide()
+	emit_signal("finish")
+
+	
 	
 

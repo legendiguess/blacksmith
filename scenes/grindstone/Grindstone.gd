@@ -23,10 +23,8 @@ func take_item_to_character(item_id):
 
 func put_item_to_grindstone():
 	if inventory.current_item && $"/root/ItemTable".weapon_ids.has(inventory.current_item.id) && inventory.current_item.weapon_state == inventory.current_item.WeaponStates.BLADE:
-		#$Storage.put()
 		emit_signal("opened", inventory.current_item)
-		#Миниигра
-		#$Storage.items[0].sharpen()
-		#$Storage.take(0)
 		
-		
+func finish():
+	inventory.current_item.sharpen()
+	pass

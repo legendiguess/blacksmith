@@ -6,7 +6,7 @@ func _ready():
 	$Game/Chest.connect("opened", $GUI/ChestMenu, "open")
 	$Game/Grindstone.connect("opened", $GUI/GrindstoneMinigame, "open")
 	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
-	
+	$GUI/GrindstoneMinigame.connect("finish", $Game/Grindstone, "finish")
 	
 	# Setup day event
 	current_event = load("res://scenes/events/TestEvent.gd").new()
