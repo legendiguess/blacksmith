@@ -4,6 +4,7 @@ signal item_selected(weapon_id)
 
 func _ready():
 	$Menu.connect("item_selected", self, "item_selected")
+	self.show()
 
 func open(chest):
 	for item_button in $Menu/VBoxContainer/VBoxContainer.get_children():
