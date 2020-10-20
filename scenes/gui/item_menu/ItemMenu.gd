@@ -46,6 +46,7 @@ func _ready():
 func item_button_pressed(item_button):
 	emit_signal("item_selected", {
 		"id": item_button.item_id,
-		"additional": item_button.additional
+		"additional": item_button.additional,
+		"button": item_button
 	})
 	hide()

@@ -1,6 +1,6 @@
 extends Control
 
-signal item_selected(weapon_id)
+signal item_selected(index)
 
 func _ready():
 	$Menu.connect("item_selected", self, "item_selected")
@@ -18,6 +18,11 @@ func open(chest):
 	$ChestOpening.play()
 
 func item_selected(item_dictionary):
-	emit_signal("item_selected", item_dictionary.id)
-	$ChestOpening.stop()
-	$ChestClosing.play()
+	var counter = 0
+	for item_button in $Menu/VBoxContainer/VBoxContainer.get_children():
+		if item_button == item_dictionary.button:
+			emit_signal("item_selected", counter)
+			$ChestOpening.stop()
+			$ChestClosing.play()
+			return
+		counter += 1
