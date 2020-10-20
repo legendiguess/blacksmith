@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -17,11 +17,14 @@
 [ext_resource path="res://scenes/grindstone/Grindstone.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/main/BackgroundMusicPlayer.gd" type="Script" id=16]
 [ext_resource path="res://scenes/minigames/grindstone/GrindstoneMinigame.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/anvil/Anvil.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/anvil/AnvilCollision.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/gui/weapon_menu/WeaponMenu.tscn" type="PackedScene" id=21]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=3]
 background_mode = 4
 glow_enabled = true
 
@@ -90,6 +93,8 @@ __meta__ = {
 [node name="Grindstone" parent="Game" instance=ExtResource( 15 )]
 position = Vector2( 525, 265 )
 
+[node name="Anvil" parent="Game" instance=ExtResource( 19 )]
+
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 403.533, 239.671 )
 
@@ -102,9 +107,17 @@ mouse_filter = 2
 [node name="GrindstoneMinigame" parent="GUI" instance=ExtResource( 17 )]
 visible = false
 
+[node name="AnvilMinigame" parent="GUI" instance=ExtResource( 18 )]
+visible = false
+
+[node name="WeaponMenu" parent="GUI" instance=ExtResource( 21 )]
+margin_right = -458.0
+margin_bottom = -218.0
+
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"
 script = ExtResource( 16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 3 )
+[connection signal="weapon_selected" from="GUI/WeaponMenu" to="Game/Anvil" method="what_weapon_is_selected"]

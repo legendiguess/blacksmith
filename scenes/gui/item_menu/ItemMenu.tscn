@@ -13,24 +13,24 @@ __meta__ = {
 use_quantity = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 633.0
-margin_bottom = 353.0
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 634.0
+margin_bottom = 356.0
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 626.0
-margin_bottom = 22.0
+margin_right = 628.0
+margin_bottom = 30.0
 size_flags_horizontal = 5
 size_flags_vertical = 0
 text = "ItemMenu"
 align = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
-margin_top = 26.0
-margin_right = 626.0
-margin_bottom = 48.0
+margin_top = 34.0
+margin_right = 628.0
+margin_bottom = 64.0
 size_flags_horizontal = 5
 size_flags_vertical = 0
 custom_colors/font_color = Color( 0.709804, 0.709804, 0.709804, 1 )
@@ -38,9 +38,9 @@ text = "Description"
 align = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 52.0
-margin_right = 626.0
-margin_bottom = 346.0
+margin_top = 68.0
+margin_right = 628.0
+margin_bottom = 352.0
 size_flags_horizontal = 5
 size_flags_vertical = 7
 alignment = 1
