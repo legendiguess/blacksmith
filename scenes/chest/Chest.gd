@@ -11,12 +11,11 @@ signal opened(opened_chest)
 func _ready():
 	#test
 	storage.number_of_slots = 6
-	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_ORE))
-	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
-	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_ORE))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.IRON_INGOT))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_INGOT))
+	storage.items.append(item_factory.new_item(ItemTable.Ids.FANTASIUM_INGOT))
 	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
-	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_DAGGER))
-	#
+	storage.items.append(item_factory.new_item(ItemTable.Ids.COPPER_INGOT))
 
 func take_item_to_character(selected_item_index):
 	storage.take(selected_item_index)
