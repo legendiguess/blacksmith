@@ -2,10 +2,10 @@
 
 [ext_resource path="res://scenes/grindstone/Grindstone.gd" type="Script" id=1]
 [ext_resource path="res://scenes/abstractions/Storage.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://sprites/benches/Grindstone.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.865, 31.8059 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
 
 [node name="Grindstone" type="StaticBody2D"]
 script = ExtResource( 1 )
