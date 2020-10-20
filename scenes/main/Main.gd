@@ -13,7 +13,7 @@ func _ready():
 	$"Game/Сashier".set_event(current_event)
 	$"Game/Сashier".generate_day()
 	$BackgroundMusicPlayer.load_music_list(current_event.music_names_to_play)
-	#$BackgroundMusicPlayer.play()
+	$BackgroundMusicPlayer.play()
 	
 	$GUI.show()
 	var Settings = $"/root/Settings"
