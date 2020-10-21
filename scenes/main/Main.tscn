@@ -24,7 +24,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 4
 glow_enabled = true
 
@@ -109,15 +109,16 @@ visible = false
 
 [node name="AnvilMinigame" parent="GUI" instance=ExtResource( 18 )]
 visible = false
+mouse_filter = 2
 
 [node name="WeaponMenu" parent="GUI" instance=ExtResource( 21 )]
-margin_right = -458.0
-margin_bottom = -218.0
+visible = false
+mouse_filter = 2
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"
 script = ExtResource( 16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 [connection signal="weapon_selected" from="GUI/WeaponMenu" to="Game/Anvil" method="what_weapon_is_selected"]
