@@ -7,8 +7,7 @@ func _ready():
 	self.show()
 
 func open(chest):
-	for item_button in $Menu/VBoxContainer/VBoxContainer.get_children():
-		item_button.queue_free()
+	$Menu.remove_all_items_buttons()
 	
 	for item in chest.storage.items:
 		$Menu.add_item_button(item.id, ItemTable.sprite[item.id], null)

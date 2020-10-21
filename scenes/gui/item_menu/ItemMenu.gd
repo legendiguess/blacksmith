@@ -32,6 +32,10 @@ func remove_item_button_by_index(index):
 			break
 		counter += 1
 
+func remove_all_items_buttons():
+	for item_button in $VBoxContainer/VBoxContainer.get_children():
+		item_button.queue_free()
+
 func _ready():
 	hide()
 	if !menu_name.empty():

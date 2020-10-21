@@ -19,6 +19,8 @@ func open(ingot_id):
 	elif ingot_id == ItemTable.Ids.FANTASIUM_INGOT:
 		weapon_id_array = [ItemTable.Ids.FANTASIUM_BATTLE_AXE, ItemTable.Ids.FANTASIUM_DAGGER, ItemTable.Ids.FANTASIUM_HALBERD, ItemTable.Ids.FANTASIUM_LONGSWORD, ItemTable.Ids.FANTASIUM_RAPIER]
 	
+	$Menu.remove_all_items_buttons()
+	
 	for weapon_id in weapon_id_array:
 		$Menu.add_item_button(weapon_id, null, null)
 	
