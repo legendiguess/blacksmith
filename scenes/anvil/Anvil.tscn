@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/anvil/Anvil.gd" type="Script" id=1]
 [ext_resource path="res://sprites/minigames/anvil_minigame/CopperFirstPerson.png" type="Texture" id=2]
@@ -10,6 +10,53 @@
 [ext_resource path="res://sprites/minigames/anvil_minigame/GreenSlider.png" type="Texture" id=8]
 [ext_resource path="res://sprites/minigames/anvil_minigame/Slider.png" type="Texture" id=9]
 [ext_resource path="res://sprites/minigames/anvil_minigame/YellowSlider.png" type="Texture" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.839216, 0.811765, 0.811765, 1 )
+border_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color( 0, 0, 0, 0.941176 )
+shadow_size = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.929412, 0.756863, 0.0784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.76, 0.62016, 0.0608, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color( 1, 0.988235, 0.988235, 0.996078 )
+shadow_size = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.109804, 0.717647, 0.231373, 1 )
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.0915, 0.61, 0.1952, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.815686, 0.815686, 0.815686, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+shadow_size = 2
+anti_aliasing = false
 
 [node name="Anvil" type="Control"]
 script = ExtResource( 1 )
@@ -203,22 +250,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="YellowSlider" type="Sprite" parent="SliderBar"]
+[node name="Panel" type="Panel" parent="SliderBar"]
+margin_left = 138.0
+margin_top = 37.0
+margin_right = 550.0
+margin_bottom = 59.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="SliderBar"]
+margin_left = 141.0
+margin_top = 40.0
+margin_right = 547.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenSlider" type="Panel" parent="SliderBar"]
+margin_left = 296.0
+margin_top = 40.0
+margin_right = 390.0
+margin_bottom = 56.0
+rect_scale = Vector2( 1.454, 1 )
+rect_pivot_offset = Vector2( 47, 8 )
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slider" type="Panel" parent="SliderBar"]
+margin_left = 339.0
+margin_top = 26.0
+margin_right = 347.0
+margin_bottom = 70.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderBar2" type="Control" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YellowSlider" type="Sprite" parent="SliderBar2"]
 position = Vector2( 344, 48 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 10 )
 
-[node name="GreenSlider" type="Sprite" parent="SliderBar"]
+[node name="GreenSlider" type="Sprite" parent="SliderBar2"]
 position = Vector2( 343, 48 )
 scale = Vector2( 1.454, 4.383 )
 texture = ExtResource( 8 )
 
-[node name="OutlineSlider" type="Sprite" parent="SliderBar"]
+[node name="OutlineSlider" type="Sprite" parent="SliderBar2"]
 position = Vector2( 344, 48 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 7 )
 
-[node name="Slider" type="Sprite" parent="SliderBar"]
+[node name="Slider" type="Sprite" parent="SliderBar2"]
 position = Vector2( 343, 49 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 9 )

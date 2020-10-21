@@ -109,13 +109,13 @@ var scale_of_green_zone = {
 
 func _process(delta):
 	if moving_right_state == 1 and is_weapon_forged_state == 0:
-		slider_sprite.position.x += slider_speed*delta
-		if slider_sprite.position.x >=540:
+		slider_sprite.rect_position.x += slider_speed*delta
+		if slider_sprite.rect_position.x >=540:
 			moving_right_state = 0
 			
 	elif moving_right_state == 0 and is_weapon_forged_state == 0:
-		slider_sprite.position.x -= slider_speed*delta
-		if slider_sprite.position.x <=142:
+		slider_sprite.rect_position.x -= slider_speed*delta
+		if slider_sprite.rect_position.x <=142:
 			moving_right_state = 1
 	
 	elif is_weapon_forged_state == 1 and self.visible == true:
@@ -155,7 +155,7 @@ func forge_weapon(weapon):
 	generate_new_slider_pos()
 	pressed_map_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
 	slider_speed = 250
-	slider_green_part.scale = Vector2(scale_of_green_zone[character_inventory.current_item.id], 4.383)
+	slider_green_part.rect_scale = Vector2(scale_of_green_zone[character_inventory.current_item.id], 1)
 	first_person_ingot_sprite.visible = true
 	for row in range(0,4):
 		for column in range(0,3):
@@ -178,11 +178,11 @@ func generate_new_slider_pos():
 		left_side_border = random_number
 		right_side_border = random_number+slider_green_zone_lenth[character_inventory.current_item.id]
 		
-	slider_green_part.position.x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
+	slider_green_part.rect_position.x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
 	
 func check_if_slider_in_zone():
 	
-	if slider_sprite.position.x < right_side_border and slider_sprite.position.x > left_side_border:
+	if slider_sprite.rect_position.x < right_side_border and slider_sprite.rect_position.x > left_side_border:
 		return true
 	else:
 		return false
