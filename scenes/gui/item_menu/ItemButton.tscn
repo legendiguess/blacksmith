@@ -22,3 +22,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_bottom = 1.0
+margin_left = 4.0
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -8,32 +8,34 @@ export var use_quantity: bool
 export var menu_name: String
 export var menu_description: String
 
+onready var item_buttons_container = $VBoxContainer/ScrollContainer/VBoxContainer
+
 func add_item_button(item_id, quantity, additional):
 	var new_item_button = preload_item_button.instance()
+	item_buttons_container.add_child(new_item_button)
 	new_item_button.setup(item_id, additional)
 	if use_quantity:
 		new_item_button.set_quantity(quantity)
 	else:
 		new_item_button.get_node("Quantity").queue_free()
-	$VBoxContainer/VBoxContainer.add_child(new_item_button)
 	new_item_button.connect("item_button_pressed", self, "item_button_pressed")
 
 func remove_item_button_by_item_name(item_name):
-	for item_button in $VBoxContainer/VBoxContainer.get_children():
+	for item_button in item_buttons_container.get_children():
 		if item_button.text == item_name:
 			item_button.queue_free()
 			break
 
 func remove_item_button_by_index(index):
 	var counter = 0
-	for item_button in $VBoxContainer/VBoxContainer.get_children():
+	for item_button in item_buttons_container.get_children():
 		if counter == index:
 			item_button.queue_free()
 			break
 		counter += 1
 
 func remove_all_items_buttons():
-	for item_button in $VBoxContainer/VBoxContainer.get_children():
+	for item_button in item_buttons_container.get_children():
 		item_button.queue_free()
 
 func _ready():

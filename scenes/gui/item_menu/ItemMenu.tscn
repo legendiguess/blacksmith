@@ -37,10 +37,16 @@ custom_colors/font_color = Color( 0.709804, 0.709804, 0.709804, 1 )
 text = "Description"
 align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 margin_top = 68.0
 margin_right = 628.0
 margin_bottom = 352.0
 size_flags_horizontal = 5
 size_flags_vertical = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 628.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 alignment = 1

@@ -18,7 +18,7 @@ func open(chest):
 
 func item_selected(item_dictionary):
 	var counter = 0
-	for item_button in $Menu/VBoxContainer/VBoxContainer.get_children():
+	for item_button in $Menu.item_buttons_container.get_children():
 		if item_button == item_dictionary.button:
 			emit_signal("item_selected", counter)
 			$ChestOpening.stop()
