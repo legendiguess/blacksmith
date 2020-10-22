@@ -1,4 +1,4 @@
-extends "res://scenes/items/Base_item.gd"
+extends "res://scenes/items/BaseItem.gd"
 
 enum WeaponStates{
 	BLADE,

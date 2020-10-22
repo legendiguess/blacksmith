@@ -1,6 +1,5 @@
 extends StaticBody2D
 # Ложим лезвие - получаем наточенное лезвие
-var item = load("res://scenes/items/Base_item.gd")
 onready var inventory = get_node("/root/Main/Game/Character/Inventory")
 onready var item_factory = get_node("/root/ItemFactory")
 onready var storage = $Storage
@@ -10,8 +9,6 @@ signal opened(grindstone)
 func _ready():
 	storage.number_of_slots = 1
 	pass
-
-	
 
 func take_item_to_character(item_id):
 	var item_index = 0

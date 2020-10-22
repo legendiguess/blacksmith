@@ -320,12 +320,6 @@ var sprite = {
 	Ids.FANTASIUM_RAPIER_GUARD: preload("res://sprites/weapons/rapier/guard/Fantasium.png"),
 }
 
-
-#(Возможно нужно перенести в скрипт наковальни)Каждому предмету, который крафтиться на наковальне соответсвует массив вещей для рецептов
-var incus_recipes = { 
-	
-}
-
 func correct_test():
 	#Проверка что для каждого предмета из ids есть спрайт, выведение ошибки(если присутсвует)
 	pass

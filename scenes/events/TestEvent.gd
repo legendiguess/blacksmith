@@ -1,4 +1,4 @@
-extends "res://scenes/abstractions/Event.gd"
+extends "res://scenes/events/BaseEvent.gd"
 
 func _init():
 	weapon_pull = [

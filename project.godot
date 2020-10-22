@@ -21,11 +21,11 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ItemTable="*res://scenes/items/Item_table.gd"
-ItemFactory="*res://scenes/items/Item_factory.tscn"
-Strings="*res://scenes/strings/Strings.tscn"
 Settings="*res://scenes/singletons/Settings.gd"
 Music="*res://scenes/singletons/Music.gd"
+Strings="*res://scenes/singletons/Strings.gd"
+ItemTable="*res://scenes/singletons/ItemTable.gd"
+ItemFactory="*res://scenes/singletons/ItemFactory.gd"
 
 [display]
 
