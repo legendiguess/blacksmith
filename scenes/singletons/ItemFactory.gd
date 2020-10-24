@@ -11,7 +11,7 @@ func new_item(id):
 	if ItemTable.weapon_ids.has(id):
 		item = bs_weapon.new()
 		item.id = id
-		item.sprites = ItemTable.sprite[id]
+		item.sprites = ItemTable.sprite[id].long_shot
 		item.item_name = Strings.names[id]
 		pass
 	else:

@@ -2,7 +2,7 @@ extends Node2D
 var grindstone_rect = Rect2(63,27,4,10)
 
 var image_texture = ImageTexture.new()
-var image = Image.new()
+var image
 var image_path = ""
 
 var upper_pixels = []
@@ -18,10 +18,10 @@ func _ready():
 
 func open(weapon):
 	current_weapon = weapon
-	image_path = $"/root/ItemTable".sprite[current_weapon.id].resource_path
+	image_path = $"/root/ItemTable".sprite[current_weapon.id].closeup.resource_path
 	var weapon_type = $GrindSprite.define_type(current_weapon.id)
 	$GrindSprite.region_rect = weapon_type[0]
-	$GrindSprite.texture = $"/root/ItemTable".sprite[current_weapon.id]
+	$GrindSprite.texture = $"/root/ItemTable".sprite[current_weapon.id].closeup
 	speed_sharpen = weapon_type[1]
 	image = Image.new()
 	image.load(image_path)

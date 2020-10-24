@@ -145,7 +145,7 @@ func zone_pressed(zone):
 		print("Dont hit")
 		
 	if weapon_craft[weapon_id] == pressed_map_array:
-		forged_blade_sprite.texture = ItemTable.sprite[blade_table[weapon_id]]
+		forged_blade_sprite.texture = ItemTable.sprite[blade_table[weapon_id]].closeup
 		is_weapon_forged_state = 1
 		$SliderBar.visible = false
 		first_person_ingot_sprite.visible = false

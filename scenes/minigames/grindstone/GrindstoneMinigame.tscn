@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/minigames/grindstone/GrindstoneMinigame.gd" type="Script" id=1]
-[ext_resource path="res://sprites/weapons/battle_axe/Coppper.png" type="Texture" id=2]
+[ext_resource path="res://sprites/weapons/long_shot/battle_axe/Coppper.png" type="Texture" id=2]
 [ext_resource path="res://scenes/minigames/grindstone/GrindSprite.gd" type="Script" id=3]
+
 
 [node name="GrindstoneMinigame" type="Node2D"]
 scale = Vector2( 5, 5 )
