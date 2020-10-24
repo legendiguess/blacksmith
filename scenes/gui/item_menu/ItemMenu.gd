@@ -48,6 +48,7 @@ func _ready():
 		$VBoxContainer/Label2.text = menu_description
 	else:
 		$VBoxContainer/Label2.queue_free()
+	$VBoxContainer/Button.connect("pressed", self, "hide")
 
 func item_button_pressed(item_button):
 	emit_signal("item_selected", {

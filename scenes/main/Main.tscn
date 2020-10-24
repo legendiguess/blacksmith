@@ -66,10 +66,10 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="Chest" parent="Game" instance=ExtResource( 2 )]
-position = Vector2( 260, 265 )
+position = Vector2( 213, 276.5 )
 
 [node name="Furnace" parent="Game" instance=ExtResource( 7 )]
-position = Vector2( 103.298, 225.678 )
+position = Vector2( 89.798, 253.678 )
 
 [node name="Сashier" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 664.07, 177.338 )
@@ -91,9 +91,10 @@ __meta__ = {
 }
 
 [node name="Grindstone" parent="Game" instance=ExtResource( 15 )]
-position = Vector2( 525, 265 )
+position = Vector2( 503.5, 271.5 )
 
 [node name="Anvil" parent="Game" instance=ExtResource( 19 )]
+position = Vector2( -3, 30.5 )
 
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 403.533, 239.671 )
