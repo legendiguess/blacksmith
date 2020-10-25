@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/anvil/Anvil.gd" type="Script" id=1]
 [ext_resource path="res://sprites/minigames/anvil_minigame/CopperFirstPerson.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://sprites/minigames/anvil_minigame/GreenSlider.png" type="Texture" id=8]
 [ext_resource path="res://sprites/minigames/anvil_minigame/Slider.png" type="Texture" id=9]
 [ext_resource path="res://sprites/minigames/anvil_minigame/YellowSlider.png" type="Texture" id=10]
+[ext_resource path="res://scenes/anvil/Sparks.tscn" type="PackedScene" id=11]
 
 [node name="Anvil" type="Control"]
 script = ExtResource( 1 )
@@ -64,6 +65,8 @@ __meta__ = {
 [node name="0" parent="Ingot/GridContainer" instance=ExtResource( 4 )]
 margin_right = 35.0
 margin_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -75,6 +78,7 @@ expand = true
 margin_left = 35.0
 margin_right = 70.0
 margin_bottom = 53.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -86,6 +90,7 @@ expand = true
 margin_left = 70.0
 margin_right = 105.0
 margin_bottom = 53.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -97,6 +102,7 @@ expand = true
 margin_top = 53.0
 margin_right = 35.0
 margin_bottom = 106.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -109,6 +115,7 @@ margin_left = 35.0
 margin_top = 53.0
 margin_right = 70.0
 margin_bottom = 106.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -121,6 +128,7 @@ margin_left = 70.0
 margin_top = 53.0
 margin_right = 105.0
 margin_bottom = 106.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -132,6 +140,7 @@ expand = true
 margin_top = 106.0
 margin_right = 35.0
 margin_bottom = 159.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -144,6 +153,7 @@ margin_left = 35.0
 margin_top = 106.0
 margin_right = 70.0
 margin_bottom = 159.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -156,6 +166,7 @@ margin_left = 70.0
 margin_top = 106.0
 margin_right = 105.0
 margin_bottom = 159.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -167,6 +178,7 @@ expand = true
 margin_top = 159.0
 margin_right = 35.0
 margin_bottom = 212.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -179,6 +191,7 @@ margin_left = 35.0
 margin_top = 159.0
 margin_right = 70.0
 margin_bottom = 212.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -191,12 +204,15 @@ margin_left = 70.0
 margin_top = 159.0
 margin_right = 105.0
 margin_bottom = 212.0
+rect_pivot_offset = Vector2( 17.5, 26.5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
 texture_normal = ExtResource( 3 )
 texture_disabled = ExtResource( 5 )
 expand = true
+
+[node name="Sparks" parent="Ingot" instance=ExtResource( 11 )]
 
 [node name="SliderBar" type="Control" parent="."]
 __meta__ = {

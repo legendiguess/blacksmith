@@ -132,14 +132,21 @@ func _ready():
 	for zone in $Ingot/GridContainer.get_children():
 		zone.connect("ingot_zone_pressed", self, "zone_pressed" )
 		
-
 func zone_pressed(zone):
 	if check_if_slider_in_zone() == true:
+		var rng = RandomNumberGenerator.new()
+		var sparks_particle = get_node("Ingot/Sparks")
+		rng.randomize()
+		var random_number = rng.randf_range(3, 8)
+		sparks_particle.amount = random_number
+		sparks_particle.position = Vector2(get_viewport().get_mouse_position())
+		sparks_particle.emitting = true
 		var row = int(int(zone.name)/3)
 		var column = int(zone.name)-int(int(zone.name)/3)*3
 		pressed_map_array[row][column] = 1
 		zone.disabled = true
 		slider_speed += slider_speed/20
+		print(zone)
 		generate_new_slider_pos()
 	else:
 		print("Dont hit")
