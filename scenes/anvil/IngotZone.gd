@@ -2,6 +2,8 @@ extends TextureButton
 
 signal ingot_zone_pressed(ingot_zone)
 
+onready var spark = $Spark
+
 func _ready():
 	connect("pressed", self, "pressed")
 

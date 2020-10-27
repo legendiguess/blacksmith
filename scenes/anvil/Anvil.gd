@@ -127,7 +127,7 @@ func _process(delta):
 			$SliderBar.visible = true
 			is_weapon_forged_state = 0
 			self.hide()
-			
+
 func _ready():
 	for zone in $Ingot/GridContainer.get_children():
 		zone.connect("ingot_zone_pressed", self, "zone_pressed" )
@@ -145,19 +145,19 @@ func zone_pressed(zone):
 		var column = int(zone.name)-int(int(zone.name)/3)*3
 		pressed_map_array[row][column] = 1
 		zone.disabled = true
+		zone.spark.hide()
 		slider_speed += slider_speed/20
 		print(zone)
 		generate_new_slider_pos()
 	else:
 		print("Dont hit")
-		
 	if weapon_craft[weapon_id] == pressed_map_array:
 		forged_blade_sprite.texture = ItemTable.sprite[blade_table[weapon_id]].closeup
 		is_weapon_forged_state = 1
 		$SliderBar.visible = false
 		first_person_ingot_sprite.visible = false
 		forged_blade_sprite.visible = true
-		
+
 func forge_weapon(weapon):
 	generate_new_slider_pos()
 	pressed_map_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
@@ -170,6 +170,7 @@ func forge_weapon(weapon):
 				var zone = row*3+column
 				zone = get_node("Ingot/GridContainer/" + str(zone))
 				zone.disabled = false
+				zone.spark.show()
 
 func generate_new_slider_pos():
 	var rng = RandomNumberGenerator.new()
