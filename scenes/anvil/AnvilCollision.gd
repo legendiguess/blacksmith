@@ -1,7 +1,7 @@
 extends Node
 onready var character_inventory = get_node("../Character/Inventory")
 onready var weapon_menu = get_node("../../GUI/WeaponMenu")
-onready var anvil_scene = get_node("../../GUI/AnvilMinigame")
+onready var anvil_scene = get_node("../..//AnvilMinigame")
 
 var anvil_ingot_sprite_table = {
 	ItemTable.Ids.COPPER_INGOT: preload("res://sprites/minigames/anvil_minigame/CopperFirstPerson.png"),

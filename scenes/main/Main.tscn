@@ -99,6 +99,10 @@ position = Vector2( -3, 30.5 )
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 403.533, 239.671 )
 
+[node name="AnvilMinigame" parent="." instance=ExtResource( 18 )]
+visible = false
+mouse_filter = 2
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="ChestMenu" parent="GUI" instance=ExtResource( 6 )]
@@ -107,10 +111,6 @@ mouse_filter = 2
 
 [node name="GrindstoneMinigame" parent="GUI" instance=ExtResource( 17 )]
 visible = false
-
-[node name="AnvilMinigame" parent="GUI" instance=ExtResource( 18 )]
-visible = false
-mouse_filter = 2
 
 [node name="WeaponMenu" parent="GUI" instance=ExtResource( 21 )]
 visible = false

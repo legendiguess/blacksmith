@@ -4,8 +4,9 @@ onready var first_person_ingot_sprite = $IngotSprite
 onready var forged_blade_sprite = $BladeSprite
 onready var slider_sprite = get_node("SliderBar/Slider")
 onready var slider_green_part = get_node("SliderBar/GreenSlider")
-onready var character_inventory = get_node("../../Game/Character/Inventory")
+onready var character_inventory = get_node("../Game/Character/Inventory")
 onready var item_factory = get_node("/root/ItemFactory")
+onready var hitting_ingot_sound = $Ingot/Sparks/HittingIngot
 
 var left_side_border = 0
 var right_side_border = 0
@@ -141,6 +142,7 @@ func zone_pressed(zone):
 		sparks_particle.amount = random_number
 		sparks_particle.position = Vector2(get_viewport().get_mouse_position())
 		sparks_particle.emitting = true
+		hitting_ingot_sound.play()
 		var row = int(int(zone.name)/3)
 		var column = int(zone.name)-int(int(zone.name)/3)*3
 		pressed_map_array[row][column] = 1

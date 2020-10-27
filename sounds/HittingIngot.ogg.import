@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HittingIngot.ogg-84d7a627084a4127449765758593efe3.oggstr"
+
+[deps]
+
+source_file="res://sounds/HittingIngot.ogg"
+dest_files=[ "res://.import/HittingIngot.ogg-84d7a627084a4127449765758593efe3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/anvil/Anvil.gd" type="Script" id=1]
 [ext_resource path="res://sprites/minigames/anvil_minigame/CopperFirstPerson.png" type="Texture" id=2]
+[ext_resource path="res://sounds/HittingIngot.ogg" type="AudioStream" id=3]
 [ext_resource path="res://scenes/anvil/IngotZone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/minigames/anvil_minigame/MarkDisable.png" type="Texture" id=5]
 [ext_resource path="res://sprites/minigames/anvil_minigame/AnvilFirstPerson.png" type="Texture" id=6]
@@ -10,6 +11,10 @@
 [ext_resource path="res://sprites/minigames/anvil_minigame/Slider.png" type="Texture" id=9]
 [ext_resource path="res://sprites/minigames/anvil_minigame/YellowSlider.png" type="Texture" id=10]
 [ext_resource path="res://scenes/anvil/Sparks.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
 
 [node name="Anvil" type="Control"]
 script = ExtResource( 1 )
@@ -201,6 +206,11 @@ expand = true
 
 [node name="Sparks" parent="Ingot" instance=ExtResource( 11 )]
 
+[node name="HittingIngot" type="AudioStreamPlayer2D" parent="Ingot/Sparks"]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "SFX"
+
 [node name="SliderBar" type="Control" parent="."]
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,3 +235,6 @@ texture = ExtResource( 7 )
 position = Vector2( 343, 49 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 9 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
