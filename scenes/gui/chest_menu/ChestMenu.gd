@@ -10,7 +10,7 @@ func open(chest):
 	$Menu.remove_all_items_buttons()
 	
 	for item in chest.storage.items:
-		$Menu.add_item_button(item.id, ItemTable.sprite[item.id], null)
+		$Menu.add_item_button(item, ItemTable.sprite[item.id], null)
 	
 	$Menu.show()
 	$ChestClosing.stop()

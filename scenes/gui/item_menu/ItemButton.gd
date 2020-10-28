@@ -8,14 +8,10 @@ var additional = null
 onready var item_button_texture = $TextureRect
 onready var quantity_label = $Quantity
 
-func setup(item_id, additional):
-	if item_id != null:
-		self.item_id = item_id
-		var texture_or_dictonary = ItemTable.sprite[item_id]
-		if typeof(texture_or_dictonary) == 18:
-			item_button_texture.texture = texture_or_dictonary.long_shot
-		else:
-			item_button_texture.texture = texture_or_dictonary
+func setup(item, additional):
+	if item != null:
+		self.item_id = item.id
+		item_button_texture.texture = item.get_long_shot_sprite()
 		self.text = Strings.names[item_id]
 	self.additional = additional
 

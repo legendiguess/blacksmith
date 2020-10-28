@@ -1,5 +1,5 @@
 extends Node2D
-var grindstone_rect = Rect2(63,27,4,10)
+var grindstone_rect = Rect2(63,10,4,10)
 
 var image_texture = ImageTexture.new()
 var image
@@ -10,6 +10,7 @@ var upper_pixel_completeness = []
 
 var current_weapon
 var speed_sharpen = 0.05
+var finished = false
 
 signal finish()
 
@@ -18,14 +19,14 @@ func _ready():
 
 func open(weapon):
 	current_weapon = weapon
-	image_path = $"/root/ItemTable".sprite[current_weapon.id].closeup.resource_path
-	var weapon_type = $GrindSprite.define_type(current_weapon.id)
-	$GrindSprite.region_rect = weapon_type[0]
-	$GrindSprite.texture = $"/root/ItemTable".sprite[current_weapon.id].closeup
-	speed_sharpen = weapon_type[1]
+	finished = false
+	image_path = current_weapon.get_closeup_sprite().resource_path
+	$GrindSprite.texture = current_weapon.get_closeup_sprite()
+	speed_sharpen = $GrindSprite.get_speed(current_weapon.id)
 	image = Image.new()
 	image.load(image_path)
 	image_texture.create_from_image(image)
+	put_in_center()
 	get_upper_pixels()
 	show()
 	set_process(true)
@@ -37,12 +38,11 @@ func set_texture():
 	$GrindSprite.texture =image_texture
 
 func _process(delta):
-	var item_region = $GrindSprite.region_rect
 	var flag_swap_texture =  false
 	for i in range(upper_pixels.size()):
 		var current_rect = Rect2(upper_pixels[i] + $GrindSprite.position, Vector2(1,1))
 		if current_rect.intersects(grindstone_rect):
-			var pixel_position = upper_pixels[i]+ item_region.position
+			var pixel_position = upper_pixels[i]
 			image.lock()
 			var current_color = image.get_pixelv(pixel_position)
 			if Color.white.gray() - current_color.gray() > 0.01:
@@ -51,6 +51,7 @@ func _process(delta):
 				flag_swap_texture = true
 				if lr_color.gray() - current_color.gray() < 0.01:
 					upper_pixel_completeness[i] = true
+					image.set_pixelv(pixel_position, Color.white)
 					check_completeness()
 			image.unlock()
 	update()
@@ -62,27 +63,27 @@ func _draw():
 	draw_rect(grindstone_rect, Color.blueviolet)
 
 func _input(event):
-	if event is InputEventMouseMotion:
-		$GrindSprite.global_position = event.position
+	if !finished:
+		if event is InputEventScreenDrag:
+			$GrindSprite.global_position += event.relative
+	else:
+		if event is InputEventScreenTouch:
+			take_weapon()
 	pass
 
 func get_upper_pixels():
-	var item_region = $GrindSprite.region_rect
-	var zero_color = Color(0,0,0,0)
-	var x = item_region.position.x
-	var y = item_region.position.y
-	var x1 = 0
-	var y1 = 0
+	var x = 0
+	var y = 0
 	var acc = []
 	image.lock()
-	while x+x1 < (item_region.position.x + item_region.size.x) && x+x1 < image.get_width():
-		y1 = 0
-		while y + y1 < (item_region.position.y + item_region.size.y) && y + y1 < image.get_height():
-			if image.get_pixel(x + x1,y+y1) != zero_color:
-				acc.append(Vector2(x1,y1))
+	while x < image.get_width():
+		y = 0
+		while y < image.get_height():
+			if image.get_pixel(x,y).a != 0:
+				acc.append(Vector2(x,y))
 				break
-			y1+=1
-		x1+=1
+			y+=1
+		x+=1
 	image.unlock()
 	upper_pixel_completeness = []
 	upper_pixels = acc
@@ -94,9 +95,14 @@ func check_completeness():
 		if not i:
 			return
 	set_process(false)
+	finished = true
+	put_in_center()
+	
+func take_weapon():
 	hide()
 	emit_signal("finish")
-
 	
-	
-
+func put_in_center():
+	var window_size = get_viewport().size
+	$GrindSprite.position.x =  window_size.x / (2 * self.scale.x) - image.get_width()/2
+	$GrindSprite.position.y =  window_size.y /(2* self.scale.y)  - image.get_height()/2

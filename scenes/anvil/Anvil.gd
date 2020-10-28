@@ -16,6 +16,7 @@ var is_weapon_forged_state = 0
 var slider_speed = 250
 
 var weapon_id = null
+var finish_weapon
 
 var halberd_pattern = [[0, 1, 0], [0, 1, 0], [1, 1, 0], [1, 1, 1]]
 var battle_axe_pattern = [[1, 0, 0], [1, 1, 1], [1, 1, 0], [1, 0, 0]]
@@ -57,39 +58,6 @@ var weapon_craft = {
 	ItemTable.Ids.FANTASIUM_RAPIER: rapier_pattern
 }
 
-var blade_table = {
-
-	ItemTable.Ids.COPPER_BATTLE_AXE: ItemTable.Ids.COPPER_BATTLE_AXE_BLADE,
-	ItemTable.Ids.IRON_BATTLE_AXE: ItemTable.Ids.IRON_BATTLE_AXE_BLADE,
-	ItemTable.Ids.SILVER_BATTLE_AXE: ItemTable.Ids.SILVER_BATTLE_AXE_BLADE,
-	ItemTable.Ids.GOLDEN_BATTLE_AXE: ItemTable.Ids.GOLDEN_BATTLE_AXE_BLADE,
-	ItemTable.Ids.FANTASIUM_BATTLE_AXE: ItemTable.Ids.FANTASIUM_BATTLE_AXE_BLADE,
-
-	ItemTable.Ids.COPPER_DAGGER: ItemTable.Ids.COPPER_DAGGER_BLADE,
-	ItemTable.Ids.IRON_DAGGER: ItemTable.Ids.IRON_DAGGER_BLADE,
-	ItemTable.Ids.SILVER_DAGGER: ItemTable.Ids.SILVER_DAGGER_BLADE,
-	ItemTable.Ids.GOLDEN_DAGGER: ItemTable.Ids.GOLDEN_DAGGER_BLADE,
-	ItemTable.Ids.FANTASIUM_DAGGER: ItemTable.Ids.FANTASIUM_DAGGER_BLADE,
-
-	ItemTable.Ids.COPPER_HALBERD: ItemTable.Ids.COPPER_HALBERD_BLADE,
-	ItemTable.Ids.IRON_HALBERD: ItemTable.Ids.IRON_HALBERD_BLADE,
-	ItemTable.Ids.SILVER_HALBERD: ItemTable.Ids.SILVER_HALBERD_BLADE,
-	ItemTable.Ids.GOLDEN_HALBERD: ItemTable.Ids.GOLDEN_HALBERD_BLADE,
-	ItemTable.Ids.FANTASIUM_HALBERD: ItemTable.Ids.FANTASIUM_HALBERD_BLADE,
-
-	ItemTable.Ids.COPPER_LONGSWORD: ItemTable.Ids.COPPER_LONGSWORD_BLADE,
-	ItemTable.Ids.IRON_LONGSWORD: ItemTable.Ids.IRON_LONGSWORD_BLADE,
-	ItemTable.Ids.SILVER_LONGSWORD: ItemTable.Ids.SILVER_LONGSWORD_BLADE,
-	ItemTable.Ids.GOLDEN_LONGSWORD: ItemTable.Ids.GOLDEN_LONGSWORD_BLADE,
-	ItemTable.Ids.FANTASIUM_LONGSWORD: ItemTable.Ids.FANTASIUM_LONGSWORD_BLADE,
-	
-	ItemTable.Ids.COPPER_RAPIER: ItemTable.Ids.COPPER_RAPIER_BLADE,
-	ItemTable.Ids.IRON_RAPIER: ItemTable.Ids.IRON_RAPIER_BLADE,
-	ItemTable.Ids.SILVER_RAPIER: ItemTable.Ids.SILVER_RAPIER_BLADE,
-	ItemTable.Ids.GOLDEN_RAPIER: ItemTable.Ids.GOLDEN_RAPIER_BLADE,
-	ItemTable.Ids.FANTASIUM_RAPIER: ItemTable.Ids.FANTASIUM_RAPIER_BLADE
-}
-
 var slider_green_zone_lenth = {
 	
 	ItemTable.Ids.COPPER_INGOT: 124,
@@ -122,7 +90,7 @@ func _process(delta):
 	elif is_weapon_forged_state == 1 and self.visible == true:
 		if Input.is_mouse_button_pressed(1):
 			character_inventory.put()
-			character_inventory.current_item = item_factory.new_item(blade_table[weapon_id])
+			character_inventory.current_item = finish_weapon
 			character_inventory.update()
 			forged_blade_sprite.visible = false
 			$SliderBar.visible = true
@@ -154,7 +122,8 @@ func zone_pressed(zone):
 	else:
 		print("Dont hit")
 	if weapon_craft[weapon_id] == pressed_map_array:
-		forged_blade_sprite.texture = ItemTable.sprite[blade_table[weapon_id]].closeup
+		finish_weapon = item_factory.new_item(weapon_id)
+		forged_blade_sprite.texture = finish_weapon.get_closeup_sprite()
 		is_weapon_forged_state = 1
 		$SliderBar.visible = false
 		first_person_ingot_sprite.visible = false
