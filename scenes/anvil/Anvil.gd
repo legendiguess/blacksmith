@@ -92,20 +92,11 @@ var blade_table = {
 
 var slider_green_zone_lenth = {
 	
-	ItemTable.Ids.COPPER_INGOT: 124,
-	ItemTable.Ids.IRON_INGOT: 102,
-	ItemTable.Ids.SILVER_INGOT: 80,
-	ItemTable.Ids.GOLDEN_INGOT: 58,
-	ItemTable.Ids.FANTASIUM_INGOT: 36
-}
-
-var scale_of_green_zone = {
-	
-	ItemTable.Ids.COPPER_INGOT: 1.454,
-	ItemTable.Ids.IRON_INGOT: 1.215,
-	ItemTable.Ids.SILVER_INGOT: 0.97,
-	ItemTable.Ids.GOLDEN_INGOT: 0.725,
-	ItemTable.Ids.FANTASIUM_INGOT: 0.49
+	ItemTable.Ids.COPPER_INGOT: 152,
+	ItemTable.Ids.IRON_INGOT: 127,
+	ItemTable.Ids.SILVER_INGOT: 102,
+	ItemTable.Ids.GOLDEN_INGOT: 77,
+	ItemTable.Ids.FANTASIUM_INGOT: 52
 }
 
 func _process(delta):
@@ -161,10 +152,10 @@ func zone_pressed(zone):
 		forged_blade_sprite.visible = true
 
 func forge_weapon(weapon):
+	slider_green_part.rect_size.x = (slider_green_zone_lenth[character_inventory.current_item.id])
 	generate_new_slider_pos()
 	pressed_map_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
 	slider_speed = 250
-	slider_green_part.scale = Vector2(scale_of_green_zone[character_inventory.current_item.id], 4.383)
 	first_person_ingot_sprite.visible = true
 	for row in range(0,4):
 		for column in range(0,3):
@@ -173,7 +164,7 @@ func forge_weapon(weapon):
 				zone = get_node("Ingot/GridContainer/" + str(zone))
 				zone.disabled = false
 				zone.spark.show()
-
+				
 func generate_new_slider_pos():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
@@ -187,8 +178,8 @@ func generate_new_slider_pos():
 	else:
 		left_side_border = random_number
 		right_side_border = random_number+slider_green_zone_lenth[character_inventory.current_item.id]
-		
-	slider_green_part.position.x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
+	var normal_position_x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
+	slider_green_part.rect_position.x = (normal_position_x - slider_green_part.rect_size.x/2)
 	
 func check_if_slider_in_zone():
 	

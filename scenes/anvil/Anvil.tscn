@@ -221,13 +221,19 @@ position = Vector2( 344, 48 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 10 )
 
-[node name="GreenSlider" type="Sprite" parent="SliderBar"]
-position = Vector2( 343, 48 )
-scale = Vector2( 1.454, 4.383 )
+[node name="GreenSlider" type="TextureRect" parent="SliderBar"]
+margin_left = 317.157
+margin_top = 15.1275
+margin_right = 369.157
+margin_bottom = 81.1275
 texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OutlineSlider" type="Sprite" parent="SliderBar"]
-position = Vector2( 344, 48 )
+position = Vector2( 344.784, 48 )
 scale = Vector2( 4.383, 4.383 )
 texture = ExtResource( 7 )
 
