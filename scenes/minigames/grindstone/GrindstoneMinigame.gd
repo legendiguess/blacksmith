@@ -1,8 +1,9 @@
 extends Node2D
-var grindstone_rect = Rect2(63,10,4,10)
 
 var image_texture = ImageTexture.new()
 var image
+var image_rect = Vector2(0,0)
+var grindstone_rect
 var image_path = ""
 
 var upper_pixels = []
@@ -15,7 +16,13 @@ var finished = false
 signal finish()
 
 func _ready():
+	var stone = $Stone
+	var grindstone_image = Image.new()
+	grindstone_image.load(stone.texture.resource_path)
+	
+	grindstone_rect = Rect2(stone.position.x, stone.position.y ,grindstone_image.get_width(), grindstone_image.get_height())
 	set_process(false)
+	set_process_input(false)
 
 func open(weapon):
 	current_weapon = weapon
@@ -26,10 +33,12 @@ func open(weapon):
 	image = Image.new()
 	image.load(image_path)
 	image_texture.create_from_image(image)
+	image_rect = Vector2(image.get_width(), image.get_height())
 	put_in_center()
 	get_upper_pixels()
 	show()
 	set_process(true)
+	set_process_input(true)
 	pass
 
 func set_texture():
@@ -53,6 +62,7 @@ func _process(delta):
 					upper_pixel_completeness[i] = true
 					image.set_pixelv(pixel_position, Color.white)
 					check_completeness()
+				break
 			image.unlock()
 	update()
 	if flag_swap_texture:
@@ -64,10 +74,10 @@ func _draw():
 
 func _input(event):
 	if !finished:
-		if event is InputEventScreenDrag:
+		if event is InputEventScreenDrag and Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
 			$GrindSprite.global_position += event.relative
 	else:
-		if event is InputEventScreenTouch:
+		if event is InputEventScreenTouch and Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
 			take_weapon()
 	pass
 
@@ -95,14 +105,18 @@ func check_completeness():
 		if not i:
 			return
 	set_process(false)
+	
 	finished = true
 	put_in_center()
 	
 func take_weapon():
 	hide()
+	set_process_input(false)
 	emit_signal("finish")
 	
 func put_in_center():
-	var window_size = get_viewport().size
-	$GrindSprite.position.x =  window_size.x / (2 * self.scale.x) - image.get_width()/2
-	$GrindSprite.position.y =  window_size.y /(2* self.scale.y)  - image.get_height()/2
+	var window_size = get_viewport().get_visible_rect().size
+	$GrindSprite.position.x =(window_size.x /2 - image.get_width()*2)/scale.x
+	$GrindSprite.position.y = (window_size.y - image.get_height()*4) / scale.y
+	#$GrindSprite.position.x =  window_size.x / (2 * self.scale.x) - image.get_width()/2
+	#$GrindSprite.position.y =  window_size.y /(2* self.scale.y)  - image.get_height()/2
