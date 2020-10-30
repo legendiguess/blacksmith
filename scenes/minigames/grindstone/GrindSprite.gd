@@ -42,9 +42,9 @@ onready var rapier = {
 onready var weapons = [axe, dagger, halberd, longsword, rapier]
 onready var material_sharpen_speed = [0.25, 0.125, 0.0625, 0.03, 0.01]
 
-func define_type(id):
+func get_speed(id):
 	for weapon in weapons:
 		var result = weapon["ids"].find(id)
 		if result != -1:
-			return [weapon["region"], material_sharpen_speed[result]]
+			return material_sharpen_speed[result]
 	

@@ -103,14 +103,14 @@ position = Vector2( 403.533, 239.671 )
 visible = false
 mouse_filter = 2
 
+[node name="GrindstoneMinigame" parent="." instance=ExtResource( 17 )]
+visible = false
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="ChestMenu" parent="GUI" instance=ExtResource( 6 )]
 visible = false
 mouse_filter = 2
-
-[node name="GrindstoneMinigame" parent="GUI" instance=ExtResource( 17 )]
-visible = false
 
 [node name="WeaponMenu" parent="GUI" instance=ExtResource( 21 )]
 visible = false

@@ -22,7 +22,7 @@ func open(ingot_id):
 	$Menu.remove_all_items_buttons()
 	
 	for weapon_id in weapon_id_array:
-		$Menu.add_item_button(weapon_id, null, null)
+		$Menu.add_item_button($"/root/ItemFactory".new_item(weapon_id), null, null)
 	
 	$Menu.show()
 

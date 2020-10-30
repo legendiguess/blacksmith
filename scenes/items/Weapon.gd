@@ -17,4 +17,14 @@ func sharpen():
 func haften():
 	weapon_state = WeaponStates.HAFTEN
 
+func get_sprite():
+	if weapon_state == WeaponStates.HAFTEN:
+		return sprites.full
+	else:
+		return sprites.blade
 
+func get_closeup_sprite():
+	return get_sprite().closeup
+
+func get_long_shot_sprite():
+	return get_sprite().long_shot

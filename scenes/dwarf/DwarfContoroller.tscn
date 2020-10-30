@@ -2,8 +2,6 @@
 
 [ext_resource path="res://scenes/dwarf/DwarfContoroller.gd" type="Script" id=1]
 
-
-
 [node name="DwarfController" type="Node2D"]
 script = ExtResource( 1 )
 
