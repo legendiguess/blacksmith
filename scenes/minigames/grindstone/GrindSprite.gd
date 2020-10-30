@@ -40,7 +40,7 @@ onready var rapier = {
 	"region":  Rect2(12,7,53,2)
 }
 onready var weapons = [axe, dagger, halberd, longsword, rapier]
-onready var material_sharpen_speed = [0.25, 0.2, 0.15, 0.1, 0.05]
+onready var material_sharpen_speed = [0.25, 0.23, 0.2, 0.18, 0.15]
 
 func get_speed(id):
 	for weapon in weapons:

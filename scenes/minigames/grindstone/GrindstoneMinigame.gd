@@ -16,16 +16,15 @@ var finished = false
 signal finish()
 
 func _ready():
+	._ready()
 	var stone = $Stone
 	var grindstone_image = Image.new()
 	grindstone_image.load(stone.texture.resource_path)
 	
 	grindstone_rect = Rect2(stone.position.x - grindstone_image.get_height(), stone.position.y ,grindstone_image.get_height(), grindstone_image.get_width())
-	set_process(false)
-	set_process_input(false)
 
 func open(weapon):
-	.open(weapon)
+	._open()
 	current_weapon = weapon
 	finished = false
 	image_path = current_weapon.get_closeup_sprite().resource_path
@@ -38,8 +37,6 @@ func open(weapon):
 	put_in_center()
 	get_upper_pixels()
 	show()
-	set_process(true)
-	set_process_input(true)
 	pass
 
 func set_texture():
@@ -60,7 +57,7 @@ func _process(delta):
 				var new_color = color_add(current_color, speed_sharpen*2*delta)
 				image.set_pixelv(pixel_position, new_color)
 				flag_swap_texture = true
-				if Color.white.gray() - new_color.gray()< 0:
+				if Color.white.gray() - new_color.gray()< 0.01:
 					upper_pixel_completeness[i] = true
 					#image.set_pixelv(pixel_position, Color.white)
 					check_completeness()
@@ -124,9 +121,11 @@ func check_completeness():
 	set_process(false)
 	
 	finished = true
+	weapon_touched = false
 	put_in_center()
 	
 func take_weapon():
+	._stop()
 	hide()
 	set_process_input(false)
 	emit_signal("finish")
@@ -134,6 +133,6 @@ func take_weapon():
 func put_in_center():
 	var window_size = get_viewport().get_visible_rect().size
 	$GrindSprite.position.x =(window_size.x /2 - image.get_width()*2)/scale.x
-	$GrindSprite.position.y = (window_size.y - image.get_height()*4) / scale.y
+	$GrindSprite.position.y = (window_size.y/2 - image.get_height()) / scale.y
 	#$GrindSprite.position.x =  window_size.x / (2 * self.scale.x) - image.get_width()/2
 	#$GrindSprite.position.y =  window_size.y /(2* self.scale.y)  - image.get_height()/2

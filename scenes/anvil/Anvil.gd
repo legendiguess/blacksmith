@@ -1,4 +1,4 @@
-extends Control
+extends "res://scenes/abstractions/AbstractMinigame.gd"
 
 onready var first_person_ingot_sprite = $IngotSprite
 onready var forged_blade_sprite = $BladeSprite
@@ -86,9 +86,11 @@ func _process(delta):
 			forged_blade_sprite.visible = false
 			$SliderBar.visible = true
 			is_weapon_forged_state = 0
+			._stop()
 			self.hide()
 
 func _ready():
+	._ready()
 	for zone in $Ingot/GridContainer.get_children():
 		zone.connect("ingot_zone_pressed", self, "zone_pressed" )
 		
@@ -121,6 +123,7 @@ func zone_pressed(zone):
 		forged_blade_sprite.visible = true
 
 func forge_weapon(weapon):
+	._open()
 	slider_green_part.rect_size.x = (slider_green_zone_lenth[character_inventory.current_item.id])
 	generate_new_slider_pos()
 	pressed_map_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
