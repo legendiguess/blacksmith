@@ -31,6 +31,7 @@ scale = Vector2( 4, 4 )
 script = ExtResource( 1 )
 
 [node name="Floor" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 1.095, 1.085 )
 texture = ExtResource( 8 )
 centered = false
@@ -38,30 +39,29 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GrindstoneWood" type="Sprite" parent="Floor"]
-position = Vector2( 74.6679, 39.32 )
+[node name="GrindstoneWood" type="Sprite" parent="."]
+visible = false
+position = Vector2( 84.9361, 5.48131 )
+rotation = 1.5708
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Stone" type="Sprite" parent="."]
-position = Vector2( 50.7263, 31.2622 )
-scale = Vector2( 1.095, 1.085 )
+visible = false
+position = Vector2( 95.442, -22.089 )
+rotation = 1.5708
 texture = ExtResource( 6 )
 centered = false
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Shadow" type="Sprite" parent="Stone"]
+visible = false
 texture = ExtResource( 7 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Stone/Shadow"]
+visible = false
 texture = ExtResource( 4 )
 centered = false
 

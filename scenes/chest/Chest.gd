@@ -10,7 +10,7 @@ func _ready():
 	storage.number_of_slots = 6
 	storage.items.append(ItemFactory.new_item(ItemTable.Ids.COPPER_ORE))
 	storage.items.append(ItemFactory.new_item(ItemTable.Ids.FANTASIUM_INGOT))
-	storage.items.append(ItemFactory.new_item(ItemTable.Ids.IRON_LONGSWORD))
+	storage.items.append(ItemFactory.new_item(ItemTable.Ids.FANTASIUM_BATTLE_AXE))
 	storage.items.append(ItemFactory.new_item(ItemTable.Ids.IRON_BATTLE_AXE))
 	storage.items.append(ItemFactory.new_item(ItemTable.Ids.IRON_HALBERD))
 	storage.items.append(ItemFactory.new_item(ItemTable.Ids.IRON_LONGSWORD))

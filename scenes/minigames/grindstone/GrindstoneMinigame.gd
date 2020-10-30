@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scenes/abstractions/AbstractMinigame.gd"
 
 var image_texture = ImageTexture.new()
 var image
@@ -20,11 +20,12 @@ func _ready():
 	var grindstone_image = Image.new()
 	grindstone_image.load(stone.texture.resource_path)
 	
-	grindstone_rect = Rect2(stone.position.x, stone.position.y ,grindstone_image.get_width(), grindstone_image.get_height())
+	grindstone_rect = Rect2(stone.position.x - grindstone_image.get_height(), stone.position.y ,grindstone_image.get_height(), grindstone_image.get_width())
 	set_process(false)
 	set_process_input(false)
 
 func open(weapon):
+	.open(weapon)
 	current_weapon = weapon
 	finished = false
 	image_path = current_weapon.get_closeup_sprite().resource_path
@@ -54,31 +55,47 @@ func _process(delta):
 			var pixel_position = upper_pixels[i]
 			image.lock()
 			var current_color = image.get_pixelv(pixel_position)
-			if Color.white.gray() - current_color.gray() > 0.01:
-				var lr_color = current_color.linear_interpolate(Color.white, speed_sharpen)
-				image.set_pixelv(pixel_position, lr_color)
+			if !Color.white.is_equal_approx(current_color):
+				#var lr_color = current_color.linear_interpolate(Color.white, speed_sharpen)
+				var new_color = color_add(current_color, speed_sharpen*2*delta)
+				image.set_pixelv(pixel_position, new_color)
 				flag_swap_texture = true
-				if lr_color.gray() - current_color.gray() < 0.01:
+				if Color.white.gray() - new_color.gray()< 0:
 					upper_pixel_completeness[i] = true
-					image.set_pixelv(pixel_position, Color.white)
+					#image.set_pixelv(pixel_position, Color.white)
 					check_completeness()
-				break
 			image.unlock()
 	update()
 	if flag_swap_texture:
 		set_texture()
 	pass
 
+func color_add(color, speed):
+	if color.r <1:
+		color.r +=speed
+	if color.g <1:
+		color.g +=speed
+	if color.b <1:
+		color.b +=speed
+	return color
+	
 func _draw():
 	draw_rect(grindstone_rect, Color.blueviolet)
 
+var weapon_touched = false
 func _input(event):
-	if !finished:
-		if event is InputEventScreenDrag and Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
-			$GrindSprite.global_position += event.relative
-	else:
-		if event is InputEventScreenTouch and Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
-			take_weapon()
+	if event is InputEventScreenTouch:
+		if Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
+			if !finished:
+				if event.is_pressed():
+					weapon_touched = true
+				else:
+					weapon_touched = false
+					
+			else:
+				take_weapon()
+	elif (weapon_touched and event is InputEventScreenDrag):
+			$GrindSprite.global_position+=event.relative
 	pass
 
 func get_upper_pixels():
