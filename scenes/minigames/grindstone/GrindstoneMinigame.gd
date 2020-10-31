@@ -1,4 +1,5 @@
 extends "res://scenes/abstractions/AbstractMinigame.gd"
+onready var sparks_particle = get_node("Sparks")
 
 var image_texture = ImageTexture.new()
 var image
@@ -57,6 +58,13 @@ func _process(delta):
 				var new_color = color_add(current_color, speed_sharpen*2*delta)
 				image.set_pixelv(pixel_position, new_color)
 				flag_swap_texture = true
+				if sparks_particle.is_emitting() == false:
+					var rng = RandomNumberGenerator.new()
+					rng.randomize()
+					var random_number = rng.randf_range(3, 8)
+					sparks_particle.amount = random_number
+					sparks_particle.position = current_rect.position
+					sparks_particle.emitting = true
 				if Color.white.gray() - new_color.gray()< 0.01:
 					upper_pixel_completeness[i] = true
 					#image.set_pixelv(pixel_position, Color.white)

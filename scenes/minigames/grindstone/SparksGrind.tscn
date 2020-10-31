@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0.0162338, -292.091 ), 0.0, 0.0, 0, 0, Vector2( 0.993507, 290.455 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.45614, 0.891228 )
+colors = PoolColorArray( 2, 2, 0.3, 1, 0.996078, 0.4, 0.168627, 1, 0.3125, 0.0203804, 0.0203804, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+max_value = 2.5
+_data = [ Vector2( 0, 2.12216 ), 0.0, 0.0, 0, 0, Vector2( 0.993506, 0.985795 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 10.0
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 25.0
+gravity = Vector3( 0, 140, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 0.5
+angular_velocity = 200.0
+angular_velocity_random = 0.5
+angular_velocity_curve = SubResource( 2 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 300.0
+linear_accel_random = 0.2
+scale = 3.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
+[node name="SparksGrind" type="Particles2D"]
+modulate = Color( 2, 2, 2, 1 )
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.2
+local_coords = false
+process_material = SubResource( 7 )
