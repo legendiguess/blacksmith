@@ -25,3 +25,6 @@ func put_item_to_grindstone():
 func finish():
 	inventory.current_item.sharpen()
 	pass
+
+func stoppage():
+	pass

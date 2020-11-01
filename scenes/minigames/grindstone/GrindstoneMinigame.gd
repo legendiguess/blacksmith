@@ -15,6 +15,7 @@ var speed_sharpen = 0.05
 var finished = false
 
 signal finish()
+signal stoppage()
 
 func _ready():
 	._ready()
@@ -23,27 +24,6 @@ func _ready():
 	grindstone_image.load(stone.texture.resource_path)
 	
 	grindstone_rect = Rect2(stone.position.x - grindstone_image.get_height(), stone.position.y ,grindstone_image.get_height(), grindstone_image.get_width())
-
-func open(weapon):
-	._open()
-	current_weapon = weapon
-	finished = false
-	image_path = current_weapon.get_closeup_sprite().resource_path
-	$GrindSprite.texture = current_weapon.get_closeup_sprite()
-	speed_sharpen = $GrindSprite.get_speed(current_weapon.id)
-	image = Image.new()
-	image.load(image_path)
-	image_texture.create_from_image(image)
-	image_rect = Vector2(image.get_width(), image.get_height())
-	put_in_center()
-	get_upper_pixels()
-	show()
-	pass
-
-func set_texture():
-	image_texture.create_from_image(image)
-	image_texture.flags = 1
-	$GrindSprite.texture =image_texture
 
 func _process(delta):
 	var flag_swap_texture =  false
@@ -74,6 +54,34 @@ func _process(delta):
 		set_texture()
 	pass
 
+func open(weapon):
+	._open()
+	current_weapon = weapon
+	finished = false
+	image_path = current_weapon.get_closeup_sprite().resource_path
+	$GrindSprite.texture = current_weapon.get_closeup_sprite()
+	speed_sharpen = $GrindSprite.get_speed(current_weapon.id)
+	image = Image.new()
+	image.load(image_path)
+	image_texture.create_from_image(image)
+	image_rect = Vector2(image.get_width(), image.get_height())
+	put_in_center()
+	get_upper_pixels()
+	show()
+	pass
+
+func stoppage():
+	._stop()
+	hide()
+	emit_signal("stoppage")
+	pass
+
+func set_texture():
+	image_texture.create_from_image(image)
+	image_texture.flags = 1
+	$GrindSprite.texture =image_texture
+
+
 func color_add(color, speed):
 	if color.r <1:
 		color.r +=speed
@@ -85,22 +93,6 @@ func color_add(color, speed):
 	
 func _draw():
 	draw_rect(grindstone_rect, Color.blueviolet)
-
-var weapon_touched = false
-func _input(event):
-	if event is InputEventScreenTouch:
-		if Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
-			if !finished:
-				if event.is_pressed():
-					weapon_touched = true
-				else:
-					weapon_touched = false
-					
-			else:
-				take_weapon()
-	elif (weapon_touched and event is InputEventScreenDrag):
-			$GrindSprite.global_position+=event.relative
-	pass
 
 func get_upper_pixels():
 	var x = 0
@@ -134,10 +126,30 @@ func check_completeness():
 func take_weapon():
 	._stop()
 	hide()
-	set_process_input(false)
 	emit_signal("finish")
 	
 func put_in_center():
 	var window_size = get_viewport().get_visible_rect().size
 	$GrindSprite.position.x =(window_size.x /2 - image.get_width()*2)/scale.x
 	$GrindSprite.position.y = (window_size.y/2 - image.get_height()) / scale.y
+
+
+var weapon_touched = false
+func _input(event):
+	if event is InputEventScreenTouch:
+		if Rect2($GrindSprite.global_position, image_rect*scale).has_point(event.position):
+			if !finished:
+				if event.is_pressed():
+					weapon_touched = true
+				else:
+					weapon_touched = false
+					
+			else:
+				take_weapon()
+	elif (weapon_touched and event is InputEventScreenDrag):
+			$GrindSprite.global_position+=event.relative
+	pass
+	
+func _on_StopButton_button_down():
+	stoppage()
+	pass # Replace with function body.
