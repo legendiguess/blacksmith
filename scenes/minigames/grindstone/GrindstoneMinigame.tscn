@@ -45,14 +45,13 @@ position = Vector2( 74.7284, 20.3162 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Stone" type="Sprite" parent="."]
-position = Vector2( 76.3834, 7.79622 )
+position = Vector2( 91.0518, -20.9538 )
 rotation = 1.5708
 texture = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
+centered = false
 
 [node name="Shadow" type="Sprite" parent="Stone"]
+position = Vector2( 28.0634, 14.477 )
 texture = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Stone/Shadow"]

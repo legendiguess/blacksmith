@@ -54,14 +54,13 @@ func _process(delta):
 			image.lock()
 			var current_color = image.get_pixelv(pixel_position)
 			if !Color.white.is_equal_approx(current_color):
-				#var lr_color = current_color.linear_interpolate(Color.white, speed_sharpen)
 				var new_color = color_add(current_color, speed_sharpen*2*delta)
 				image.set_pixelv(pixel_position, new_color)
 				flag_swap_texture = true
 				if sparks_particle.is_emitting() == false:
 					var rng = RandomNumberGenerator.new()
 					rng.randomize()
-					var random_number = rng.randf_range(3, 8)
+					var random_number = rng.randi_range(5, 10)
 					sparks_particle.amount = random_number
 					sparks_particle.position = current_rect.position
 					sparks_particle.emitting = true
@@ -142,5 +141,3 @@ func put_in_center():
 	var window_size = get_viewport().get_visible_rect().size
 	$GrindSprite.position.x =(window_size.x /2 - image.get_width()*2)/scale.x
 	$GrindSprite.position.y = (window_size.y/2 - image.get_height()) / scale.y
-	#$GrindSprite.position.x =  window_size.x / (2 * self.scale.x) - image.get_width()/2
-	#$GrindSprite.position.y =  window_size.y /(2* self.scale.y)  - image.get_height()/2
