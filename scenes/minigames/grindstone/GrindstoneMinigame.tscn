@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/minigames/grindstone/GrindstoneMinigame.gd" type="Script" id=1]
 [ext_resource path="res://sprites/weapons/closeup/battle_axe/blade/Copper.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://sprites/minigames/grindstone_minigame/Grindstone.png" type="Texture" id=6]
 [ext_resource path="res://sprites/minigames/grindstone_minigame/GrindstoneShadow.png" type="Texture" id=7]
 [ext_resource path="res://sprites/minigames/grindstone_minigame/Floor.png" type="Texture" id=8]
-[ext_resource path="res://scenes/minigames/grindstone/SparksGrind.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -40,9 +39,8 @@ position = Vector2( 80.5953, 7.69765 )
 rotation = 1.5708
 texture = ExtResource( 5 )
 
-[node name="Sparks" parent="." instance=ExtResource( 9 )]
-position = Vector2( 74.7284, 20.3162 )
-scale = Vector2( 0.25, 0.25 )
+[node name="SparksStorage" type="Node2D" parent="."]
+position = Vector2( 25, 8 )
 
 [node name="Stone" type="Sprite" parent="."]
 position = Vector2( 91.0518, -20.9538 )

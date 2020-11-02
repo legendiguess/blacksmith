@@ -24,8 +24,6 @@ curve = SubResource( 5 )
 
 [sub_resource type="ParticlesMaterial" id=7]
 lifetime_randomness = 0.2
-emission_shape = 1
-emission_sphere_radius = 10.0
 flag_disable_z = true
 direction = Vector3( 0, 1, 0 )
 spread = 25.0
@@ -46,7 +44,7 @@ color_ramp = SubResource( 4 )
 [node name="SparksGrind" type="Particles2D"]
 modulate = Color( 2, 2, 2, 1 )
 emitting = false
-amount = 10
+amount = 3
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.2

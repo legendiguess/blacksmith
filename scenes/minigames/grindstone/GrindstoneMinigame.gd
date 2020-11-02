@@ -1,6 +1,8 @@
 extends "res://scenes/abstractions/AbstractMinigame.gd"
-onready var sparks_particle = get_node("Sparks")
+onready var sparks_particle = preload("res://scenes/particles/GrindingStoneSparks.tscn")
+onready var sparks_storage = get_node("SparksStorage")
 
+var particle_array = []
 var image_texture = ImageTexture.new()
 var image
 var image_rect = Vector2(0,0)
@@ -54,25 +56,22 @@ func _process(delta):
 			image.lock()
 			var current_color = image.get_pixelv(pixel_position)
 			if !Color.white.is_equal_approx(current_color):
+				sparks_storage.position = $GrindSprite.position
+				for spark in range(upper_pixels.size()):
+					particle_array[i].emitting = true
 				var new_color = color_add(current_color, speed_sharpen*2*delta)
 				image.set_pixelv(pixel_position, new_color)
 				flag_swap_texture = true
-				if sparks_particle.is_emitting() == false:
-					var rng = RandomNumberGenerator.new()
-					rng.randomize()
-					var random_number = rng.randi_range(5, 10)
-					sparks_particle.amount = random_number
-					sparks_particle.position = current_rect.position
-					sparks_particle.emitting = true
 				if Color.white.gray() - new_color.gray()< 0.01:
 					upper_pixel_completeness[i] = true
 					#image.set_pixelv(pixel_position, Color.white)
 					check_completeness()
+			else:
+				particle_array[i].emitting = false
 			image.unlock()
 	update()
 	if flag_swap_texture:
 		set_texture()
-	pass
 
 func color_add(color, speed):
 	if color.r <1:
@@ -120,16 +119,25 @@ func get_upper_pixels():
 	upper_pixels = acc
 	for i in range(upper_pixels.size()):
 		upper_pixel_completeness.append(false)
+		var new_spark = sparks_particle.instance()
+		sparks_storage.add_child(new_spark)
+		particle_array.append(new_spark)
+		particle_array[i].position = upper_pixels[i]
 
 func check_completeness():
 	for i in upper_pixel_completeness:
 		if not i:
 			return
 	set_process(false)
-	
 	finished = true
 	weapon_touched = false
+	particle_array.clear()
+	delete_particles()
 	put_in_center()
+
+func delete_particles():
+	for instance in sparks_storage.get_children():
+		instance.queue_free()
 	
 func take_weapon():
 	._stop()
