@@ -58,7 +58,7 @@ var weapon_craft = {
 	ItemTable.Ids.FANTASIUM_RAPIER: rapier_pattern
 }
 
-var slider_green_zone_lenth = {
+var slider_green_zone_length = {
 	
 	ItemTable.Ids.COPPER_INGOT: 152,
 	ItemTable.Ids.IRON_INGOT: 127,
@@ -124,7 +124,7 @@ func zone_pressed(zone):
 
 func forge_weapon(weapon):
 	._open()
-	slider_green_part.rect_size.x = (slider_green_zone_lenth[character_inventory.current_item.id])
+	slider_green_part.rect_size.x = (slider_green_zone_length[character_inventory.current_item.id])
 	generate_new_slider_pos()
 	pressed_map_array = [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]]
 	slider_speed = 250
@@ -145,12 +145,12 @@ func generate_new_slider_pos():
 	var right_slider_side_check = 544 - random_number
 
 	if left_slider_side_check > right_slider_side_check:
-		left_side_border = random_number-slider_green_zone_lenth[character_inventory.current_item.id]
+		left_side_border = random_number-slider_green_zone_length[character_inventory.current_item.id]
 		right_side_border = random_number
 	else:
 		left_side_border = random_number
-		right_side_border = random_number+slider_green_zone_lenth[character_inventory.current_item.id]
-	var normal_position_x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
+		right_side_border = random_number+slider_green_zone_length[character_inventory.current_item.id]
+	var normal_position_x = (left_side_border + (slider_green_zone_length[character_inventory.current_item.id])/2)
 	slider_green_part.rect_position.x = (normal_position_x - slider_green_part.rect_size.x/2)
 	
 func check_if_slider_in_zone():
