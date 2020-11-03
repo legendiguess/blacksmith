@@ -241,3 +241,12 @@ texture = ExtResource( 9 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="StoppageButton" type="Button" parent="."]
+margin_left = 610.063
+margin_right = 640.063
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="StoppageButton" to="." method="_on_StoppageButton_button_down"]

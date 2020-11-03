@@ -64,3 +64,13 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="StopButton" type="Button" parent="."]
+margin_left = 145.35
+margin_top = -16.1046
+margin_right = 160.35
+margin_bottom = 13.8954
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="StopButton" to="." method="_on_StopButton_button_down"]
