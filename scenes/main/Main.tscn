@@ -17,7 +17,7 @@
 [ext_resource path="res://scenes/grindstone/Grindstone.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/main/BackgroundMusicPlayer.gd" type="Script" id=16]
 [ext_resource path="res://scenes/minigames/grindstone/GrindstoneMinigame.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/anvil/Anvil.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/minigames/anvil/AnvilMinigame.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/anvil/AnvilCollision.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/gui/weapon_menu/WeaponMenu.tscn" type="PackedScene" id=21]
 
