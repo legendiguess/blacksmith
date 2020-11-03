@@ -145,7 +145,6 @@ func put_in_center():
 	$GrindSprite.position.x =(window_size.x /2 - image.get_width()*2)/scale.x
 	$GrindSprite.position.y = (window_size.y/2 - image.get_height()) / scale.y
 
-
 var weapon_touched = false
 func _input(event):
 	if event is InputEventScreenTouch:
