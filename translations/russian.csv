@@ -15,78 +15,78 @@ COPPER_ORE	Медная руда
 IRON_ORE	Железная руда
 SILVER_ORE	Серебряная руда
 GOLDEN_ORE	Золотая руда
-FANTASIUM_ORE	Фантазиум руда
+FANTASIUM_ORE	Фантазиумая руда
 COPPER_INGOT	Медный слиток
 IRON_INGOT	Железный слиток
 SILVER_INGOT	Серебряный слиток
 GOLDEN_INGOT	Золотой слиток
-FANTASIUM_INGOT	Фантазиум слиток
-COPPER_BATTLE_AXE Медный боевой топор
-IRON_BATTLE_AXE Железный боевой топор
-SILVER_BATTLE_AXE Серебряный боевой топор
-GOLDEN_BATTLE_AXE Золотой боевой топор
-FANTASIUM_BATTLE_AXE Фантазиум боевой топор
-COPPER_BATTLE_AXE_BLADE Медное лезвие боевого топора
-IRON_BATTLE_AXE_BLADE Железное лезвие боевого топора
-SILVER_BATTLE_AXE_BLADE Серебрянное лезвие боевого топора
-GOLDEN_BATTLE_AXE_BLADE Золотое лезвие боевого топора
-FANTASIUM_BATTLE_AXE_BLADE Фантазиум лезвие боевого топора
-BATTLE_AXE_HANDLE Рукоять боевого топора
-COPPER_DAGGER Медный кинжал
-IRON_DAGGER Железный  кинжал
-SILVER_DAGGER Серебряный  кинжал
-GOLDEN_DAGGER Золотой  кинжал
-FANTASIUM_DAGGER Фантазиум  кинжал
-COPPER_DAGGER_BLADE Медное лезвие кинжала
-IRON_DAGGER_BLADE Железное лезвие кинжала
-SILVER_DAGGER_BLADE Серебрянное лезвие кинжала
-GOLDEN_DAGGER_BLADE Золотое лезвие кинжала
-FANTASIUM_DAGGER_BLADE Фантазиум лезвие кинжала
-DAGGER_HANDLE Рукоять кинжала
-COPPER_DAGGER_BOLSTER Медный больстер кинжала
-IRON_DAGGER_BOLSTER Железный больстер кинжала
-SILVER_DAGGER_BOLSTER Серебряный больстер кинжала
-GOLDEN_DAGGER_BOLSTER Золотой больстер кинжала
-FANTASIUM_DAGGER_BOLSTER Фантазиум больстер кинжала
-COPPER_DAGGER_GUARD Медная гарда кинжала
-IRON_DAGGER_GUARD Железная гарда кинжала
-SILVER_DAGGER_GUARD Серебрянная гарда кинжала
-GOLDEN_DAGGER_GUARD Золотая гарда кинжала
-FANTASIUM_DAGGER_GUARD Фантазиум гарда кинжала
-COPPER_HALBERD Медная алебарда
-IRON_HALBERD Железная  алебарда
-SILVER_HALBERD Серебрянная  алебарда
-GOLDEN_HALBERD Золотая  алебарда
-FANTASIUM_HALBERD Фантазиум  алебарда
-COPPER_HALBERD_BLADE Медное лезвие алебарды
-IRON_HALBERD_BLADE Железное лезвие алебарды
-SILVER_HALBERD_BLADE Серебрянное лезвие алебарды
-GOLDEN_HALBERD_BLADE Золотое лезвие алебарды
-FANTASIUM_HALBERD_BLADE Фантазиум лезвие алебарды
-HALBERD_HANDLE Рукоять алебарды
-COPPER_HALBERD_BOLSTER Медный больстер алебарды
-IRON_HALBERD_BOLSTER Железный больстер алебарды
-SILVER_HALBERD_BOLSTER Серебряный больстер алебарды
-GOLDEN_HALBERD_BOLSTER Золотой больстер алебарды
-FANTASIUM_HALBERD_BOLSTER Фантазиум больстер алебарды
-COPPER_LONGSWORD Медный меч
-IRON_LONGSWORD Железный меч
-SILVER_LONGSWORD Серебряный меч
-GOLDEN_LONGSWORD Золотой меч
-FANTASIUM_LONGSWORD Фантазиум меч
-COPPER_LONGSWORD_BLADE Медное лезвие меча
-IRON_LONGSWORD_BLADE Железное лезвие меча
-SILVER_LONGSWORD_BLADE Серебрянное лезвие меча
-GOLDEN_LONGSWORD_BLADE Золотое лезвие меча
-FANTASIUM_LONGSWORD_BLADE Фантазиум лезвие меча
-LONGSWORD_HANDLE Рукоять меча
-COPPER_LONGSWORD_BOLSTER Медный больстер меча
-IRON_LONGSWORD_BOLSTER Железный больстер меча
-SILVER_LONGSWORD_BOLSTER Серебряный больстер меча
-GOLDEN_LONGSWORD_BOLSTER Золотой больстер меча
-FANTASIUM_LONGSWORD_BOLSTER Фантазиум больстер меча
-COPPER_LONGSWORD_GUARD Медная гарда меча
-IRON_LONGSWORD_GUARD Железная гарда меча
-SILVER_LONGSWORD_GUARD Серебрянная гарда меча
-GOLDEN_LONGSWORD_GUARD Золотая гарда меча
-FANTASIUM_LONGSWORD_GUARD Фантазиум гарда меча
+FANTASIUM_INGOT	Фантазиумный слиток
+COPPER_BATTLE_AXE	Медный боевой топор
+IRON_BATTLE_AXE	Железный боевой топор
+SILVER_BATTLE_AXE	Серебряный боевой топор
+GOLDEN_BATTLE_AXE	Золотой боевой топор
+FANTASIUM_BATTLE_AXE	Фантазиумный боевой топор
+COPPER_BATTLE_AXE_BLADE	Медное лезвие боевого топора
+IRON_BATTLE_AXE_BLADE	Железное лезвие боевого топора
+SILVER_BATTLE_AXE_BLADE	Серебрянное лезвие боевого топора
+GOLDEN_BATTLE_AXE_BLADE	Золотое лезвие боевого топора
+FANTASIUM_BATTLE_AXE_BLADE	Фантазиумное лезвие боевого топора
+BATTLE_AXE_HANDLE	Рукоять боевого топора
+COPPER_DAGGER	Медный кинжал
+IRON_DAGGER	Железный  кинжал
+SILVER_DAGGER	Серебряный  кинжал
+GOLDEN_DAGGER	Золотой  кинжал
+FANTASIUM_DAGGER	Фантазиумный  кинжал
+COPPER_DAGGER_BLADE	Медное лезвие кинжала
+IRON_DAGGER_BLADE	Железное лезвие кинжала/
+SILVER_DAGGER_BLADE	Серебрянное лезвие кинжала
+GOLDEN_DAGGER_BLADE	Золотое лезвие кинжала
+FANTASIUM_DAGGER_BLADE	Фантазиумное лезвие кинжала
+DAGGER_HANDLE	Рукоять кинжала
+COPPER_DAGGER_BOLSTER	Медный больстер кинжала
+IRON_DAGGER_BOLSTER	Железный больстер кинжала
+SILVER_DAGGER_BOLSTER	Серебряный больстер кинжала
+GOLDEN_DAGGER_BOLSTER	Золотой больстер кинжала
+FANTASIUM_DAGGER_BOLSTER	Фантазиумный больстер кинжала
+COPPER_DAGGER_GUARD	Медная гарда кинжала
+IRON_DAGGER_GUARD	Железная гарда кинжала
+SILVER_DAGGER_GUARD	Серебрянная гарда кинжала
+GOLDEN_DAGGER_GUARD	Золотая гарда кинжала
+FANTASIUM_DAGGER_GUARD	Фантазиумная гарда кинжала
+COPPER_HALBERD	Медная алебарда
+IRON_HALBERD	Железная  алебарда
+SILVER_HALBERD	Серебрянная  алебарда
+GOLDEN_HALBERD	Золотая  алебарда
+FANTASIUM_HALBERD	Фантазиумная  алебарда
+COPPER_HALBERD_BLADE	Медное лезвие алебарды
+IRON_HALBERD_BLADE	Железное лезвие алебарды
+SILVER_HALBERD_BLADE	Серебрянное лезвие алебарды
+GOLDEN_HALBERD_BLADE	Золотое лезвие алебарды
+FANTASIUM_HALBERD_BLADE	Фантазиумное лезвие алебарды
+HALBERD_HANDLE	Рукоять алебарды
+COPPER_HALBERD_BOLSTER	Медный больстер алебарды
+IRON_HALBERD_BOLSTER	Железный больстер алебарды
+SILVER_HALBERD_BOLSTER	Серебряный больстер алебарды
+GOLDEN_HALBERD_BOLSTER	Золотой больстер алебарды
+FANTASIUM_HALBERD_BOLSTER	Фантазиумный больстер алебарды
+COPPER_LONGSWORD	Медный меч
+IRON_LONGSWORD	Железный меч
+SILVER_LONGSWORD	Серебряный меч
+GOLDEN_LONGSWORD	Золотой меч
+FANTASIUM_LONGSWORD	Фантазиумный меч
+COPPER_LONGSWORD_BLADE	Медное лезвие меча
+IRON_LONGSWORD_BLADE	Железное лезвие меча
+SILVER_LONGSWORD_BLADE	Серебрянное лезвие меча
+GOLDEN_LONGSWORD_BLADE	Золотое лезвие меча
+FANTASIUM_LONGSWORD_BLADE	Фантазиумное лезвие меча
+LONGSWORD_HANDLE	Рукоять меча
+COPPER_LONGSWORD_BOLSTER	Медный больстер меча
+IRON_LONGSWORD_BOLSTER	Железный больстер меча
+SILVER_LONGSWORD_BOLSTER	Серебряный больстер меча
+GOLDEN_LONGSWORD_BOLSTER	Золотой больстер меча
+FANTASIUM_LONGSWORD_BOLSTER	Фантазиумный больстер меча
+COPPER_LONGSWORD_GUARD	Медная гарда меча
+IRON_LONGSWORD_GUARD	Железная гарда меча
+SILVER_LONGSWORD_GUARD	Серебрянная гарда меча
+GOLDEN_LONGSWORD_GUARD	Золотая гарда меча
+FANTASIUM_LONGSWORD_GUARD	Фантазиумая гарда меча
