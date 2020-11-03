@@ -152,10 +152,27 @@ func generate_new_slider_pos():
 		right_side_border = random_number+slider_green_zone_lenth[character_inventory.current_item.id]
 	var normal_position_x = (left_side_border + (slider_green_zone_lenth[character_inventory.current_item.id])/2)
 	slider_green_part.rect_position.x = (normal_position_x - slider_green_part.rect_size.x/2)
-	
+
+func stoppage():
+	forged_blade_sprite.visible = false
+	is_weapon_forged_state = 0
+	$SliderBar.visible = true
+	var zones  = get_node("Ingot/GridContainer/").get_children()
+	for zone in zones:
+		zone.disabled = true
+		zone.spark.hide()
+	._stop()
+	hide()
+	pass
+
 func check_if_slider_in_zone():
 	
 	if slider_sprite.position.x < right_side_border and slider_sprite.position.x > left_side_border:
 		return true
 	else:
 		return false
+
+
+func _on_StoppageButton_button_down():
+	stoppage()
+	pass # Replace with function body.

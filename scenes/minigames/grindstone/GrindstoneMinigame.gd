@@ -58,6 +58,7 @@ func open(weapon):
 	._open()
 	current_weapon = weapon
 	finished = false
+	weapon_touched = false
 	image_path = current_weapon.get_closeup_sprite().resource_path
 	$GrindSprite.texture = current_weapon.get_closeup_sprite()
 	speed_sharpen = $GrindSprite.get_speed(current_weapon.id)
@@ -71,6 +72,9 @@ func open(weapon):
 	pass
 
 func stoppage():
+	if finished:
+		take_weapon()
+		return
 	._stop()
 	hide()
 	emit_signal("stoppage")
