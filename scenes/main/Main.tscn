@@ -52,7 +52,7 @@ texture = ExtResource( 11 )
 centered = false
 
 [node name="Wall" type="Sprite" parent="Game"]
-position = Vector2( 340, 95 )
+position = Vector2( 340, 96 )
 texture = ExtResource( 10 )
 centered = false
 offset = Vector2( -340.733, -95.6992 )
