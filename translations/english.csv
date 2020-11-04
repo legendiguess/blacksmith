@@ -1,6 +1,7 @@
 keys	en
 EXIT	Exit
-NEXT_DAY	Next day
+NEW_GAME	New game
+NEXT_DAY(%d)	Next day (%d)
 SETTINGS	Settings
 MASTER_VOLUME	Master volume
 SFX_VOLUME	SFX volume

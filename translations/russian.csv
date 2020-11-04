@@ -1,6 +1,7 @@
 keys	ru
 EXIT	Выход
-NEXT_DAY	Следующий день
+NEW_GAME	Новая игра
+NEXT_DAY(%d)	Следующий день (%d)
 SETTINGS	Настройки
 MASTER_VOLUME	Общая громкость
 SFX_VOLUME	Громкость эффектов
