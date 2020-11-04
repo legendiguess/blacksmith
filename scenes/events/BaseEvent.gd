@@ -1,4 +1,4 @@
-extends Node
+extends Reference
 #Все ивенты должны наследоваться от этого
 
 var weapon_pull = [] #id пушек которые используются при ивенте

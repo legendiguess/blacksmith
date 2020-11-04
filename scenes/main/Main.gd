@@ -22,3 +22,10 @@ func _ready():
 	AudioServer.set_bus_volume_db(0, Settings.master_volume)
 	AudioServer.set_bus_volume_db(1, Settings.sfx_volume)
 	AudioServer.set_bus_volume_db(2, Settings.music_volume)
+	
+	$DayTimer.connect("timeout", self, "day_timer_timeout")
+
+func day_timer_timeout():
+	Progress.next_day += 1
+	Progress.save_to_file()
+	get_tree().change_scene("res://scenes/menus/main_menu/MainMenu.tscn")

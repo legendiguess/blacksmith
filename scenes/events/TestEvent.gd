@@ -2,11 +2,7 @@ extends "res://scenes/events/BaseEvent.gd"
 
 func _init():
 	weapon_pull = [
-		ItemTable.Ids.COPPER_BATTLE_AXE,
-		ItemTable.Ids.IRON_BATTLE_AXE,
-		ItemTable.Ids.SILVER_BATTLE_AXE,
-		ItemTable.Ids.GOLDEN_BATTLE_AXE,
-		ItemTable.Ids.FANTASIUM_BATTLE_AXE,
+		ItemTable.Ids.COPPER_INGOT,
 	]
 	phrases = [
 		"Сегодня тестовый день, сделайте - ",

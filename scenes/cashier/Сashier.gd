@@ -17,8 +17,6 @@ func _ready():
 
 func generate_day():
 	generate_buyer()
-	generate_buyer()
-	generate_buyer()
 	next_buyer()
 
 func next_buyer():
