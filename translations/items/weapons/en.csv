@@ -1,27 +1,4 @@
 keys	en
-EXIT	Exit
-NEW_GAME	New game
-NEXT_DAY(%d)	Next day (%d)
-SETTINGS	Settings
-MASTER_VOLUME	Master volume
-SFX_VOLUME	SFX volume
-MUSIC_VOLUME	Music volume
-CONTROLS	Controls
-BY_TAP	By tap
-VIRTUAL_GAMEPAD	Virtual gamepad
-RESET_PROGRESS	Reset progress
-BACK	Back
-SAVE	Save
-COPPER_ORE	Copper ore
-IRON_ORE	Iron ore
-SILVER_ORE	Silver ore
-GOLDEN_ORE	Golden ore
-FANTASIUM_ORE	Fantasium ore
-COPPER_INGOT	Copper ingot
-IRON_INGOT	Iron ingot
-SILVER_INGOT	Silver ingot
-GOLDEN_INGOT	Golden ingot
-FANTASIUM_INGOT	Fantasium ingot
 COPPER_BATTLE_AXE	Copper battle axe
 IRON_BATTLE_AXE	Iron battle axe
 SILVER_BATTLE_AXE	Silver battle axe

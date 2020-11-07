@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/phrases/uk.uk.translation" ]
+
+source_file="res://translations/phrases/uk.csv"
+dest_files=[ "res://translations/phrases/uk.uk.translation" ]
+
+[params]
+
+compress=true
+delimiter=2

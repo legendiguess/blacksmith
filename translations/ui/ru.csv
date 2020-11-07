@@ -1,0 +1,14 @@
+keys	ru
+EXIT	Выход
+NEW_GAME	Новая игра
+NEXT_DAY(%d)	Следующий день (%d)
+SETTINGS	Настройки
+MASTER_VOLUME	Общая громкость
+SFX_VOLUME	Громкость эффектов
+MUSIC_VOLUME	Громкость музыки
+CONTROLS	Управление
+BY_TAP	Нажатием
+VIRTUAL_GAMEPAD	Виртуальный джойстик
+RESET_PROGRESS	Сброс прогресса
+BACK	Назад
+SAVE	Сохранить

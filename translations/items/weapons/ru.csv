@@ -1,27 +1,4 @@
 keys	ru
-EXIT	Выход
-NEW_GAME	Новая игра
-NEXT_DAY(%d)	Следующий день (%d)
-SETTINGS	Настройки
-MASTER_VOLUME	Общая громкость
-SFX_VOLUME	Громкость эффектов
-MUSIC_VOLUME	Громкость музыки
-CONTROLS	Управление
-BY_TAP	Нажатием
-VIRTUAL_GAMEPAD	Виртуальный джойстик
-RESET_PROGRESS	Сброс прогресса
-BACK	Назад
-SAVE	Сохранить
-COPPER_ORE	Медная руда
-IRON_ORE	Железная руда
-SILVER_ORE	Серебряная руда
-GOLDEN_ORE	Золотая руда
-FANTASIUM_ORE	Фантазиумая руда
-COPPER_INGOT	Медный слиток
-IRON_INGOT	Железный слиток
-SILVER_INGOT	Серебряный слиток
-GOLDEN_INGOT	Золотой слиток
-FANTASIUM_INGOT	Фантазиумный слиток
 COPPER_BATTLE_AXE	Медный боевой топор
 IRON_BATTLE_AXE	Железный боевой топор
 SILVER_BATTLE_AXE	Серебряный боевой топор

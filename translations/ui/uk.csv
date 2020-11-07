@@ -1,0 +1,14 @@
+keys	uk
+EXIT	Вихід
+NEW_GAME	Нова гра
+NEXT_DAY(%d)	Наступний день (%d)
+SETTINGS	Налаштування
+MASTER_VOLUME	Загальна гучність
+SFX_VOLUME	Гучність ефектів
+MUSIC_VOLUME	Гучність музики
+CONTROLS	Управління
+BY_TAP	Нажаттям
+VIRTUAL_GAMEPAD	Віртульний джойстик
+RESET_PROGRESS	Скинути прогрес
+BACK	Назад
+SAVE	Зберегти

@@ -60,8 +60,8 @@ pointing/emulate_touch_from_mouse=true
 
 [locale]
 
-translations=PoolStringArray( "res://translations/english.en.translation", "res://translations/russian.ru.translation" )
-locale_filter=[ 1, [ "en", "ru" ] ]
+translations=PoolStringArray( "res://translations/ui/en.en.translation", "res://translations/ui/ru.ru.translation", "res://translations/ui/uk.uk.translation", "res://translations/phrases/en.en.translation", "res://translations/phrases/ru.ru.translation", "res://translations/phrases/uk.uk.translation", "res://translations/items/materials/en.en.translation", "res://translations/items/materials/ru.ru.translation", "res://translations/items/materials/uk.uk.translation", "res://translations/items/weapons/en.en.translation", "res://translations/items/weapons/ru.ru.translation", "res://translations/items/weapons/uk.uk.translation" )
+locale_filter=[ 1, [ "en", "ru", "uk" ] ]
 
 [rendering]
 
