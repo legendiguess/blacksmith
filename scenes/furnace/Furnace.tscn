@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://sprites/benches/Furnace.png" type="Texture" id=1]
+[ext_resource path="res://sprites/benches/Furnance.png" type="Texture" id=1]
 [ext_resource path="res://scenes/furnace/Furnace.gd" type="Script" id=2]
 [ext_resource path="res://scenes/abstractions/Storage.gd" type="Script" id=3]
 [ext_resource path="res://themes/Main.tres" type="Theme" id=4]

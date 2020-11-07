@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/cashier/Сashier.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/cashier/Cashier.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/dwarf/DwarfContoroller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gui/chest_menu/ChestMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
@@ -24,6 +24,7 @@
 [ext_resource path="res://sprites/house/Window.png" type="Texture" id=22]
 [ext_resource path="res://sprites/house/ShopfrontBackground.png" type="Texture" id=23]
 [ext_resource path="res://sprites/house/Shopfront.png" type="Texture" id=24]
+[ext_resource path="res://scenes/main/OrderQueue/OrderQueue.gd" type="Script" id=25]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -39,6 +40,7 @@ script = ExtResource( 1 )
 script = ExtResource( 13 )
 
 [node name="Camera2D" type="Camera2D" parent="Game"]
+visible = false
 anchor_mode = 0
 current = true
 script = ExtResource( 14 )
@@ -56,17 +58,21 @@ position = Vector2( 240, 179 )
 texture = ExtResource( 11 )
 centered = false
 
-[node name="Ceiling" type="Sprite" parent="Game"]
-texture = ExtResource( 20 )
-centered = false
-
 [node name="ShopfrontBackground" type="Sprite" parent="Game"]
 position = Vector2( 711.5, 139 )
 texture = ExtResource( 23 )
 
+[node name="Shopfront" type="Sprite" parent="Game"]
+position = Vector2( 719, 139 )
+texture = ExtResource( 24 )
+
 [node name="Wall" type="Sprite" parent="Game"]
 position = Vector2( -4, 82 )
 texture = ExtResource( 10 )
+centered = false
+
+[node name="Ceiling" type="Sprite" parent="Game"]
+texture = ExtResource( 20 )
 centered = false
 
 [node name="Floor" type="Sprite" parent="Game"]
@@ -78,10 +84,6 @@ centered = false
 position = Vector2( 447.5, 194.5 )
 texture = ExtResource( 22 )
 
-[node name="Shopfront" type="Sprite" parent="Game"]
-position = Vector2( 719, 139 )
-texture = ExtResource( 24 )
-
 [node name="Shadow" type="Sprite" parent="Game"]
 texture = ExtResource( 8 )
 centered = false
@@ -90,10 +92,10 @@ centered = false
 position = Vector2( 213, 268 )
 
 [node name="Furnace" parent="Game" instance=ExtResource( 7 )]
-position = Vector2( 89, 220.5 )
+position = Vector2( 89, 186.5 )
 
-[node name="Сashier" parent="Game" instance=ExtResource( 4 )]
-position = Vector2( 664.07, 177.338 )
+[node name="Cashier" parent="Game" instance=ExtResource( 4 )]
+position = Vector2( 720, 230 )
 
 [node name="Dwarf controller" parent="Game" instance=ExtResource( 5 )]
 position = Vector2( 7.72821, 377.945 )
@@ -125,6 +127,17 @@ visible = false
 
 [node name="GrindstoneMinigame" parent="." instance=ExtResource( 17 )]
 visible = false
+
+[node name="OrderQueue" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 801.0
+margin_right = 639.0
+custom_constants/separation = 0
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GUI" type="CanvasLayer" parent="."]
 

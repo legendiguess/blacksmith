@@ -17,7 +17,6 @@ func log_out():
 		return "base_item"
 	return item_name
 
-
 func get_closeup_sprite():
 	return sprites
 
