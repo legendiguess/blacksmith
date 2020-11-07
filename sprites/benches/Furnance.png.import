@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grindstone.png-b0cb031e8192113cd2d0c11380ab278c.stex"
+path="res://.import/Furnance.png-bc382e48c8546061a1acc45c12621e37.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/minigames/grindstone_minigame/Grindstone.png"
-dest_files=[ "res://.import/Grindstone.png-b0cb031e8192113cd2d0c11380ab278c.stex" ]
+source_file="res://sprites/benches/Furnance.png"
+dest_files=[ "res://.import/Furnance.png-bc382e48c8546061a1acc45c12621e37.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

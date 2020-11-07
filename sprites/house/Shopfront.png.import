@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.png-470ab4a075009564f97cd4f9c6cb4a84.stex"
+path="res://.import/Shopfront.png-23dd6c3439be23dc4da206807b03473b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/house/Background.png"
-dest_files=[ "res://.import/Background.png-470ab4a075009564f97cd4f9c6cb4a84.stex" ]
+source_file="res://sprites/house/Shopfront.png"
+dest_files=[ "res://.import/Shopfront.png-23dd6c3439be23dc4da206807b03473b.stex" ]
 
 [params]
 

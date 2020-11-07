@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grindstone.png-b0cb031e8192113cd2d0c11380ab278c.stex"
+path="res://.import/Window.png-23a3a883a43683fccfea7ffd42dcee92.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/minigames/grindstone_minigame/Grindstone.png"
-dest_files=[ "res://.import/Grindstone.png-b0cb031e8192113cd2d0c11380ab278c.stex" ]
+source_file="res://sprites/house/Window.png"
+dest_files=[ "res://.import/Window.png-23a3a883a43683fccfea7ffd42dcee92.stex" ]
 
 [params]
 
