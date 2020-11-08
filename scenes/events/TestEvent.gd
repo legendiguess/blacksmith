@@ -13,3 +13,4 @@ func _init():
 	music_names_to_play = [Music.Names.LOOP_MINSTREL_DANCE]
 	orders_arrival_time = 30
 	buyer_time_to_leave = 60
+	chance = 0.25

@@ -7,7 +7,6 @@ var size_of_queue = 5 # Количество слотов в очереди
 var queue_of_buyers = []
 
 var current_event = null
-const CHANCE_OF_EVENT = 0.8
 
 signal new_buyer_come(buyer)
 signal buyer_left(buyer_index)
@@ -26,7 +25,7 @@ func generate_buyer():
 	var random_id
 	var random_phrase
 	var rand = randf()
-	if current_event and rand < CHANCE_OF_EVENT:
+	if current_event and rand < current_event.chance:
 		random_id = current_event.weapon_pull[randi()%current_event.weapon_pull.size()]
 		random_phrase = current_event.phrases[randi()%current_event.phrases.size()]
 		pass
