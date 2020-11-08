@@ -112,8 +112,21 @@ onready var names = {
 #		item_table.Ids.SILVER_RAPIER_GUARD : tr("RAPIER_GUARD"),
 #		item_table.Ids.GOLDEN_RAPIER_GUARD : tr("RAPIER_GUARD"),
 #		item_table.Ids.FANTASIUM_RAPIER_GUARD : tr("RAPIER_GUARD")
-
 	}
-onready var default_phrases = ["Дефолт фраза:" ]
+
+onready var default_phrases = [
+	tr("ORDER_1"),
+	tr("ORDER_2"),
+	tr("ORDER_3"),
+	tr("ORDER_4"),
+	tr("ORDER_5"),
+	tr("ORDER_6"),
+	tr("ORDER_7"),
+	tr("ORDER_8"),
+	tr("ORDER_9"),
+	tr("ORDER_10"),
+	tr("ORDER_11"),
+]
+
 func _ready():
 	pass
