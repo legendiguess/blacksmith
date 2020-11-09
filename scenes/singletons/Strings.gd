@@ -38,7 +38,10 @@ onready var names = {
 		item_table.Ids.SILVER_RAPIER : tr("SILVER_RAPIER"),
 		item_table.Ids.GOLDEN_RAPIER : tr("GOLDEN_RAPIER"),
 		item_table.Ids.FANTASIUM_RAPIER : tr("FANTASIUM_RAPIER"),
-
+		item_table.Ids.APPLE : tr("APPLE"),
+		item_table.Ids.CHEESE : tr("CHEESE"),
+		item_table.Ids.CHICKEN_LEG : tr("CHICKEN_LEG"),
+		item_table.Ids.CHICKEN : tr("CHICKEN"),
 #		item_table.Ids.COPPER_BATTLE_AXE_BLADE : tr("BATTLE_AXE_BLADE"),
 #		item_table.Ids.IRON_BATTLE_AXE_BLADE : tr("BATTLE_AXE_BLADE"),
 #		item_table.Ids.SILVER_BATTLE_AXE_BLADE : tr("BATTLE_AXE_BLADE"),

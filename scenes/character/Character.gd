@@ -45,3 +45,14 @@ func _physics_process(delta):
 					body.use()
 				elif body.name == "Cashier":
 					body.submit_order()
+				elif body.name == "Dwarf":
+					if $Inventory.current_item == null:
+						if body.item_in_hand != null:
+							body.give_item_to_player()
+						else:
+							if body.get_node("Timer").time_left == 0:
+								body.ask_to_mine()
+					else:
+						if body.item_in_hand == null:
+							if body.get_node("Timer").time_left == 0:
+								body.ask_to_mine()

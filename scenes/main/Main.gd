@@ -13,6 +13,10 @@ func _ready():
 	$GrindstoneMinigame.connect("stoppage", $Game/Grindstone, "stoppage")
 	$Game/Cashier.connect("new_buyer_come", $OrderQueue, "new_buyer_come")
 	$Game/Cashier.connect("buyer_left", $OrderQueue, "buyer_left")
+	
+	$GUI/DwarfOreMenu.connect("player_selected_ore", $GUI/DwarfFoodMenu, "player_selected_ore")
+	$GUI/DwarfFoodMenu.connect("food_selected", $Game/Dwarf, "mine")
+	$Game/Dwarf.connect("player_asked_to_mine", $GUI/DwarfOreMenu, "open")
 
 	# Setup day event
 	current_event = load("res://scenes/events/TestEvent.gd").new()

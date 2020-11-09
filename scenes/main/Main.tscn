@@ -1,10 +1,9 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cashier/Cashier.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/dwarf/DwarfContoroller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gui/chest_menu/ChestMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/house/Shadow.png" type="Texture" id=8]
@@ -25,6 +24,14 @@
 [ext_resource path="res://sprites/house/ShopfrontBackground.png" type="Texture" id=23]
 [ext_resource path="res://sprites/house/Shopfront.png" type="Texture" id=24]
 [ext_resource path="res://scenes/main/OrderQueue/OrderQueue.gd" type="Script" id=25]
+[ext_resource path="res://scenes/gui/item_menu/ItemMenu.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/main/DwarfOreMenu.gd" type="Script" id=27]
+[ext_resource path="res://scenes/main/DwarfFoodMenu.gd" type="Script" id=28]
+[ext_resource path="res://sprites/Dwarf.png" type="Texture" id=29]
+[ext_resource path="res://scenes/dwarf/Dwarf.gd" type="Script" id=30]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 38.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 4.0
@@ -97,8 +104,20 @@ position = Vector2( 89, 186.5 )
 [node name="Cashier" parent="Game" instance=ExtResource( 4 )]
 position = Vector2( 720, 230 )
 
-[node name="Dwarf controller" parent="Game" instance=ExtResource( 5 )]
-position = Vector2( 7.72821, 377.945 )
+[node name="Dwarf" type="StaticBody2D" parent="Game"]
+position = Vector2( 420.221, 252.413 )
+script = ExtResource( 30 )
+
+[node name="Timer" type="Timer" parent="Game/Dwarf"]
+one_shot = true
+
+[node name="Sprite" type="Sprite" parent="Game/Dwarf"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Dwarf"]
+shape = SubResource( 3 )
+
+[node name="DiggedOre" type="Sprite" parent="Game/Dwarf"]
 
 [node name="CashierWindowEntranceZone" type="Area2D" parent="Game"]
 position = Vector2( 640, 238 )
@@ -148,6 +167,36 @@ mouse_filter = 2
 [node name="WeaponMenu" parent="GUI" instance=ExtResource( 21 )]
 visible = false
 mouse_filter = 2
+
+[node name="DwarfOreMenu" type="Control" parent="GUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="GUI/DwarfOreMenu" instance=ExtResource( 26 )]
+use_quantity = false
+menu_name = "DWARF_ORE_MENU"
+menu_description = "DWARF_ORE_MENU_DESCRIPTION"
+
+[node name="DwarfFoodMenu" type="Control" parent="GUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="GUI/DwarfFoodMenu" instance=ExtResource( 26 )]
+use_quantity = false
+menu_name = "DWARF_FOOD_MENU"
+menu_description = "DWARF_FOOD_MENU_DESCRIPTION"
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 bus = "Music"

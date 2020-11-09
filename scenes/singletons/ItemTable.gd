@@ -52,6 +52,11 @@ enum Ids{
 	GOLDEN_RAPIER,
 	FANTASIUM_RAPIER,
 	
+#Еда
+	APPLE,
+	CHEESE,
+	CHICKEN_LEG,
+	CHICKEN
 }
 
 #Ид всех пушек добавлять сюда
@@ -336,9 +341,31 @@ var sprite = {
 			"closeup": preload("res://sprites/weapons/closeup/rapier/Fantasium.png"),
 			"long_shot": preload("res://sprites/weapons/long_shot/rapier/Fantasium.png")
 			}
+	},
+	Ids.APPLE: preload("res://sprites/food/Apple.png"),
+	Ids.CHEESE: preload("res://sprites/food/Cheese.png"),
+	Ids.CHICKEN_LEG: preload("res://sprites/food/ChickenLeg.png"),
+	Ids.CHICKEN: preload("res://sprites/food/Chicken.png")
 	}
-	}
-	
+
+var food_stats = {
+	Ids.CHICKEN: {
+		"cost": 70,
+		"time": 8,
+	},
+	Ids.CHICKEN_LEG: {
+		"cost": 50,
+		"time": 20,
+	},
+	Ids.CHEESE: {
+		"cost": 10,
+		"time": 35,
+	},
+	Ids.APPLE: {
+		"cost": 0,
+		"time": 45,
+	},
+}
 	
 func correct_test():
 	#Проверка что для каждого предмета из ids есть спрайт, выведение ошибки(если присутсвует)
