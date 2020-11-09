@@ -45,5 +45,5 @@ func _physics_process(delta):
 					body.use()
 				elif body.name == "Anvil":
 					body.use()
-				elif body.name == "Сashier":
+				elif body.name == "Cashier":
 					body.submit_order()
