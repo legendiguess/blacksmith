@@ -8,6 +8,7 @@ func _ready():
 	
 	$GUI/ChestMenu.connect("item_selected", $Game/Chest, "take_item_to_character")
 	
+	#Grindstone signals
 	$Game/Grindstone.connect("opened", $GrindstoneMinigame, "open")
 	$GrindstoneMinigame.connect("finish", $Game/Grindstone, "finish")
 	$GrindstoneMinigame.connect("stoppage", $Game/Grindstone, "stoppage")
@@ -18,6 +19,8 @@ func _ready():
 	$GUI/DwarfFoodMenu.connect("food_selected", $Game/Dwarf, "mine")
 	$Game/Dwarf.connect("player_asked_to_mine", $GUI/DwarfOreMenu, "open")
 
+	$Game/Workbench.connect("opened", $WorkbenchMinigame, "open")
+	
 	# Setup day event
 	current_event = load("res://scenes/events/TestEvent.gd").new()
 	$Game/Cashier.setup(current_event)

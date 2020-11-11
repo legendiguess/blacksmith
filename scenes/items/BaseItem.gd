@@ -5,6 +5,7 @@ extends Reference
 #Declare Variables
 var item_name = ""
 var id = 0
+var material
 var sprites
 
 #Code sector

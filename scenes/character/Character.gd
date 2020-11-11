@@ -43,6 +43,8 @@ func _physics_process(delta):
 					body.use()
 				elif body.name == "Anvil":
 					body.use()
+				elif body.name == "Workbench":
+					body.use()
 				elif body.name == "Cashier":
 					body.submit_order()
 				elif body.name == "Dwarf":
@@ -56,3 +58,4 @@ func _physics_process(delta):
 						if body.item_in_hand == null:
 							if body.get_node("Timer").time_left == 0:
 								body.ask_to_mine()
+

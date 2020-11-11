@@ -1,4 +1,5 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
+
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -29,6 +30,11 @@
 [ext_resource path="res://scenes/main/DwarfFoodMenu.gd" type="Script" id=28]
 [ext_resource path="res://sprites/Dwarf.png" type="Texture" id=29]
 [ext_resource path="res://scenes/dwarf/Dwarf.gd" type="Script" id=30]
+
+
+[ext_resource path="res://scenes/workbench/Workbench.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/gui/weapon_menu/WeaponMenu.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/minigames/workbench/WorkbenchMinigame.tscn" type="PackedScene" id=33]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 38.0
@@ -138,6 +144,9 @@ position = Vector2( 503.5, 264 )
 [node name="Anvil" parent="Game" instance=ExtResource( 19 )]
 position = Vector2( -3, 1 )
 
+[node name="Workbench" parent="Game" instance=ExtResource( 20 )]
+position = Vector2( 601, 258 )
+
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 403.533, 232.5 )
 
@@ -146,6 +155,7 @@ visible = false
 
 [node name="GrindstoneMinigame" parent="." instance=ExtResource( 17 )]
 visible = false
+
 
 [node name="OrderQueue" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -157,6 +167,9 @@ script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[node name="WorkbenchMinigame" parent="." instance=ExtResource( 22 )]
+visible = false
+
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
