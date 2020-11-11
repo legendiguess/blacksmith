@@ -41,7 +41,7 @@ func _physics_process(delta):
 						pass
 				elif body.name == "Furnace":
 					body.use()
-				elif body.name == "Furnace":
-					body.use()
 				elif body.name == "Anvil":
+					body.use()
+				elif body.name == "Workbench":
 					body.use()

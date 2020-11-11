@@ -6,6 +6,7 @@ enum WeaponStates{
 	HAFTEN
 }
 
+var weapon_type
 var weapon_state = WeaponStates.BLADE
 
 func _ready():
