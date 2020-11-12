@@ -1,10 +1,10 @@
-[gd_scene load_steps=36 format=2]
-
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cashier/Cashier.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/workbench/Workbench.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gui/chest_menu/ChestMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/furnace/Furnace.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/house/Shadow.png" type="Texture" id=8]
@@ -30,19 +30,15 @@
 [ext_resource path="res://scenes/main/DwarfFoodMenu.gd" type="Script" id=28]
 [ext_resource path="res://sprites/Dwarf.png" type="Texture" id=29]
 [ext_resource path="res://scenes/dwarf/Dwarf.gd" type="Script" id=30]
-
-
-[ext_resource path="res://scenes/workbench/Workbench.tscn" type="PackedScene" id=31]
-[ext_resource path="res://scenes/gui/weapon_menu/WeaponMenu.tscn" type="PackedScene" id=32]
-[ext_resource path="res://scenes/minigames/workbench/WorkbenchMinigame.tscn" type="PackedScene" id=33]
-
-[sub_resource type="CircleShape2D" id=3]
-radius = 38.0
+[ext_resource path="res://scenes/minigames/workbench/WorkbenchMinigame.tscn" type="PackedScene" id=32]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id=2]
 radius = 4.0
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=3]
 background_mode = 4
 glow_enabled = true
 
@@ -121,7 +117,7 @@ one_shot = true
 texture = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Dwarf"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="DiggedOre" type="Sprite" parent="Game/Dwarf"]
 
@@ -133,7 +129,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/CashierWindowEntranceZone"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -144,11 +140,11 @@ position = Vector2( 503.5, 264 )
 [node name="Anvil" parent="Game" instance=ExtResource( 19 )]
 position = Vector2( -3, 1 )
 
-[node name="Workbench" parent="Game" instance=ExtResource( 20 )]
-position = Vector2( 601, 258 )
-
 [node name="Character" parent="Game" instance=ExtResource( 3 )]
 position = Vector2( 403.533, 232.5 )
+
+[node name="Workbench" parent="Game" instance=ExtResource( 5 )]
+position = Vector2( 587.226, 253.676 )
 
 [node name="AnvilMinigame" parent="." instance=ExtResource( 18 )]
 visible = false
@@ -156,6 +152,8 @@ visible = false
 [node name="GrindstoneMinigame" parent="." instance=ExtResource( 17 )]
 visible = false
 
+[node name="WorkbenchMinigame" parent="." instance=ExtResource( 32 )]
+visible = false
 
 [node name="OrderQueue" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -167,9 +165,6 @@ script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[node name="WorkbenchMinigame" parent="." instance=ExtResource( 22 )]
-visible = false
-
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -216,7 +211,7 @@ bus = "Music"
 script = ExtResource( 16 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 3 )
 
 [node name="DayTimer" type="Timer" parent="."]
 wait_time = 300.0
