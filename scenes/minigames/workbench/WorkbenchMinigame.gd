@@ -18,7 +18,7 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch:
 		if finished:
-			if Rect2(finished_sprite.global_position,finished_sprite.get_rect().size*scale).has_point(event.position):
+			if event.pressed:
 				finished_sprite.queue_free()
 				finished = false
 				inventory.update()
