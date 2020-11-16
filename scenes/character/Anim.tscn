@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/character/ArmRight.png" type="Texture" id=1]
+[ext_resource path="res://sprites/character/Head.png" type="Texture" id=2]
+[ext_resource path="res://sprites/character/Body.png" type="Texture" id=3]
+[ext_resource path="res://sprites/character/ArmLeft.png" type="Texture" id=4]
+[ext_resource path="res://sprites/character/ForearmRight.png" type="Texture" id=5]
+[ext_resource path="res://sprites/character/ForearmLeft.png" type="Texture" id=6]
+[ext_resource path="res://sprites/character/FootLeft.png" type="Texture" id=7]
+[ext_resource path="res://sprites/character/LegRight.png" type="Texture" id=8]
+[ext_resource path="res://sprites/character/ShinRight.png" type="Texture" id=9]
+[ext_resource path="res://sprites/character/ShinLeft.png" type="Texture" id=10]
+[ext_resource path="res://sprites/character/FootRight.png" type="Texture" id=11]
+[ext_resource path="res://sprites/character/LegLeft.png" type="Texture" id=12]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ForearmRight" type="Sprite" parent="."]
+position = Vector2( 151.5, 108.5 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, 10 )
+
+[node name="FootRight" type="Sprite" parent="."]
+position = Vector2( 156.5, 175.5 )
+texture = ExtResource( 11 )
+offset = Vector2( -2.5, 2 )
+
+[node name="ShinRight" type="Sprite" parent="."]
+position = Vector2( 156.5, 148.5 )
+texture = ExtResource( 9 )
+offset = Vector2( 1, 12 )
+
+[node name="LegRight" type="Sprite" parent="."]
+position = Vector2( 156.5, 119.5 )
+texture = ExtResource( 8 )
+offset = Vector2( 0, 14 )
+
+[node name="ArmRight" type="Sprite" parent="."]
+position = Vector2( 152.5, 91 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 8.99999 )
+
+[node name="FootLeft" type="Sprite" parent="."]
+position = Vector2( 165.5, 175.5 )
+texture = ExtResource( 7 )
+offset = Vector2( -2.49998, 2.00002 )
+
+[node name="ShinLeft" type="Sprite" parent="."]
+position = Vector2( 165.5, 148.5 )
+texture = ExtResource( 10 )
+offset = Vector2( 1, 12 )
+
+[node name="LegLeft" type="Sprite" parent="."]
+position = Vector2( 165.5, 119.5 )
+texture = ExtResource( 12 )
+offset = Vector2( 0, 14 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 160, 120 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -13 )
+
+[node name="ForearmLeft" type="Sprite" parent="Body"]
+position = Vector2( 11, -12 )
+texture = ExtResource( 6 )
+offset = Vector2( -0.499985, 10.5 )
+
+[node name="ArmLeft" type="Sprite" parent="Body"]
+position = Vector2( 10, -29 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 9 )
+
+[node name="RemoteForearmLeft" type="RemoteTransform2D" parent="Body/ArmLeft"]
+position = Vector2( 1, 17 )
+remote_path = NodePath("../../ForearmLeft")
+
+[node name="Head" type="Sprite" parent="Body"]
+position = Vector2( 2, -36 )
+texture = ExtResource( 2 )
+offset = Vector2( -0.5, -8.5 )
+
+[node name="RemoteArmRight" type="RemoteTransform2D" parent="Body"]
+position = Vector2( -7.5, -29 )
+remote_path = NodePath("../../ArmRight")
+
+[node name="RemoteForearmRight" type="RemoteTransform2D" parent="Body/RemoteArmRight"]
+position = Vector2( -1, 17.5 )
+remote_path = NodePath("../../../ForearmRight")
+
+[node name="RemoteLegLeft" type="RemoteTransform2D" parent="Body"]
+position = Vector2( 5.5, -0.5 )
+remote_path = NodePath("../../LegLeft")
+
+[node name="RemoteShinLeft" type="RemoteTransform2D" parent="Body/RemoteLegLeft"]
+position = Vector2( 0, 29 )
+remote_path = NodePath("../../../ShinLeft")
+
+[node name="RemoteFootLeft" type="RemoteTransform2D" parent="Body/RemoteLegLeft/RemoteShinLeft"]
+position = Vector2( 0, 27 )
+remote_path = NodePath("../../../../FootLeft")
+
+[node name="RemoteLegRight" type="RemoteTransform2D" parent="Body"]
+position = Vector2( -3.5, -0.5 )
+remote_path = NodePath("../../LegRight")
+
+[node name="RemoteShinRight" type="RemoteTransform2D" parent="Body/RemoteLegRight"]
+position = Vector2( 0, 29 )
+remote_path = NodePath("../../../ShinRight")
+
+[node name="RemoteFootRight" type="RemoteTransform2D" parent="Body/RemoteLegRight/RemoteShinRight"]
+position = Vector2( 0, 27 )
+remote_path = NodePath("../../../../FootRight")

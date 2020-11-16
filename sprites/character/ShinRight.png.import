@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/anvil.png-419c630a601dff462eb69291f930d289.stex"
+path="res://.import/ShinRight.png-1602b3c20007f09bf5c09671378b8b40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/benches/anvil.png"
-dest_files=[ "res://.import/anvil.png-419c630a601dff462eb69291f930d289.stex" ]
+source_file="res://sprites/character/ShinRight.png"
+dest_files=[ "res://.import/ShinRight.png-1602b3c20007f09bf5c09671378b8b40.stex" ]
 
 [params]
 

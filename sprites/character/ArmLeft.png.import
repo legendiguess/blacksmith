@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/anvil.png-419c630a601dff462eb69291f930d289.stex"
+path="res://.import/ArmLeft.png-3bdd74d113833862bbd02a211b79b757.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/benches/anvil.png"
-dest_files=[ "res://.import/anvil.png-419c630a601dff462eb69291f930d289.stex" ]
+source_file="res://sprites/character/ArmLeft.png"
+dest_files=[ "res://.import/ArmLeft.png-3bdd74d113833862bbd02a211b79b757.stex" ]
 
 [params]
 
