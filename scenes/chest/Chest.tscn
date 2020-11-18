@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/chest/Chest.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Chest.png" type="Texture" id=2]
 [ext_resource path="res://scenes/abstractions/Storage.gd" type="Script" id=3]
 [ext_resource path="res://sounds/PuttingItemInChest.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/sounds/AudioStreamPlayer2D.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 34.8895
@@ -23,3 +24,4 @@ shape = SubResource( 1 )
 [node name="PuttingItemInChest" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 bus = "SFX"
+script = ExtResource( 5 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/minigames/anvil_minigame/CopperFirstPerson.png" type="Texture" id=1]
 [ext_resource path="res://sprites/minigames/anvil_minigame/MarkDisable.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/minigames/anvil/AnvilMinigame.gd" type="Script" id=9]
 [ext_resource path="res://scenes/anvil/IngotZone.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/particles/AnvilSparks.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/sounds/AudioStreamPlayer2D.gd" type="Script" id=12]
 
 [node name="Anvil" type="Node2D"]
 script = ExtResource( 9 )
@@ -203,6 +204,7 @@ expand = true
 stream = ExtResource( 8 )
 volume_db = -10.0
 bus = "SFX"
+script = ExtResource( 12 )
 
 [node name="SliderBar" type="Control" parent="."]
 __meta__ = {

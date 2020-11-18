@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1.ogg-4bbc5b716b1caa7e099aef19613c2fdf.oggstr"
+
+[deps]
+
+source_file="res://sounds/footsteps/wooden_floor/1.ogg"
+dest_files=[ "res://.import/1.ogg-4bbc5b716b1caa7e099aef19613c2fdf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

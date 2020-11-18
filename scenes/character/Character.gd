@@ -1,5 +1,8 @@
 extends Node2D
 
+onready var ground_footsteps = $GroundFootsteps
+onready var wooden_floor_footsteps = $WoodenFloorFootsteps
+
 const MAX_SPEED = 300
 const ACCELERATION = 100
 
@@ -11,17 +14,15 @@ func _physics_process(delta):
 		$ItemInHandsSprite.position.x = 23
 		$ItemInHandsSprite.flip_h = false
 		motion_x = min(motion_x + ACCELERATION, MAX_SPEED)
-		if $Footsteps.playing == false:
-			$Footsteps.play()
+		play_footsteps_sound()
 	elif Input.is_action_pressed('ui_left'):
 		motion_x = max(motion_x - ACCELERATION, -MAX_SPEED)
 		$Sprite.flip_h = false
 		$ItemInHandsSprite.position.x = -23
 		$ItemInHandsSprite.flip_h = true
-		if $Footsteps.playing == false:
-			$Footsteps.play()
+		play_footsteps_sound()
 	else:
-		$Footsteps.stop()
+		stop_footsteps_sound()
 		motion_x = lerp(motion_x, 0, 0.2)
 	
 	position.x += motion_x * delta
@@ -59,3 +60,13 @@ func _physics_process(delta):
 							if body.get_node("Timer").time_left == 0:
 								body.ask_to_mine()
 
+func play_footsteps_sound():
+	if ground_footsteps.playing == false and wooden_floor_footsteps.playing == false:
+		if position.x > 640:
+			ground_footsteps.play()
+		else:
+			wooden_floor_footsteps.play()
+
+func stop_footsteps_sound():
+	ground_footsteps.stop()
+	wooden_floor_footsteps.stop()
