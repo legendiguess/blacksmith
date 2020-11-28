@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/chest/Chest.tscn" type="PackedScene" id=2]
@@ -30,7 +30,11 @@
 [ext_resource path="res://scenes/main/DwarfFoodMenu.gd" type="Script" id=28]
 [ext_resource path="res://sprites/Dwarf.png" type="Texture" id=29]
 [ext_resource path="res://scenes/dwarf/Dwarf.gd" type="Script" id=30]
+[ext_resource path="res://themes/ControlButton.tres" type="StyleBox" id=31]
 [ext_resource path="res://scenes/minigames/workbench/WorkbenchMinigame.tscn" type="PackedScene" id=32]
+[ext_resource path="res://sprites/gui/controls_buttons/ArrowNormal.png" type="Texture" id=33]
+[ext_resource path="res://scenes/main/TouchScreenControlButton.gd" type="Script" id=34]
+[ext_resource path="res://sprites/gui/controls_buttons/HandNormal.png" type="Texture" id=35]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 38.0
@@ -167,6 +171,59 @@ __meta__ = {
 }
 
 [node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="TouchScreenControls" type="HBoxContainer" parent="GUI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -50.0
+margin_right = -20.0
+margin_bottom = -10.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/TouchScreenControls"]
+margin_right = 573.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="TouchScreenControlButton" type="Button" parent="GUI/TouchScreenControls/HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_styles/normal = ExtResource( 31 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+icon = ExtResource( 33 )
+script = ExtResource( 34 )
+action = "ui_left"
+
+[node name="Button2" type="Button" parent="GUI/TouchScreenControls/HBoxContainer"]
+margin_left = 47.0
+margin_right = 90.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_styles/normal = ExtResource( 31 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+icon = ExtResource( 33 )
+script = ExtResource( 34 )
+action = "ui_right"
+
+[node name="Button3" type="Button" parent="GUI/TouchScreenControls"]
+margin_left = 577.0
+margin_right = 600.0
+margin_bottom = 40.0
+focus_mode = 0
+custom_styles/normal = ExtResource( 31 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+icon = ExtResource( 35 )
+script = ExtResource( 34 )
+action = "use"
 
 [node name="ChestMenu" parent="GUI" instance=ExtResource( 6 )]
 visible = false
