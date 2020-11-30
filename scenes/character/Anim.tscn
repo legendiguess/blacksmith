@@ -18,9 +18,9 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
-length = 5.0
+length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:position")
+tracks/0/path = NodePath("BodyInitialPoint/Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "values": [ Vector2( 160.53, 118.939 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:rotation_degrees")
+tracks/1/path = NodePath("BodyInitialPoint/Body:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -44,7 +44,7 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/RemoteBody/SpotForBody/Head:position")
+tracks/2/path = NodePath("BodyInitialPoint/Body/RemoteBody/SpotNeck/Head:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -56,7 +56,7 @@ tracks/2/keys = {
 "values": [ Vector2( -1, -3 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/RemoteBody/SpotForBody/Head:rotation_degrees")
+tracks/3/path = NodePath("BodyInitialPoint/Body/RemoteBody/SpotNeck/Head:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -68,7 +68,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/ApronEnd:position")
+tracks/4/path = NodePath("BodyInitialPoint/ApronEnd:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -80,7 +80,7 @@ tracks/4/keys = {
 "values": [ Vector2( -0.530334, 2.06067 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/ApronEnd:rotation_degrees")
+tracks/5/path = NodePath("BodyInitialPoint/ApronEnd:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -92,7 +92,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/ArmLeft:position")
+tracks/6/path = NodePath("BodyInitialPoint/Body/RemoteBody/ArmLeft:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -104,7 +104,7 @@ tracks/6/keys = {
 "values": [ Vector2( 10, -29 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/ArmLeft:rotation_degrees")
+tracks/7/path = NodePath("BodyInitialPoint/Body/RemoteBody/ArmLeft:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -116,7 +116,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/RemoteLegRight:position")
+tracks/8/path = NodePath("BodyInitialPoint/RemoteLegRight:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -128,7 +128,7 @@ tracks/8/keys = {
 "values": [ Vector2( -3.5, -0.5 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/RemoteLegRight:rotation_degrees")
+tracks/9/path = NodePath("BodyInitialPoint/RemoteLegRight:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -140,7 +140,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/RemoteLegRight/RemoteShinRight/RemoteFootRight:position")
+tracks/10/path = NodePath("BodyInitialPoint/RemoteLegRight/RemoteShinRight/RemoteFootRight:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -152,7 +152,7 @@ tracks/10/keys = {
 "values": [ Vector2( 0.5, 29.5 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/RemoteLegRight/RemoteShinRight/RemoteFootRight:rotation_degrees")
+tracks/11/path = NodePath("BodyInitialPoint/RemoteLegRight/RemoteShinRight/RemoteFootRight:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -164,7 +164,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/RemoteLegRight/RemoteShinRight:position")
+tracks/12/path = NodePath("BodyInitialPoint/RemoteLegRight/RemoteShinRight:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -176,7 +176,7 @@ tracks/12/keys = {
 "values": [ Vector2( 0, 29 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/RemoteLegRight/RemoteShinRight:rotation_degrees")
+tracks/13/path = NodePath("BodyInitialPoint/RemoteLegRight/RemoteShinRight:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -188,7 +188,7 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body/RemoteBody/SpotForBody:position")
+tracks/14/path = NodePath("BodyInitialPoint/Body/RemoteBody/SpotNeck:rotation_degrees")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -197,10 +197,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 2, -33 ) ]
+"values": [ 0.0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Body/RemoteBody/SpotForBody:rotation_degrees")
+tracks/15/path = NodePath("BodyInitialPoint/Body/RemoteBody/SpotNeck:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -209,10 +209,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Vector2( 2, -33 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body/RemoteArmRight:position")
+tracks/16/path = NodePath("BodyInitialPoint/Body/RemoteBody/RemoteArmRight:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -224,7 +224,7 @@ tracks/16/keys = {
 "values": [ Vector2( -7.5, -29 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/RemoteArmRight:rotation_degrees")
+tracks/17/path = NodePath("BodyInitialPoint/Body/RemoteBody/RemoteArmRight:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -236,7 +236,7 @@ tracks/17/keys = {
 "values": [ 0.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/RemoteBody:position")
+tracks/18/path = NodePath("BodyInitialPoint/Body/RemoteBody:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -248,7 +248,7 @@ tracks/18/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/RemoteBody:rotation_degrees")
+tracks/19/path = NodePath("BodyInitialPoint/Body/RemoteBody:rotation_degrees")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -260,7 +260,7 @@ tracks/19/keys = {
 "values": [ 0.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body/ArmLeft/RemoteForearmLeft:position")
+tracks/20/path = NodePath("BodyInitialPoint/Body/RemoteBody/ArmLeft/RemoteForearmLeft:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -272,7 +272,7 @@ tracks/20/keys = {
 "values": [ Vector2( 1, 17 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Body/ArmLeft/RemoteForearmLeft:rotation_degrees")
+tracks/21/path = NodePath("BodyInitialPoint/Body/RemoteBody/ArmLeft/RemoteForearmLeft:rotation_degrees")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -284,7 +284,7 @@ tracks/21/keys = {
 "values": [ 0.0 ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body/RemoteArmRight/RemoteForearmRight:position")
+tracks/22/path = NodePath("BodyInitialPoint/Body/RemoteBody/RemoteArmRight/RemoteForearmRight:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -296,7 +296,7 @@ tracks/22/keys = {
 "values": [ Vector2( -1, 17.5 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Body/RemoteArmRight/RemoteForearmRight:rotation_degrees")
+tracks/23/path = NodePath("BodyInitialPoint/Body/RemoteBody/RemoteArmRight/RemoteForearmRight:rotation_degrees")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -308,7 +308,7 @@ tracks/23/keys = {
 "values": [ 0.0 ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Body/RemoteLegLeft/RemoteShinLeft:position")
+tracks/24/path = NodePath("BodyInitialPoint/RemoteLegLeft/RemoteShinLeft:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -320,7 +320,7 @@ tracks/24/keys = {
 "values": [ Vector2( 0, 29 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Body/RemoteLegLeft/RemoteShinLeft:rotation_degrees")
+tracks/25/path = NodePath("BodyInitialPoint/RemoteLegLeft/RemoteShinLeft:rotation_degrees")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -332,7 +332,7 @@ tracks/25/keys = {
 "values": [ 0.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Body/RemoteLegLeft:position")
+tracks/26/path = NodePath("BodyInitialPoint/RemoteLegLeft:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -344,7 +344,7 @@ tracks/26/keys = {
 "values": [ Vector2( 5.5, -0.5 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Body/RemoteLegLeft:rotation_degrees")
+tracks/27/path = NodePath("BodyInitialPoint/RemoteLegLeft:rotation_degrees")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -356,7 +356,7 @@ tracks/27/keys = {
 "values": [ 0.0 ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Body/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft:position")
+tracks/28/path = NodePath("BodyInitialPoint/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -368,7 +368,7 @@ tracks/28/keys = {
 "values": [ Vector2( 0.5, 29.5 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Body/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft:rotation_degrees")
+tracks/29/path = NodePath("BodyInitialPoint/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft:rotation_degrees")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -383,14 +383,14 @@ tracks/29/keys = {
 [node name="Node2D" type="Node2D"]
 
 [node name="ForearmRight" type="Sprite" parent="."]
-position = Vector2( 152.03, 107.439 )
+position = Vector2( 152, 109.5 )
 texture = ExtResource( 5 )
-offset = Vector2( 0, 10 )
+offset = Vector2( 0.028717, 7.93342 )
 
 [node name="ArmRight" type="Sprite" parent="."]
-position = Vector2( 153.03, 89.9393 )
+position = Vector2( 153, 92 )
 texture = ExtResource( 1 )
-offset = Vector2( 0, 8.99999 )
+offset = Vector2( 0.029007, 6.935 )
 
 [node name="FootRight" type="Sprite" parent="."]
 position = Vector2( 157.53, 176.939 )
@@ -422,160 +422,174 @@ position = Vector2( 166.03, 118.439 )
 texture = ExtResource( 12 )
 offset = Vector2( 0, 14 )
 
-[node name="Body" type="Sprite" parent="."]
-position = Vector2( 160.53, 118.939 )
-texture = ExtResource( 3 )
-offset = Vector2( 0, -17 )
+[node name="BodyInitialPoint" type="Position2D" parent="."]
+position = Vector2( 160, 120 )
+rotation = 0.0056961
 
-[node name="RemoteBody" type="RemoteTransform2D" parent="Body"]
-remote_path = NodePath("..")
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="SpotForBody" type="Position2D" parent="Body/RemoteBody"]
-position = Vector2( 2, -33 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="Head" type="Sprite" parent="Body/RemoteBody/SpotForBody"]
-position = Vector2( -1, -3 )
-texture = ExtResource( 2 )
-offset = Vector2( 0.5, -8.5 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="End" type="Position2D" parent="Body/RemoteBody/SpotForBody/Head"]
-position = Vector2( 0, -16 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="ApronEnd" type="Sprite" parent="Body"]
-position = Vector2( -0.530334, 2.06067 )
+[node name="ApronEnd" type="Sprite" parent="BodyInitialPoint"]
+position = Vector2( 0.00534058, 0.999649 )
+rotation = -0.0056961
 texture = ExtResource( 15 )
 offset = Vector2( 0.530334, 3.43933 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="End" type="Position2D" parent="Body/ApronEnd"]
+[node name="End" type="Position2D" parent="BodyInitialPoint/ApronEnd"]
 position = Vector2( -2.38419e-07, 7 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Apron" type="Sprite" parent="Body"]
-position = Vector2( -0.5, -14.5 )
-texture = ExtResource( 14 )
-offset = Vector2( -1, 0 )
-
-[node name="Belt" type="Sprite" parent="Body"]
-position = Vector2( 2, -1 )
-texture = ExtResource( 13 )
-
-[node name="ForearmLeft" type="Sprite" parent="Body"]
-position = Vector2( 11, -12 )
-texture = ExtResource( 6 )
-offset = Vector2( -0.499985, 10.5 )
-
-[node name="ArmLeft" type="Sprite" parent="Body"]
-position = Vector2( 10, -29 )
-texture = ExtResource( 4 )
-offset = Vector2( 0, 9 )
-__meta__ = {
-"_edit_bone_": true,
-"_edit_ik_": true
-}
-
-[node name="RemoteForearmLeft" type="RemoteTransform2D" parent="Body/ArmLeft"]
-position = Vector2( 1, 17 )
-remote_path = NodePath("../../ForearmLeft")
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="End" type="Position2D" parent="Body/ArmLeft/RemoteForearmLeft"]
-position = Vector2( 0, 21.5 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="RemoteArmRight" type="RemoteTransform2D" parent="Body"]
-position = Vector2( -7.5, -29 )
-remote_path = NodePath("../../ArmRight")
-__meta__ = {
-"_edit_bone_": true,
-"_edit_ik_": true
-}
-
-[node name="RemoteForearmRight" type="RemoteTransform2D" parent="Body/RemoteArmRight"]
-position = Vector2( -1, 17.5 )
-remote_path = NodePath("../../../ForearmRight")
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="End" type="Position2D" parent="Body/RemoteArmRight/RemoteForearmRight"]
-position = Vector2( 0, 21 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="RemoteLegLeft" type="RemoteTransform2D" parent="Body"]
-position = Vector2( 5.5, -0.5 )
-remote_path = NodePath("../../LegLeft")
-__meta__ = {
-"_edit_bone_": true,
-"_edit_ik_": true
-}
-
-[node name="RemoteShinLeft" type="RemoteTransform2D" parent="Body/RemoteLegLeft"]
-position = Vector2( 0, 29 )
-remote_path = NodePath("../../../ShinLeft")
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="RemoteFootLeft" type="RemoteTransform2D" parent="Body/RemoteLegLeft/RemoteShinLeft"]
-position = Vector2( 0.5, 29.5 )
-remote_path = NodePath("../../../../FootLeft")
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="End" type="Position2D" parent="Body/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft"]
-position = Vector2( -9.5, 0.5 )
-__meta__ = {
-"_edit_bone_": true
-}
-
-[node name="RemoteLegRight" type="RemoteTransform2D" parent="Body"]
-position = Vector2( -3.5, -0.5 )
+[node name="RemoteLegRight" type="RemoteTransform2D" parent="BodyInitialPoint"]
+position = Vector2( -2.97887, -1.54407 )
+rotation = -0.0056961
 remote_path = NodePath("../../LegRight")
 __meta__ = {
 "_edit_bone_": true,
 "_edit_ik_": true
 }
 
-[node name="RemoteShinRight" type="RemoteTransform2D" parent="Body/RemoteLegRight"]
+[node name="RemoteShinRight" type="RemoteTransform2D" parent="BodyInitialPoint/RemoteLegRight"]
 position = Vector2( 0, 29 )
 remote_path = NodePath("../../../ShinRight")
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="RemoteFootRight" type="RemoteTransform2D" parent="Body/RemoteLegRight/RemoteShinRight"]
+[node name="RemoteFootRight" type="RemoteTransform2D" parent="BodyInitialPoint/RemoteLegRight/RemoteShinRight"]
 position = Vector2( 0.5, 29.5 )
 remote_path = NodePath("../../../../FootRight")
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="End" type="Position2D" parent="Body/RemoteLegRight/RemoteShinRight/RemoteFootRight"]
+[node name="End" type="Position2D" parent="BodyInitialPoint/RemoteLegRight/RemoteShinRight/RemoteFootRight"]
 position = Vector2( -9.5, 0.5 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RemoteLegLeft" type="RemoteTransform2D" parent="BodyInitialPoint"]
+position = Vector2( 6.021, -1.59533 )
+rotation = -0.0056961
+remote_path = NodePath("../../LegLeft")
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="RemoteShinLeft" type="RemoteTransform2D" parent="BodyInitialPoint/RemoteLegLeft"]
+position = Vector2( 0, 29 )
+remote_path = NodePath("../../../ShinLeft")
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RemoteFootLeft" type="RemoteTransform2D" parent="BodyInitialPoint/RemoteLegLeft/RemoteShinLeft"]
+position = Vector2( 0.5, 29.5 )
+remote_path = NodePath("../../../../FootLeft")
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="End" type="Position2D" parent="BodyInitialPoint/RemoteLegLeft/RemoteShinLeft/RemoteFootLeft"]
+position = Vector2( -9.5, 0.5 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Body" type="Sprite" parent="BodyInitialPoint"]
+position = Vector2( 0.523926, -1.064 )
+rotation = -0.0056961
+texture = ExtResource( 3 )
+offset = Vector2( 0, -17 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RemoteBody" type="RemoteTransform2D" parent="BodyInitialPoint/Body"]
+position = Vector2( -0.529999, -28.939 )
+remote_path = NodePath("..")
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Apron" type="Sprite" parent="BodyInitialPoint/Body/RemoteBody"]
+texture = ExtResource( 14 )
+offset = Vector2( -0.970001, 14.439 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="SpotNeck" type="Position2D" parent="BodyInitialPoint/Body/RemoteBody"]
+position = Vector2( 2.53, -4.061 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Head" type="Sprite" parent="BodyInitialPoint/Body/RemoteBody/SpotNeck"]
+position = Vector2( -0.529999, -3.939 )
+texture = ExtResource( 2 )
+offset = Vector2( 0.0299988, -7.561 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="End" type="Position2D" parent="BodyInitialPoint/Body/RemoteBody/SpotNeck/Head"]
+position = Vector2( 0, -16 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="RemoteArmRight" type="RemoteTransform2D" parent="BodyInitialPoint/Body/RemoteBody"]
+position = Vector2( -7, 2.00001 )
+remote_path = NodePath("../../../../ArmRight")
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="RemoteForearmRight" type="RemoteTransform2D" parent="BodyInitialPoint/Body/RemoteBody/RemoteArmRight"]
+position = Vector2( -1, 17.5 )
+remote_path = NodePath("../../../../../ForearmRight")
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="End" type="Position2D" parent="BodyInitialPoint/Body/RemoteBody/RemoteArmRight/RemoteForearmRight"]
+position = Vector2( 0.036, 18.942 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Belt" type="Sprite" parent="BodyInitialPoint/Body/RemoteBody"]
+position = Vector2( 2.53, 27.939 )
+texture = ExtResource( 13 )
+
+[node name="ForearmLeft" type="Sprite" parent="BodyInitialPoint/Body/RemoteBody"]
+position = Vector2( 11.53, 16.939 )
+texture = ExtResource( 6 )
+offset = Vector2( -0.499985, 10.5 )
+
+[node name="ArmLeft" type="Sprite" parent="BodyInitialPoint/Body/RemoteBody"]
+position = Vector2( 10, 2.00001 )
+texture = ExtResource( 4 )
+offset = Vector2( 0.529999, 6.939 )
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
+
+[node name="RemoteForearmLeft" type="RemoteTransform2D" parent="BodyInitialPoint/Body/RemoteBody/ArmLeft"]
+position = Vector2( 1.53, 14.939 )
+remote_path = NodePath("../../ForearmLeft")
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="End" type="Position2D" parent="BodyInitialPoint/Body/RemoteBody/ArmLeft/RemoteForearmLeft"]
+position = Vector2( 0, 21.5 )
 __meta__ = {
 "_edit_bone_": true
 }
